@@ -1,12 +1,22 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export const navLinks = [
+interface NavLink {
+  href: string;
+  title: string;
+}
+
+interface HeaderNavLinksProps {
+  href: string;
+  children: React.ReactNode;
+}
+
+export const navLinks: NavLink[] = [
   { href: "/components", title: "Components" },
   { href: "/about", title: "About" },
 ];
 
-export const HeaderNavLinks = ({ href, children }) => {
+const HeaderNavLinks: React.FC<HeaderNavLinksProps> = ({ href, children }) => {
   const pathname = usePathname();
   const active = href === pathname;
 
@@ -24,3 +34,5 @@ export const HeaderNavLinks = ({ href, children }) => {
     </Link>
   );
 };
+
+export default HeaderNavLinks;

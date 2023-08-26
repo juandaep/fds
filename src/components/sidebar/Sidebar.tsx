@@ -1,20 +1,11 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useRouter } from "next/router";
 import React from "react";
+import { menuItems } from "./sidebarNavLinks";
 
-interface MenuItem {
-  title: string;
-  href: string;
-}
-
-interface SidebarProps {
-  menuItems: MenuItem[];
-}
-
-const Sidebar: React.FC<SidebarProps> = ({ menuItems }) => {
-    const pathname = usePathname()
+const Sidebar = () => {
+  const pathname = usePathname();
 
   return (
     <aside className="hidden relative z-10 lg:block lg:col-span-2 mt-8 pr-4">
@@ -27,11 +18,44 @@ const Sidebar: React.FC<SidebarProps> = ({ menuItems }) => {
               "linear-gradient(to top, transparent 0%, #000 100px, #000 100%, transparent 100%)",
           }}
         >
-          {menuItems.map((link) => (
-            <Link key={link.title} href={link.href} className={pathname === link.href ? "text-amber-400" : "text-white"}>
-              {link.title}
-            </Link>
-          ))}
+          <ul>
+            {menuItems.map((item, index) => (
+              <li key={index}>
+                {"title" in item ? (
+                  <Link
+                    href={item.href}
+                    passHref
+                    className={
+                      pathname === item.href ? "text-amber-400" : "text-white"
+                    }
+                  >
+                    {item.title}
+                  </Link>
+                ) : (
+                  <div>
+                    <p className="">{item.type}</p>
+                    <ul>
+                      {item.menu.map((subItem, subIndex) => (
+                        <li key={subIndex}>
+                          <Link
+                            href={subItem.href}
+                            passHref
+                            className={
+                              pathname === subItem.href
+                                ? "text-amber-400"
+                                : "text-white"
+                            }
+                          >
+                            {subItem.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </li>
+            ))}
+          </ul>
         </div>
       </nav>
     </aside>
