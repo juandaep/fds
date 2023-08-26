@@ -19,7 +19,7 @@ const ThemeToggle = () => {
         checked={theme === "dark"}
         onChange={toggleTheme}
       />
-      <span className="slider round"></span>
+      <span className="slider"></span>
     </label>
   );
 };

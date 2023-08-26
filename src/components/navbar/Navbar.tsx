@@ -22,12 +22,8 @@ const Navbar = () => {
           <Image src="/logo.svg" alt="Flux Logo" priority fill />
         </Link>
         <div className="flex gap-4 flex-row flex-nowrap items-center data-[justify=start]:justify-start data-[justify=start]:flex-grow data-[justify=start]:basis-0 data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=end]:flex-grow data-[justify=end]:basis-0 basis-1/5 sm:basis-full h-20">
-          
           {navLinks.map((link) => (
-            <HeaderNavLinks
-              key={link.title}
-              href={link.href}
-            >
+            <HeaderNavLinks key={link.title} href={link.href}>
               {link.title}
             </HeaderNavLinks>
           ))}
@@ -46,9 +42,9 @@ const Navbar = () => {
             </span>
           </Link>
         </div>
+        <ThemeSwitch />
+        <ThemeToggle />
       </header>
-      <ThemeSwitch />
-      <ThemeToggle />
     </nav>
   );
 };

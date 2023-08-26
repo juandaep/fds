@@ -2,7 +2,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export const navLinks = [
-  { href: "/components", title: "Components Overview" },
+  { href: "/components", title: "Components" },
   { href: "/about", title: "About" },
 ];
 
