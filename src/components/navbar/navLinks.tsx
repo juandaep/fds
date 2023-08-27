@@ -14,6 +14,7 @@ interface HeaderNavLinksProps {
 export const navLinks: NavLink[] = [
   { href: "/components", title: "Components" },
   { href: "/about", title: "About" },
+  { href: "/figma", title: "Figma" },
 ];
 
 const HeaderNavLinks: React.FC<HeaderNavLinksProps> = ({ href, children }) => {

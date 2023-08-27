@@ -26,20 +26,6 @@ const Navbar = () => {
               {link.title}
             </HeaderNavLinks>
           ))}
-
-          <Link
-            href="https://www.figma.com/community/file/1172091403014887161"
-            className={classNames(
-              "transition-all flex items-center gap-2",
-              "hover-animation hover:text-primary-main"
-            )}
-            target="_blank"
-          >
-            Figma
-            <span className="w-4 h-4">
-              <ArrowTopRightOnSquareIcon />
-            </span>
-          </Link>
         </div>
         <ThemeSwitch />
         <ThemeToggle />

@@ -8,8 +8,10 @@ export default function PagesLayout({
 }) {
   return (
     <Provider>
-      <Sidebar />
+      <div className="grid grid-cols-12">
+        <Sidebar />
         {children}
+      </div>
     </Provider>
   );
 }
