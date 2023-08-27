@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import NavigationItems from "./NavigationItems";
+import BackToTopButton from "../BackToTopButton";
 
 interface Section {
   id: string;
@@ -59,6 +60,7 @@ const Navigation: React.FC<NavigationProps> = ({ sections }) => {
               />
             ))}
           </div>
+          <BackToTopButton />
       </div>
     </aside>
   );
