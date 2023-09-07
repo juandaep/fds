@@ -10,15 +10,6 @@ const ThemeSwitch = () => {
   
     //Ater mounting, we have access to the theme
     useEffect(() => setMounted(true), []);
-  
-
-  const switchTheme = () => {
-    if (theme === "dark") {
-      setTheme("light");
-    } else if (theme === "light") {
-      setTheme("dark");
-    }
-  };
 
   return (
     <button

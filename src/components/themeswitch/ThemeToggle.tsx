@@ -1,23 +1,22 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 
 const ThemeToggle = () => {
-  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme, resolvedTheme } = useTheme();
 
-  const toggleTheme = () => {
-    if (theme === "dark") {
-      setTheme("light");
-    } else if (theme === "light") {
-      setTheme("dark");
-    }
-  };
+  useEffect(() => setMounted(true), []);
+
   return (
     <label className="switch">
       <input
         type="checkbox"
-        checked={theme === "dark"}
-        onChange={toggleTheme}
+        checked={mounted && (theme === "dark" || resolvedTheme === "dark")}
+        onChange={() => 
+        setTheme(
+          theme === "dark" || resolvedTheme === "dark" ? "light" : "dark"
+        )}
       />
       <span className="slider"></span>
     </label>
