@@ -10,6 +10,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+          light: '#FFFFFF',
+          dark: '#05070A',
         default:{
           25: '#FCFCFD',
           50: '#F8FAFC',
