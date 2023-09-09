@@ -1,16 +1,15 @@
 "use client";
 import { classNames } from "@/utils/classNames";
-import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
-import HeaderNavLinks, { navLinks } from "./navLinks";
 import ThemeSwitch from "../themeswitch/ThemeSwitch";
-import ThemeToggle from "../themeswitch/ThemeToggle";
+import HeaderNavLinks, { navLinks } from "./navLinks";
+import { MobileNav } from "./MobileNav";
 
 const Navbar = () => {
   return (
-    <nav className="flex z-40 w-full h-auto items-center justify-center data-[menu-open=true]:border-none sticky top-0 inset-x-0 backdrop-blur-lg data-[menu-open=true]:backdrop-blur-xl backdrop-saturate-150 bg-background/70">
-      <header className="z-40 flex px-6 gap-4 w-full flex-row relative flex-nowrap items-center justify-between h-[var(--navbar-height)] max-w-[1280px]">
+    <nav className="flex gap-3 z-40 w-full px-6 py-4 items-center justify-center sticky top-0 inset-x-0 backdrop-blur-xl backdrop-saturate-100 bg-light/70 dark:bg-dark/70">
+      <header className="z-40 flex px-6 gap-4 w-full flex-row relative flex-nowrap items-center justify-between max-w-[1280px]">
         <Link
           href="/"
           className={classNames(
@@ -20,7 +19,7 @@ const Navbar = () => {
         >
           <Image src="/logo.svg" alt="Flux Logo" priority fill />
         </Link>
-        <div className="flex gap-4 flex-row flex-nowrap items-center data-[justify=start]:justify-start data-[justify=start]:flex-grow data-[justify=start]:basis-0 data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=end]:flex-grow data-[justify=end]:basis-0 basis-1/5 sm:basis-full h-20">
+        <div className="hidden md:flex gap-4 flex-row flex-nowrap items-center justify-end flex-grow basis-1/5 sm:basis-full">
           {navLinks.map((link) => (
             <HeaderNavLinks key={link.title} href={link.href}>
               {link.title}
@@ -28,7 +27,7 @@ const Navbar = () => {
           ))}
         </div>
         <ThemeSwitch />
-        <ThemeToggle />
+        <MobileNav />
       </header>
     </nav>
   );

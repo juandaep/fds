@@ -12,7 +12,7 @@ const components = () => {
       <section>
         <div
           id="home"
-          className="h-screen flex justify-center items-center bg-slate-100"
+          className="h-screen flex justify-center items-center bg-amber-500"
         >
           <h1>Home</h1>
         </div>

@@ -1,5 +1,5 @@
 import Sidebar from "@/components/sidebar/Sidebar";
-import { Provider } from "@/components/themeswitch/Provider";
+import { Provider } from "@/components/themeswitch/ThemeProvider";
 
 export default function PagesLayout({
   children,

@@ -89,10 +89,10 @@
   .surface-darkest {
     @apply bg-default-500 dark:bg-default-500
   }
-  .divider {
+  .default-divider {
     @apply divide-default-200 dark:divide-default-700
   }
-  .border {
+  .default-border {
     @apply border-default-300 dark:border-default-600
   }
   .switch-thumb {
@@ -136,7 +136,7 @@
   }
 
   .switch {
-    @apply relative inline-block w-[58px] h-6
+    @apply relative inline-block w-12 h-6
   }
   .switch input {
     @apply opacity-0 w-0 h-0
