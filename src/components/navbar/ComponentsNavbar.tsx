@@ -1,12 +1,11 @@
-"use client"
-import { classNames } from '@/utils/classNames'
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
-import HeaderNavLinks, { navLinks } from './navLinks'
-import ThemeSwitch from '../themeswitch/ThemeSwitch'
-import { MobileNav } from './MobileNav'
-import { Bars3Icon } from '@heroicons/react/24/outline'
+"use client";
+import { classNames } from "@/utils/classNames";
+import Image from "next/image";
+import Link from "next/link";
+import { MobileSidebar } from "../sidebar/MobileSidebar";
+import ThemeSwitch from "../themeswitch/ThemeSwitch";
+import { MobileNav } from "./MobileNav";
+import HeaderNavLinks, { navLinks } from "./navLinks";
 
 export const ComponentsNavbar = () => {
   return (
@@ -31,9 +30,7 @@ export const ComponentsNavbar = () => {
         <ThemeSwitch />
         <MobileNav />
       </header>
-      <div className='w-full mx-auto py-3 border-y border-default-200 dark:border-default-700 lg:hidden'>
-        <Bars3Icon width={24} />
-      </div>
+      <MobileSidebar />
     </nav>
-  )
-}
+  );
+};

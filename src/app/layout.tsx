@@ -7,17 +7,12 @@ import { NavbarProvider } from "@/components/navbar/NavbarProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
-type RootLayoutProps = {
-  children: ReactNode
-}
 export const metadata: Metadata = {
   title: "Flux Design Systems",
   description: "This web is only for preview the components",
 };
 
-export default function RootLayout({
-  children
-}: RootLayoutProps) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body className={inter.className}>

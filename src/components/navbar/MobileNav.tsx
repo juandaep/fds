@@ -13,10 +13,10 @@ export const MobileNav = () => {
   function openModal() {
     setModalOpen(true);
   }
-
   function closeModal() {
     setModalOpen(false);
   }
+
   return (
     <div
       className={classNames("flex justify-center items-center", "md:hidden")}
@@ -31,7 +31,7 @@ export const MobileNav = () => {
         aria-label="Nav Menu"
         onClick={openModal}
       >
-        <EllipsisVerticalIcon className="w-6 h-6" />
+        <EllipsisVerticalIcon width={24} />
       </button>
 
       <Transition appear show={isModalOpen} as={Fragment}>
