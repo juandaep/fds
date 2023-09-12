@@ -51,16 +51,16 @@ const Navigation: React.FC<NavigationProps> = ({ sections }) => {
       >
         <p className="text-sm">My Navigation App</p>
         <div className="scrollbar-hide flex flex-col gap-2">
-            {sections.map((section) => (
-              <NavigationItems
-                key={section.id}
-                href={`#${section.id}`}
-                label={section.label}
-                active={activeLink === section.id}
-              />
-            ))}
-          </div>
-          <BackToTopButton />
+          {sections.map((section) => (
+            <NavigationItems
+              key={section.id}
+              href={`#${section.id}`}
+              label={section.label}
+              active={activeLink === section.id}
+            />
+          ))}
+        </div>
+        <BackToTopButton />
       </div>
     </aside>
   );

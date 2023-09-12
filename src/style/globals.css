@@ -9,12 +9,15 @@
   body {
     @apply bg-light dark:bg-dark inset-0 bg-cover bg-no-repeat bg-center absolute bg-fixed min-h-screen overflow-y-auto top-0 left-0;
   }
+  main {
+    @apply relative container mx-auto max-w-7xl z-10 px-4 min-h-[calc(100vh_-_64px_-_108px)] mb-12 flex-grow;
+  }
   section {
     @apply col-span-12 lg:col-span-10 xl:col-span-8 lg:px-16 mt-10;
   }
 
   input:checked + .slider {
-    @apply bg-primary-500 hover:bg-primary-600 dark:hover:bg-primary-400
+    @apply bg-primary-500 hover:bg-primary-600 dark:hover:bg-primary-400;
   }
 
   input:checked + .slider:before {
@@ -23,95 +26,19 @@
 }
 
 @layer components {
-  /* === Text === */
-  .text-display {
-    @apply text-default-900 dark:text-default-25
-  }
-  .text-title {
-    @apply text-default-800 dark:text-default-50
-  }
-  .text-subtitle {
-    @apply text-default-700 dark:text-default-200
-  }
-  .text-paragraph {
-    @apply text-default-600 dark:text-default-300
-  }
-  .supporting-text {
-    @apply text-default-500 dark:text-default-400
-  }
-  .supporting-error-text {
-    @apply text-error-600 dark:text-error-300
-  }
-  .placeholder {
-    @apply text-default-400 dark:text-default-400
-  }
-  .text-white {
-    @apply text-default-25 dark:text-default-25
-  }
-  .text-disable {
-    @apply text-default-25 dark:text-default-600
-  }
-  .text-disable-invert {
-    @apply text-default-400 dark:text-default-500
-  }
-  .primary-text {
-    @apply text-primary-500 dark:text-primary-25
-  }
-  .error-text {
-    @apply text-error-600 dark:text-error-25
-  }
-  .warning-text {
-    @apply text-warning-700 dark:text-warning-25
-  }
-  .success-text {
-    @apply text-success-500 dark:text-success-25
-  }
-  .info-text {
-    @apply text-info-500 dark:text-info-25
-  }
-  .text-link {
-    @apply text-primary-500 hover:text-primary-600 active:text-primary-700 dark:text-primary-25 dark:hover:text-primary-100 dark:active:text-primary-200
-  }
-  .text-link-disable {
-    @apply text-primary-200 dark:text-default-600
-  }
-
-  /* === Default === */
-  .surface-white {
-    @apply bg-light dark:bg-dark
-  }
-  .surface-light {
-    @apply bg-default-50 dark:bg-default-800
-  }
-  .surface-dark {
-    @apply bg-default-100 dark:bg-default-800
-  }
-  .surface-darkest {
-    @apply bg-default-500 dark:bg-default-500
-  }
-  .default-divider {
-    @apply divide-default-200 dark:divide-default-700
-  }
-  .default-border {
-    @apply border-default-300 dark:border-default-600
-  }
-  .switch-thumb {
-    @apply bg-light
-  }
-  .switch-surface {
-    @apply bg-default-100 hover:bg-default-200 dark:bg-default-800 dark:hover:bg-default-500
-  }
-  .switch-surface-active {
-    @apply bg-primary-500 hover:bg-primary-600 dark:bg-primary-500 dark:hover:bg-primary-400
-  }
-
-
   .bg-components {
-    @apply bg-[url('/components-bg-light.png')] dark:bg-[url('/components-bg-dark.png')]
+    @apply bg-[url('/components-bg-light.png')] dark:bg-[url('/components-bg-dark.png')];
   }
 
   .bg-home {
-    @apply bg-[url('/web-bg-light.png')] dark:bg-[url('/web-bg-dark.png')]
+    @apply bg-[url('/web-bg-light.png')] dark:bg-[url('/web-bg-dark.png')];
+  }
+
+  .nav-main {
+    @apply flex gap-3 z-40 w-full px-0 md:px-6 py-4 items-center justify-center sticky top-0 inset-x-0 backdrop-blur-xl backdrop-saturate-100 bg-light/70 dark:bg-dark/70;
+  }
+  .header-main {
+    @apply z-40 flex mx-auto px-4 gap-4 w-full flex-row relative flex-nowrap items-center justify-between max-w-7xl;
   }
 
   .hover-animation {
@@ -136,12 +63,12 @@
   }
 
   .switch {
-    @apply relative inline-block w-12 h-6
+    @apply relative inline-block w-12 h-6;
   }
   .switch input {
-    @apply opacity-0 w-0 h-0
+    @apply opacity-0 w-0 h-0;
   }
   .slider {
-    @apply absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-default-100 hover:bg-default-200 dark:bg-default-400 dark:hover:bg-default-500 transition duration-500 rounded-full w-full before:absolute before:content-[""] before:h-5 before:w-5 before:left-[2px] before:bottom-[2px] before:bg-light before:transition before:duration-500 before:rounded-full before:shadow
+    @apply absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-default-100 hover:bg-default-200 dark:bg-default-400 dark:hover:bg-default-500 transition duration-500 rounded-full w-full before:absolute before:content-[""] before:h-5 before:w-5 before:left-[2px] before:bottom-[2px] before:bg-light before:transition before:duration-500 before:rounded-full before:shadow;
   }
 }

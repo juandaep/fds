@@ -9,8 +9,8 @@ import HeaderNavLinks, { navLinks } from "./navLinks";
 
 export const ComponentsNavbar = () => {
   return (
-    <nav className="flex flex-col gap-3 z-40 w-full px-6 py-4 items-center justify-center sticky top-0 inset-x-0 backdrop-blur-xl backdrop-saturate-100 bg-light/70 dark:bg-dark/70">
-      <header className="z-40 flex mx-auto gap-4 w-full flex-row relative flex-nowrap items-center justify-between max-w-[1280px]">
+    <nav className="nav-main flex-col">
+      <header className="header-main">
         <Link
           href="/"
           className={classNames(

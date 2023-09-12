@@ -8,18 +8,18 @@ export function Provider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     if (router === "/") {
-      document.body.classList.add('bg-home');
+      document.body.classList.add("bg-home");
     } else {
-      document.body.classList.add('bg-components')
+      document.body.classList.add("bg-components");
     }
 
     return () => {
       if (router === "/") {
-        document.body.classList.remove('bg-home');
+        document.body.classList.remove("bg-home");
       } else {
-        document.body.classList.remove('bg-components')
+        document.body.classList.remove("bg-components");
       }
-    }
+    };
   }, [router]);
 
   return (

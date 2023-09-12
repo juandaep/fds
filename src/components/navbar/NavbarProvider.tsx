@@ -9,7 +9,7 @@ interface SubNavLink {
 
 export function NavbarProvider() {
   const router = usePathname();
-   const subNavLinks: SubNavLink[] = [
+  const subNavLinks: SubNavLink[] = [
     { href: "/components" },
     { href: "/components/colors" },
     { href: "/components/icons" },
@@ -17,11 +17,7 @@ export function NavbarProvider() {
     { href: "/components/typography" },
   ];
 
-  const isComponentsPage = subNavLinks.some((link) => router === link.href)
-  
-  return (
-    <>
-    {isComponentsPage ? <ComponentsNavbar /> : <Navbar />}
-    </>
-  );
+  const isComponentsPage = subNavLinks.some((link) => router === link.href);
+
+  return <>{isComponentsPage ? <ComponentsNavbar /> : <Navbar />}</>;
 }

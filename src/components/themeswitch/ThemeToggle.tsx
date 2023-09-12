@@ -1,7 +1,6 @@
 "use client";
-import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import { Switch } from '@headlessui/react'
+import { useEffect, useState } from "react";
 
 const ThemeToggle = () => {
   const [mounted, setMounted] = useState(false);
@@ -17,9 +16,9 @@ const ThemeToggle = () => {
         onChange={() =>
           setTheme(
             theme === "dark" || resolvedTheme === "dark" ? "light" : "dark"
-            )
-          }
-          />
+          )
+        }
+      />
       <span className="slider"></span>
     </label>
   );
