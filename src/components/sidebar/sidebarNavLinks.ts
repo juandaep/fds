@@ -1,5 +1,5 @@
 "use client";
-interface MenuItem {
+interface SidebarItem {
   title: string;
   href: string;
 }
@@ -9,12 +9,12 @@ interface SubMenuItem {
   href: string;
 }
 
-interface MenuWithSubItems {
+interface SidebarWithSubItems {
   type: string;
   menu: SubMenuItem[];
 }
 
-export const menuItems: (MenuItem | MenuWithSubItems)[] = [
+export const sidebarMenuItems: (SidebarItem | SidebarWithSubItems)[] = [
   { title: "Components Overview", href: "/components" },
   {
     type: "Atoms",

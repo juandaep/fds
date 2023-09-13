@@ -16,7 +16,7 @@ const ThemeSwitch = () => {
       aria-label="Toggle Dark Mode"
       type="button"
       className={classNames(
-        "hidden md:block h-9 w-9 rounded-lg p-1",
+        "hidden md:block h-8 w-8 rounded-lg p-1",
         "focus:ring-4 focus:ring-neutral-300 focus:dark:ring-neutral-600 focus:outline-none"
       )}
       onClick={() =>
@@ -29,7 +29,7 @@ const ThemeSwitch = () => {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
         fill="currentColor"
-        className="text-[#121212] dark:text-amber-400"
+        className="text-primary-500 dark:text-amber-400"
       >
         {mounted && (theme === "dark" || resolvedTheme === "dark") ? (
           <SunIcon />

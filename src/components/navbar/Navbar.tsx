@@ -19,14 +19,16 @@ const Navbar = () => {
         >
           <Image src="/logo.svg" alt="Flux Logo" priority fill />
         </Link>
-        <div className="hidden md:flex gap-4 flex-row flex-nowrap items-center justify-end flex-grow basis-1/5 sm:basis-full">
+        <div className="hidden md:flex gap-8 flex-row flex-nowrap items-center justify-end flex-grow basis-1/5 sm:basis-full">
+          <div className="flex gap-8 after:border after:border-r after:border-default-200">
           {navLinks.map((link) => (
             <HeaderNavLinks key={link.title} href={link.href}>
               {link.title}
             </HeaderNavLinks>
           ))}
-        </div>
+          </div>
         <ThemeSwitch />
+        </div>
         <MobileNav />
       </header>
     </nav>

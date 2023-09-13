@@ -1,12 +1,12 @@
 "use client";
-import { Bars3Icon } from "@heroicons/react/24/solid";
-import React, { Fragment, useState } from "react";
+import { classNames } from "@/utils/classNames";
 import { Dialog, Transition } from "@headlessui/react";
-import { menuItems } from "./sidebarNavLinks";
+import { XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { classNames } from "@/utils/classNames";
-import { XMarkIcon } from "@heroicons/react/24/outline";
+import { Fragment, useState } from "react";
+import { sidebarMenuItems } from "./sidebarNavLinks";
 
 export const MobileSidebar = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -19,12 +19,12 @@ export const MobileSidebar = () => {
     setSidebarOpen(false);
   }
   return (
-    <div className={classNames("flex px-4 w-full", "md:hidden")}>
+    <div className={classNames("flex w-full border-t border-default-300", "md:hidden")}>
       <button
         type="button"
         className={classNames(
-          "text-defaul-600 transition-all",
-          "focus:ring-4 focus:ring-primary-focused focus:rounded-lg",
+          "text-defaul-600 transition-all p-1",
+          "focus:rounded-lg",
           "dark:text-defaul-200 dark:ring-defaul-800"
         )}
         aria-label="Nav Menu"
@@ -52,7 +52,7 @@ export const MobileSidebar = () => {
                   )}
                 >
                   <ul>
-                    {menuItems.map((item, index) => (
+                    {sidebarMenuItems.map((item, index) => (
                       <li key={index}>
                         {"title" in item ? (
                           <Link

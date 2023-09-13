@@ -1,8 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
-import { menuItems } from "./sidebarNavLinks";
+import { sidebarMenuItems } from "./sidebarNavLinks";
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -19,7 +18,7 @@ const Sidebar = () => {
           }}
         >
           <ul>
-            {menuItems.map((item, index) => (
+            {sidebarMenuItems.map((item, index) => (
               <li key={index}>
                 {"title" in item ? (
                   <Link

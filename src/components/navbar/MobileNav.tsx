@@ -2,10 +2,9 @@
 import { classNames } from "@/utils/classNames";
 import { Dialog, Transition } from "@headlessui/react";
 import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
-import Link from "next/link";
 import { Fragment, useState } from "react";
 import ThemeToggle from "../themeswitch/ThemeToggle";
-import { navLinks } from "./navLinks";
+import HeaderNavLinks, { navLinks } from "./navLinks";
 
 export const MobileNav = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -24,9 +23,9 @@ export const MobileNav = () => {
       <button
         type="button"
         className={classNames(
-          "p-1 text-base-600 transition-all",
+          "p-1 text-default-600 transition-all",
           "focus:ring-4 focus:ring-primary-focused focus:rounded-lg",
-          "dark:text-base-200 dark:ring-base-800"
+          "dark:text-default-200 dark:ring-default-800"
         )}
         aria-label="Nav Menu"
         onClick={openModal}
@@ -35,7 +34,7 @@ export const MobileNav = () => {
       </button>
 
       <Transition appear show={isModalOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={closeModal}>
+        <Dialog as="div" className="relative z-50" onClose={closeModal}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -61,34 +60,23 @@ export const MobileNav = () => {
               >
                 <Dialog.Panel
                   className={classNames(
-                    "flex flex-col justify-center items-start gap-6 w-full max-w-md transform rounded-lg bg-white p-3 text-left align-middle shadow-xl transition-all"
+                    "flex flex-col justify-center items-start gap-6 w-full max-w-md transform rounded-lg bg-light p-3 text-left align-middle shadow-xl transition-all", 'dark:bg-default-900'
                   )}
                 >
-                  <div className="flex flex-col justify-center gap-2 self-stretch divide-y divide divide-base-300">
-                    <div className="flex flex-col justify-center gap-3 self-stretch font-medium text-lg text-base-700">
+                  <div className="flex flex-col justify-center gap-3 self-stretch divide-y divide divide-default-200 dark:divide-default-700">
+                    <div className="flex flex-col justify-center gap-2 self-stretch font-medium text-lg text-default-700 dark:text-default-300">
                       {navLinks.map((link) => (
-                        <Link
+                        <HeaderNavLinks
                           key={link.title}
                           href={link.href}
                           onClick={closeModal}
-                          className={classNames(
-                            "flex px-2 py-3 items-center gap-2 self-stretch",
-                            "active:rounded-lg active:bg-base-50"
-                          )}
                         >
                           {link.title}
-                        </Link>
+                        </HeaderNavLinks>
                       ))}
                     </div>
                     <ThemeToggle />
                   </div>
-                  <button
-                    type="button"
-                    onClick={closeModal}
-                    className="flex px-4 py-2 justify-center self-stretch rounded-lg bg-primary-surface text-primary-main"
-                  >
-                    Close
-                  </button>
                 </Dialog.Panel>
               </Transition.Child>
             </div>

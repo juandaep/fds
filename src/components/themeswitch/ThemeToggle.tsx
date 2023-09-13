@@ -1,4 +1,5 @@
 "use client";
+import { classNames } from "@/utils/classNames";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
@@ -9,18 +10,26 @@ const ThemeToggle = () => {
   useEffect(() => setMounted(true), []);
 
   return (
-    <label className="switch md:hidden">
-      <input
-        type="checkbox"
-        checked={mounted && (theme === "dark" || resolvedTheme === "dark")}
-        onChange={() =>
-          setTheme(
-            theme === "dark" || resolvedTheme === "dark" ? "light" : "dark"
-          )
-        }
-      />
-      <span className="slider"></span>
-    </label>
+    <div
+      className={classNames(
+        "flex justify-between items-center px-2 py-4 text-base",
+        "md:hidden"
+      )}
+    >
+      <span>Switch Theme</span>
+      <label className="switch">
+        <input
+          type="checkbox"
+          checked={mounted && (theme === "dark" || resolvedTheme === "dark")}
+          onChange={() =>
+            setTheme(
+              theme === "dark" || resolvedTheme === "dark" ? "light" : "dark"
+            )
+          }
+        />
+        <span className="slider"></span>
+      </label>
+    </div>
   );
 };
 
