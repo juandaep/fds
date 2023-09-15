@@ -2,10 +2,10 @@
 import { classNames } from "@/utils/classNames";
 import Image from "next/image";
 import Link from "next/link";
-import { MobileSidebar } from "../sidebar/MobileSidebar";
 import ThemeSwitch from "../themeswitch/ThemeSwitch";
 import { MobileNav } from "./MobileNav";
 import HeaderNavLinks, { navLinks } from "./navLinks";
+import { MobileSidebar } from "../sidebar/MobileSidebar";
 
 export const ComponentsNavbar = () => {
   return (

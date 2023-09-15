@@ -1,64 +1,59 @@
-"use client";
-import { classNames } from "@/utils/classNames";
-import { Dialog, Transition } from "@headlessui/react";
-import { XMarkIcon } from "@heroicons/react/24/outline";
-import { Bars3Icon } from "@heroicons/react/24/solid";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Fragment, useState } from "react";
-import { sidebarMenuItems } from "./sidebarNavLinks";
+import { classNames } from '@/utils/classNames'
+import { Bars2Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import React, { useState } from 'react'
+import { sidebarMenuItems } from './sidebarNavLinks'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 export const MobileSidebar = () => {
-  const [isSidebarOpen, setSidebarOpen] = useState(false);
-  const pathname = usePathname();
+    const [sidebarOpen, setSidebarOpen] = useState(false)
+    const pathname = usePathname();
 
-  function openSidebar() {
-    setSidebarOpen(true);
-  }
-  function closeSidebar() {
-    setSidebarOpen(false);
-  }
+    const onToggleSidebar = () => {
+        setSidebarOpen((status) => {
+            if (status) {
+                document.body.style.overflow = "auto"
+            } else {
+                document.body.style.overflow = "hidden"
+            }
+            return !status
+        })
+    }
+
+    const onItemClick = () => {
+        if (sidebarOpen){
+            onToggleSidebar()
+        }
+    }
+
   return (
-    <div className={classNames("flex w-full border-t border-default-300", "md:hidden")}>
-      <button
-        type="button"
+    <div className={classNames('flex justify-center', 'md:hidden')}>
+        <button type='button'
         className={classNames(
-          "text-defaul-600 transition-all p-1",
-          "focus:rounded-lg",
-          "dark:text-defaul-200 dark:ring-defaul-800"
+            "h-9 w-9 rounded-lg transition-colors", 'focus:ring-4 focus:ring-neutral-300 focus:dark:ring-neutral-600'
         )}
-        aria-label="Nav Menu"
-        onClick={openSidebar}
-      >
-        {isSidebarOpen ? <XMarkIcon width={24} /> : <Bars3Icon width={24} />}
-      </button>
-
-      <Transition appear show={isSidebarOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-50" onClose={closeSidebar}>
-          <div className="fixed top-28 inset-0 overflow-y-auto">
-            <div className="flex min-h-screen">
-              <Transition.Child
-                as={Fragment}
-                enter="transition ease-in-out duration-300 transform"
-                enterFrom="-translate-x-full"
-                enterTo="translate-x-0"
-                leave="transition ease-in-out duration-300 transform"
-                leaveFrom="translate-x-0"
-                leaveTo="-translate-x-full"
-              >
-                <Dialog.Panel
-                  className={classNames(
-                    "flex flex-col items-start gap-6 w-full max-w-md transform backdrop-blur-2xl p-4 bg-light/90 dark:bg-dark/90"
-                  )}
-                >
-                  <ul>
+        aria-label='Toggle Menu'
+        onClick={onToggleSidebar}>
+            {sidebarOpen ? <XMarkIcon className='h-6 w-6'/> : <Bars2Icon className='h-6 w-6' />}
+        </button>
+        <div className={`fixed top-20 left-0 z-10 min-h-screen w-full transform bg-light dark:bg-dark duration-300 ease-in-out ${
+            sidebarOpen ? '-translate-x-0' : '-translate-x-full'
+        }`}>
+            <button
+            aria-label='toggle modal'
+            className={classNames(
+                'fixed h-full w-full cursor-auto', 'focus:outline-none'
+            )}
+            onClick={onToggleSidebar}>
+                <div>
+                <ul className='fixed mt-8 w-full h-full'>
                     {sidebarMenuItems.map((item, index) => (
-                      <li key={index}>
+                      <li key={index} onClick={onToggleSidebar}>
                         {"title" in item ? (
                           <Link
                             href={item.href}
                             passHref
-                            onClick={closeSidebar}
+                            onClick={onToggleSidebar}
                             className={
                               pathname === item.href
                                 ? "text-amber-400"
@@ -72,11 +67,10 @@ export const MobileSidebar = () => {
                             <p className="text-default-500">{item.type}</p>
                             <ul>
                               {item.menu.map((subItem, subIndex) => (
-                                <li key={subIndex}>
+                                <li key={subIndex} onClick={onItemClick}>
                                   <Link
                                     href={subItem.href}
                                     passHref
-                                    onClick={closeSidebar}
                                     className={
                                       pathname === subItem.href
                                         ? "text-amber-400"
@@ -93,12 +87,11 @@ export const MobileSidebar = () => {
                       </li>
                     ))}
                   </ul>
-                </Dialog.Panel>
-              </Transition.Child>
-            </div>
-          </div>
-        </Dialog>
-      </Transition>
+                </div>
+
+            </button>
+        </div>
+
     </div>
-  );
-};
+  )
+}
