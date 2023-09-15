@@ -39,16 +39,16 @@ export const MobileSidebar = () => {
         <div className={`fixed top-20 left-0 z-10 min-h-screen w-full transform bg-light dark:bg-dark duration-300 ease-in-out ${
             sidebarOpen ? '-translate-x-0' : '-translate-x-full'
         }`}>
-            <button
+            <div
             aria-label='toggle modal'
             className={classNames(
                 'fixed h-full w-full cursor-auto', 'focus:outline-none'
             )}
             onClick={onToggleSidebar}>
-                <div>
-                <ul className='fixed mt-8 w-full h-full'>
+                <div className='fixed mt-8 w-full h-full'>
+                <ul>
                     {sidebarMenuItems.map((item, index) => (
-                      <li key={index} onClick={onToggleSidebar}>
+                      <li key={index} onClick={onItemClick}>
                         {"title" in item ? (
                           <Link
                             href={item.href}
@@ -89,7 +89,7 @@ export const MobileSidebar = () => {
                   </ul>
                 </div>
 
-            </button>
+            </div>
         </div>
 
     </div>
