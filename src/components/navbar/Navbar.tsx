@@ -63,7 +63,7 @@ const Navbar = () => {
             <Image src="/logo.svg" alt="Flux Logo" priority fill />
           </Link>
           <div className="hidden md:flex gap-8 flex-row flex-nowrap items-center justify-end flex-grow basis-1/5 sm:basis-full">
-            <div className="flex gap-8 after:border after:border-r after:border-default-200 dark:after:border-default-800">
+            <div className="flex gap-8 font-medium after:border after:border-r after:border-default-200 dark:after:border-default-800 text-default-600 dark:text-default-200">
               {navLinks.map((link) => (
                 <HeaderNavLinks key={link.title} href={link.href}>
                   {link.title}
@@ -89,11 +89,15 @@ const Navbar = () => {
       </nav>
       <Modal isOpen={modalOpen} onClose={closeModal}>
         <div className="flex flex-col justify-center gap-3 self-stretch divide-y divide divide-default-200 dark:divide-default-700">
-          <div className="flex flex-col justify-center gap-2 self-stretch font-medium text-lg text-default-700 dark:text-default-300" onClick={closeModal}>
+          <div
+            className="flex flex-col justify-center gap-2 self-stretch text-default-700 dark:text-default-300"
+            onClick={closeModal}
+          >
             {navLinks.map((link) => (
               <HeaderNavLinks
                 key={link.title}
                 href={link.href}
+                className="py-2 px-3 rounded-lg"
               >
                 {link.title}
               </HeaderNavLinks>

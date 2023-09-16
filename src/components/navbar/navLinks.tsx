@@ -9,7 +9,7 @@ interface NavLink {
 interface HeaderNavLinksProps {
   href: string;
   children: React.ReactNode;
-  onClick?: () => void;
+  className?: string;
 }
 
 export const navLinks: NavLink[] = [
@@ -20,8 +20,8 @@ export const navLinks: NavLink[] = [
 
 const HeaderNavLinks: React.FC<HeaderNavLinksProps> = ({
   href,
+  className,
   children,
-  onClick,
 }) => {
   const pathname = usePathname();
   const active = href === pathname;
@@ -29,7 +29,7 @@ const HeaderNavLinks: React.FC<HeaderNavLinksProps> = ({
   return (
     <Link
       href={href}
-      className={`transition-color md:hover-animation font-medium py-2 px-3 rounded-lg md:p-0 ${
+      className={`transition-color md:hover-animation text-lg md:text-base ${className} ${
         active ||
         (href.startsWith("/components") && pathname.startsWith("/components"))
           ? "bg-default-50 text-primary-500 dark:bg-default-800 dark:text-primary-25 md:text-primary-500 dark:md:text-primary-400 md:bg-transparent dark:md:bg-transparent"

@@ -125,12 +125,15 @@ export const ComponentsNavbar = () => {
       </nav>
       <Modal isOpen={modalOpen} onClose={closeModal}>
         <div className="flex flex-col justify-center gap-3 self-stretch divide-y divide divide-default-200 dark:divide-default-700">
-          <div className="flex flex-col justify-center gap-2 self-stretch font-medium text-lg text-default-700 dark:text-default-300">
+          <div
+            className="flex flex-col justify-center gap-2 self-stretch text-default-700 dark:text-default-300"
+            onClick={closeModal}
+          >
             {navLinks.map((link) => (
               <HeaderNavLinks
                 key={link.title}
                 href={link.href}
-                onClick={closeModal}
+                className="py-2 px-3 rounded-lg"
               >
                 {link.title}
               </HeaderNavLinks>
