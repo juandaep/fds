@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import React, { FC, Fragment, useEffect } from "react";
+import React, { FC, useEffect } from "react";
 
 type ModalProps = {
   isOpen: boolean;
