@@ -106,7 +106,7 @@ export const ComponentsNavbar = () => {
         <button
           type="button"
           className={classNames(
-            "group flex h-8 w-8 cursor-pointer items-center justify-center p-1 text-default-600 transition-all",
+            "flex h-8 w-8 cursor-pointer items-center justify-center p-1 text-default-600 transition-all",
             "focus:ring-4 focus:ring-primary-focused focus:rounded-lg",
             "dark:text-default-200 dark:ring-default-800",
             "md:hidden"
