@@ -1,8 +1,6 @@
 "use client";
 import { classNames } from "@/utils/classNames";
-import {
-  EllipsisVerticalIcon
-} from "@heroicons/react/24/outline";
+import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -52,11 +50,15 @@ export const ComponentsNavbar = () => {
 
   useEffect(() => {
     if (modalOpen) {
-        document.body.style.overflow = "hidden"
+      document.body.style.overflow = "hidden";
     } else {
-        document.body.style.overflow = "auto"
+      document.body.style.overflow = "auto";
     }
-}, [modalOpen])
+  }, [modalOpen]);
+
+  const Bars2BottomLeft = `
+  before:block before:h-[2px] before:w-6 before:origin-center before:bg-default-500 before:transition-transform before:duration-300 before:ease-in-out 
+  after:block after:h-[2px] after:origin-center after:bg-default-500 after:transition-transform after:duration-300 after:ease-in-out after:mt-1.5`;
 
   return (
     <>
@@ -112,18 +114,13 @@ export const ComponentsNavbar = () => {
           aria-label="Nav Menu"
           onClick={sidebarOpen ? closeSidebar : openSidebar}
         >
-          <div className="space-y-1.5">
-            <span
-              className={`${
-                sidebarOpen ? "translate-y-1 rotate-45" : ""
-              } block h-[2px] w-6 origin-center bg-default-500 transition-transform duration-300 ease-in-out`}
-            />
-            <span
-              className={`${
-                sidebarOpen ? "-translate-y-1 -rotate-45 w-6" : "w-4"
-              } block h-[2px] origin-center bg-default-500 transition-transform duration-300 ease-in-out`}
-            />
-          </div>
+          <span
+            className={`${Bars2BottomLeft} ${
+              sidebarOpen
+                ? "before:translate-y-1 before:rotate-45 after:-translate-y-1 after:-rotate-45 after:w-6"
+                : "after:w-4"
+            }`}
+          ></span>
         </button>
       </nav>
       <Modal isOpen={modalOpen} onClose={closeModal}>
