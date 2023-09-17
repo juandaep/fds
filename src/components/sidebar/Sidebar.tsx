@@ -17,44 +17,47 @@ const Sidebar = () => {
               "linear-gradient(to top, transparent 0%, #000 100px, #000 100%, transparent 100%)",
           }}
         >
-          <ul>
-            {sidebarMenuItems.map((item, index) => (
-              <li key={index}>
-                {"title" in item ? (
-                  <Link
-                    href={item.href}
-                    passHref
-                    className={
-                      pathname === item.href ? "text-amber-400" : "text-white"
-                    }
-                  >
-                    {item.title}
-                  </Link>
-                ) : (
-                  <div>
-                    <p className="">{item.type}</p>
-                    <ul>
-                      {item.menu.map((subItem, subIndex) => (
-                        <li key={subIndex}>
-                          <Link
-                            href={subItem.href}
-                            passHref
-                            className={
-                              pathname === subItem.href
-                                ? "text-amber-400"
-                                : "text-white"
-                            }
-                          >
-                            {subItem.title}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </li>
-            ))}
-          </ul>
+          <ul className="flex flex-col gap-4 mt-4 scrollbar-hide pb-24">
+          {sidebarMenuItems.map((item, index) => (
+            <li
+              key={index}
+              className="flex flex-col gap-3"
+            >
+              {"title" in item ? (
+                <Link
+                  href={item.href}
+                  passHref
+                  className={
+                    pathname === item.href
+                      ? "text-amber-400"
+                      : "text-default-500"
+                  }
+                >
+                  {item.title}
+                </Link>
+              ) : (
+                <>
+                  <p className="text-default-500">{item.type}</p>
+                  {item.menu.map((subItem, subIndex) => (
+                    <li key={subIndex}>
+                      <Link
+                        href={subItem.href}
+                        passHref
+                        className={`before:block before:w-1 before:h-1 before:rounded-full flex items-center justify-start gap-3 pl-4 ${
+                          pathname === subItem.href
+                            ? "before:bg-amber-400 text-amber-400"
+                            : "before:bg-default-500 text-default-500"
+                        }`}
+                      >
+                        {subItem.title}
+                      </Link>
+                    </li>
+                  ))}
+                </>
+              )}
+            </li>
+          ))}
+        </ul>
         </div>
       </nav>
     </aside>
