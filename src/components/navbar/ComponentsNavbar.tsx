@@ -65,7 +65,7 @@ export const ComponentsNavbar = () => {
       <nav
         className={`sticky top-0 z-40 px-4 md:px-6 py-4 items-center justify-center inset-x-0 ${
           applyBlur
-            ? "backdrop-blur-lg backdrop-saturate-150 bg-light/80 dark:bg-dark/80 transition-all"
+            ? "backdrop-blur-xl backdrop-saturate-150 bg-light/80 dark:bg-dark/80 transition-all"
             : ""
         }`}
       >
@@ -143,48 +143,48 @@ export const ComponentsNavbar = () => {
         </div>
       </Modal>
       <MobileSidebar isOpen={sidebarOpen} onClose={closeSidebar}>
-        <div className="flex flex-col gap-2">
-          <ul>
-            {sidebarMenuItems.map((item, index) => (
-              <li key={index} onClick={closeSidebar}>
-                {"title" in item ? (
-                  <Link
-                    href={item.href}
-                    passHref
-                    className={
-                      pathname === item.href
-                        ? "text-amber-400"
-                        : "text-default-500"
-                    }
-                  >
-                    {item.title}
-                  </Link>
-                ) : (
-                  <div>
-                    <p className="text-default-500">{item.type}</p>
-                    <ul>
-                      {item.menu.map((subItem, subIndex) => (
-                        <li key={subIndex} onClick={closeSidebar}>
-                          <Link
-                            href={subItem.href}
-                            passHref
-                            className={
-                              pathname === subItem.href
-                                ? "text-amber-400"
-                                : "text-default-500"
-                            }
-                          >
-                            {subItem.title}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
+        <ul className="flex flex-col gap-4 mt-4 pb-24">
+          {sidebarMenuItems.map((item, index) => (
+            <li
+              key={index}
+              onClick={closeSidebar}
+              className="flex flex-col gap-3"
+            >
+              {"title" in item ? (
+                <Link
+                  href={item.href}
+                  passHref
+                  className={
+                    pathname === item.href
+                      ? "text-amber-400"
+                      : "text-default-500"
+                  }
+                >
+                  {item.title}
+                </Link>
+              ) : (
+                <>
+                  <p className="text-default-500">{item.type}</p>
+                  {item.menu.map((subItem, subIndex) => (
+                    <li key={subIndex} onClick={closeSidebar}>
+                      <Link
+                        href={subItem.href}
+                        passHref
+                        className={`before:block before:w-1 before:h-1 before:rounded-full flex items-center justify-start gap-3 pl-4 ${
+                          pathname === subItem.href
+                            ? "before:bg-amber-400 text-amber-400"
+                            : "before:bg-default-500 text-default-500"
+                        }`}
+                      >
+                        {subItem.title}
+                      </Link>
+                    </li>
+                  ))}
+                </>
+              )}
+            </li>
+          ))}
+        </ul>
       </MobileSidebar>
     </>
   );
