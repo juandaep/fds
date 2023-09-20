@@ -1,20 +1,21 @@
-"use client";
-interface SidebarItem {
+import { type } from "os";
+
+export interface SidebarItem {
   title: string;
   href: string;
 }
 
-interface SubMenuItem {
+export interface SubmenuItem {
   title: string;
   href: string;
 }
 
-interface SidebarWithSubItems {
+export interface SidebarWithSubItems {
   type: string;
-  menu: SubMenuItem[];
+  menu: SubmenuItem[];
 }
 
-export const sidebarMenuItems: (SidebarItem | SidebarWithSubItems)[] = [
+export const sidebarData: (SidebarItem | SidebarWithSubItems)[] = [
   { title: "Components Overview", href: "/components" },
   {
     type: "Atoms",

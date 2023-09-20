@@ -7,10 +7,13 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Modal } from "../Modal";
 import { MobileSidebar } from "../sidebar/MobileSidebar";
-import { sidebarMenuItems } from "../sidebar/sidebarNavLinks";
+import { SidebarList } from "../sidebar/SidebarItem";
+import { sidebarData } from "../sidebar/sidebarData";
 import ThemeSwitch from "../themeswitch/ThemeSwitch";
 import ThemeToggle from "../themeswitch/ThemeToggle";
-import HeaderNavLinks, { navLinks } from "./navLinks";
+import HeaderNavLinks from "./NavbarList";
+import { navbarData } from "./navbarData";
+import NavbarList from "./NavbarList";
 
 export const ComponentsNavbar = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -81,10 +84,10 @@ export const ComponentsNavbar = () => {
           </Link>
           <div className="hidden md:flex gap-8 flex-row flex-nowrap items-center justify-end flex-grow basis-1/5 sm:basis-full">
             <div className="flex gap-8 after:border after:border-r after:border-default-200 dark:after:border-default-800">
-              {navLinks.map((link) => (
-                <HeaderNavLinks key={link.title} href={link.href}>
+              {navbarData.map((link) => (
+                <NavbarList key={link.title} href={link.href}>
                   {link.title}
-                </HeaderNavLinks>
+                </NavbarList>
               ))}
             </div>
             <ThemeSwitch />
@@ -129,7 +132,7 @@ export const ComponentsNavbar = () => {
             className="flex flex-col justify-center gap-2 self-stretch text-default-700 dark:text-default-300"
             onClick={closeModal}
           >
-            {navLinks.map((link) => (
+            {navbarData.map((link) => (
               <HeaderNavLinks
                 key={link.title}
                 href={link.href}
@@ -143,48 +146,7 @@ export const ComponentsNavbar = () => {
         </div>
       </Modal>
       <MobileSidebar isOpen={sidebarOpen} onClose={closeSidebar}>
-        <ul className="flex flex-col gap-4 mt-4 pb-24">
-          {sidebarMenuItems.map((item, index) => (
-            <li
-              key={index}
-              onClick={closeSidebar}
-              className="flex flex-col gap-3"
-            >
-              {"title" in item ? (
-                <Link
-                  href={item.href}
-                  passHref
-                  className={
-                    pathname === item.href
-                      ? "text-amber-400"
-                      : "text-default-500"
-                  }
-                >
-                  {item.title}
-                </Link>
-              ) : (
-                <>
-                  <p className="text-default-500">{item.type}</p>
-                  {item.menu.map((subItem, subIndex) => (
-                    <li key={subIndex} onClick={closeSidebar}>
-                      <Link
-                        href={subItem.href}
-                        passHref
-                        className={`before:block before:w-1 before:h-1 before:rounded-full flex items-center justify-start gap-3 pl-4 ${
-                          pathname === subItem.href
-                            ? "before:bg-amber-400 text-amber-400"
-                            : "before:bg-default-500 text-default-500"
-                        }`}
-                      >
-                        {subItem.title}
-                      </Link>
-                    </li>
-                  ))}
-                </>
-              )}
-            </li>
-          ))}
-        </ul>
+      <SidebarList sidebarMenuItems={sidebarData} pathname={pathname} onClick={closeSidebar} />
       </MobileSidebar>
     </>
   );

@@ -4,10 +4,12 @@ import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import ThemeSwitch from "../themeswitch/ThemeSwitch";
-import HeaderNavLinks, { navLinks } from "./navLinks";
 import { Modal } from "../Modal";
+import ThemeSwitch from "../themeswitch/ThemeSwitch";
 import ThemeToggle from "../themeswitch/ThemeToggle";
+import HeaderNavLinks from "./NavbarList";
+import { navbarData } from "./navbarData";
+import NavbarList from "./NavbarList";
 
 const Navbar = () => {
   const [applyBlur, setApplyBlur] = useState(false);
@@ -64,7 +66,7 @@ const Navbar = () => {
           </Link>
           <div className="hidden md:flex gap-8 flex-row flex-nowrap items-center justify-end flex-grow basis-1/5 sm:basis-full">
             <div className="flex gap-8 font-medium after:border after:border-r after:border-default-200 dark:after:border-default-800 text-default-600 dark:text-default-200">
-              {navLinks.map((link) => (
+              {navbarData.map((link) => (
                 <HeaderNavLinks key={link.title} href={link.href}>
                   {link.title}
                 </HeaderNavLinks>
@@ -93,14 +95,14 @@ const Navbar = () => {
             className="flex flex-col justify-center gap-2 self-stretch text-default-700 dark:text-default-300"
             onClick={closeModal}
           >
-            {navLinks.map((link) => (
-              <HeaderNavLinks
+            {navbarData.map((link) => (
+              <NavbarList
                 key={link.title}
                 href={link.href}
                 className="py-2 px-3 rounded-lg"
               >
                 {link.title}
-              </HeaderNavLinks>
+              </NavbarList>
             ))}
           </div>
           <ThemeToggle />

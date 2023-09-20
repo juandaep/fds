@@ -1,24 +1,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-interface NavLink {
-  href: string;
-  title: string;
-}
-
 interface HeaderNavLinksProps {
   href: string;
   children: React.ReactNode;
   className?: string;
 }
-
-export const navLinks: NavLink[] = [
-  { href: "/components", title: "Components" },
-  { href: "/about", title: "About" },
-  { href: "/figma", title: "Figma" },
-];
-
-const HeaderNavLinks: React.FC<HeaderNavLinksProps> = ({
+const NavbarList: React.FC<HeaderNavLinksProps> = ({
   href,
   className,
   children,
@@ -41,4 +29,4 @@ const HeaderNavLinks: React.FC<HeaderNavLinksProps> = ({
   );
 };
 
-export default HeaderNavLinks;
+export default NavbarList;
