@@ -13,7 +13,7 @@ const ThemeToggle = () => {
     <div
       className={classNames(
         "flex justify-between items-center px-2 py-4 text-base",
-        "md:hidden"
+        "lg:hidden"
       )}
     >
       <span>Switch Theme</span>

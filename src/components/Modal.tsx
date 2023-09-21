@@ -61,7 +61,7 @@ export const Modal: FC<ModalProps> = ({ isOpen, onClose, children }) => {
                 duration: 0.15,
               },
             }}
-            className="bg-light dark:bg-default-900 w-11/12 md:max-w-md mx-auto rounded-lg shadow-lg z-50"
+            className="bg-light dark:bg-default-900 w-11/12 sm:max-w-sm mx-auto rounded-lg shadow-lg z-50"
           >
             <div className="flex flex-col p-3">{children}</div>
           </motion.div>

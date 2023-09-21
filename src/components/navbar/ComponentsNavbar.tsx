@@ -66,23 +66,23 @@ export const ComponentsNavbar = () => {
   return (
     <>
       <nav
-        className={`sticky top-0 z-40 px-4 md:px-6 py-4 items-center justify-center inset-x-0 ${
+        className={`flex flex-col x z-40 w-full items-center justify-center sticky top-0 inset-x-0 ${
           applyBlur
             ? "backdrop-blur-xl backdrop-saturate-150 bg-light/80 dark:bg-dark/80 transition-all"
             : ""
         }`}
       >
-        <header className="z-40 flex mx-auto md:px-4 gap-4 w-full flex-row relative flex-nowrap items-center justify-between max-w-7xl">
+        <header className="flex z-40 px-6 py-4 gap-4 relative w-full items-center justify-between max-w-7xl">
           <Link
             href="/"
             className={classNames(
               "relative w-[60px] h-[18px]",
-              "md:w-[96px] md:h-[32px]"
+              "lg:w-[96px] lg:h-[32px]"
             )}
           >
             <Image src="/logo.svg" alt="Flux Logo" priority fill />
           </Link>
-          <div className="hidden md:flex gap-8 flex-row flex-nowrap items-center justify-end flex-grow basis-1/5 sm:basis-full">
+          <div className="hidden lg:flex gap-8 flex-row flex-nowrap items-center justify-end flex-grow basis-1/5 sm:basis-full">
             <div className="flex gap-8 after:border after:border-r after:border-default-200 dark:after:border-default-800">
               {navbarData.map((link) => (
                 <NavbarList key={link.title} href={link.href}>
@@ -95,10 +95,10 @@ export const ComponentsNavbar = () => {
           <button
             type="button"
             className={classNames(
-              "p-1 text-default-600 transition-all",
-              "focus:ring-4 focus:ring-primary-focused focus:rounded-lg",
-              "dark:text-default-200 dark:ring-default-800",
-              "md:hidden"
+              "p-1 text-default-600 transition-all rounded-lg",
+              "active:bg-default-400 active:rounded-lg",
+              "dark:text-default-200 dark:active:bg-default-800",
+              "lg:hidden"
             )}
             aria-label="Nav Menu"
             onClick={openModal}
@@ -106,25 +106,26 @@ export const ComponentsNavbar = () => {
             <EllipsisVerticalIcon width={24} />
           </button>
         </header>
-        <button
-          type="button"
-          className={classNames(
-            "flex h-8 w-8 cursor-pointer items-center justify-center p-1 text-default-600 transition-all",
-            "focus:ring-4 focus:ring-primary-focused focus:rounded-lg",
-            "dark:text-default-200 dark:ring-default-800",
-            "md:hidden"
-          )}
-          aria-label="Nav Menu"
-          onClick={sidebarOpen ? closeSidebar : openSidebar}
-        >
-          <span
-            className={`${Bars2BottomLeft} ${
-              sidebarOpen
-                ? "before:translate-y-1 before:rotate-45 after:-translate-y-1 after:-rotate-45 after:w-6"
-                : "after:w-4"
-            }`}
-          ></span>
-        </button>
+        <div className={classNames('flex w-full px-6 pb-2', 'lg:hidden')}>
+          <button
+            type="button"
+            className={classNames(
+              "flex h-8 w-8 cursor-pointer items-center justify-center p-1 rounded-lg text-default-600 transition-all",
+              "active:bg-default-400",
+              "dark:text-default-200 dark:active:bg-default-800",
+            )}
+            aria-label="Nav Menu"
+            onClick={sidebarOpen ? closeSidebar : openSidebar}
+          >
+            <span
+              className={`${Bars2BottomLeft} ${
+                sidebarOpen
+                  ? "before:translate-y-1 before:rotate-45 after:-translate-y-1 after:-rotate-45 after:w-6"
+                  : "after:w-4"
+              }`}
+            ></span>
+          </button>
+        </div>
       </nav>
       <Modal isOpen={modalOpen} onClose={closeModal}>
         <div className="flex flex-col justify-center gap-3 self-stretch divide-y divide divide-default-200 dark:divide-default-700">
@@ -146,7 +147,11 @@ export const ComponentsNavbar = () => {
         </div>
       </Modal>
       <MobileSidebar isOpen={sidebarOpen} onClose={closeSidebar}>
-      <SidebarList sidebarMenuItems={sidebarData} pathname={pathname} onClick={closeSidebar} />
+        <SidebarList
+          sidebarMenuItems={sidebarData}
+          pathname={pathname}
+          onClick={closeSidebar}
+        />
       </MobileSidebar>
     </>
   );
