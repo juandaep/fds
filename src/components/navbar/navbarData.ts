@@ -1,11 +1,10 @@
 interface NavLink {
-    href: string;
-    title: string;
-  }
+  href: string;
+  title: string;
+}
 
-  export const navbarData: NavLink[] = [
-    { href: "/components", title: "Components" },
-    { href: "/about", title: "About" },
-    { href: "/figma", title: "Figma" },
-  ];
-  
+export const navbarData: NavLink[] = [
+  { href: "/components", title: "Components" },
+  { href: "/about", title: "About" },
+  { href: "/figma", title: "Figma" },
+];

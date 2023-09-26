@@ -8,7 +8,7 @@ const BackToTopButton: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 600) {
+      if (window.scrollY > 800) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
@@ -31,10 +31,14 @@ const BackToTopButton: React.FC = () => {
   return (
     <button
       type="button"
-      className={`flex gap-2 text-sm items-center rounded-lg transition-opacity ${
+      className={`${classNames(
+        "flex gap-2 text-sm items-center border-t border-default-200 pt-3",
+        "dark:border-default-700",
+        "hover:text-default-500 hover:dark:text-default-300"
+      )} ${
         isVisible
-          ? classNames("opacity-100 text-default-400", "dark:text-default-500")
-          : "opacity-0"
+          ? classNames("block text-default-400", "dark:text-default-500")
+          : "hidden"
       }`}
       onClick={scrollToTop}
     >

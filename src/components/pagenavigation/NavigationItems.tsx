@@ -29,7 +29,7 @@ const NavigationItems: React.FC<NavigationItemProps> = ({
               "text-default-400 hover:text-primary-100",
               "dark:text-default-500 dark:hover:text-primary-100"
             )
-      } text-sm`}
+      } text-sm pl-3`}
     >
       {label}
     </Link>

@@ -13,7 +13,7 @@
     @apply relative container mx-auto max-w-7xl z-10 px-6 min-h-[calc(100vh_-_64px_-_108px)] mb-12 flex-grow;
   }
   section {
-    @apply col-span-12 lg:col-span-10 xl:col-span-8 lg:px-16 mt-10;
+    @apply col-span-12 lg:col-span-10 xl:col-span-8 lg:px-4 mt-10;
   }
 
   input:checked + .slider {

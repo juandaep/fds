@@ -1,3 +1,4 @@
+import { classNames } from "@/utils/classNames";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { FC, useEffect } from "react";
 
@@ -39,7 +40,10 @@ export const Modal: FC<ModalProps> = ({ isOpen, onClose, children }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-default-400/30 dark:bg-dark/30 backdrop-blur-sm"
+            className={classNames(
+              "fixed inset-0 bg-default-400/30 backdrop-blur-sm",
+              "dark:bg-dark/30"
+            )}
             onClick={handleOverlayClick}
           ></motion.div>
 
@@ -61,7 +65,11 @@ export const Modal: FC<ModalProps> = ({ isOpen, onClose, children }) => {
                 duration: 0.15,
               },
             }}
-            className="bg-light dark:bg-default-900 w-11/12 sm:max-w-sm mx-auto rounded-lg shadow-lg z-50"
+            className={classNames(
+              "bg-light w-11/12 mx-auto rounded-lg shadow-lg z-50",
+              "sm:max-w-sm",
+              "dark:bg-default-900"
+            )}
           >
             <div className="flex flex-col p-3">{children}</div>
           </motion.div>

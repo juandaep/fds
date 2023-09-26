@@ -37,7 +37,8 @@ export const Hero = () => {
               "lg:py-2.5 lg:px-4"
             )}
           >
-            <ArchiveBoxIcon
+            <img
+              src="/images/variants-variables.svg"
               className={classNames("h-4 w-4", "lg:h-5 lg:w-5")}
             />
             Variants
@@ -48,7 +49,8 @@ export const Hero = () => {
               "lg:py-2.5 lg:px-4"
             )}
           >
-            <ArchiveBoxIcon
+            <img
+              src="/images/variants-variables.svg"
               className={classNames("h-4 w-4", "lg:h-5 lg:w-5")}
             />
             Variables
@@ -59,7 +61,8 @@ export const Hero = () => {
               "lg:py-2.5 lg:px-4"
             )}
           >
-            <ArchiveBoxIcon
+            <img
+              src="/images/autolayout.svg"
               className={classNames("h-4 w-4", "lg:h-5 lg:w-5")}
             />
             Auto Layout

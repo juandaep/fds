@@ -1,5 +1,5 @@
+import { Content, ContentTitle } from "@/components/Content";
 import Navigation from "@/components/pagenavigation/PageNavigation";
-import React from "react";
 
 const components = () => {
   const sections = [
@@ -9,28 +9,32 @@ const components = () => {
   ];
   return (
     <>
-      <section>
+      <Content>
+        <ContentTitle title="Components Overview">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi
+          provident nam repellat inventore commodi corrupti quo tempore facere
+          necessitatibus nobis, est sunt aperiam perferendis quaerat, voluptates
+          dolorem corporis, harum voluptatibus?
+        </ContentTitle>
         <div
           id="home"
-          className="h-screen flex justify-center items-center bg-amber-100"
+          className="h-96 flex justify-center items-center bg-amber-100 scroll-mt-32"
         >
           <h1>Home</h1>
         </div>
-
         <div
           id="about"
-          className="h-screen flex justify-center items-center bg-blue-100"
+          className="h-96 flex justify-center items-center bg-blue-100 scroll-mt-32"
         >
           <h1>About</h1>
         </div>
-
         <div
           id="contact"
-          className="h-screen flex justify-center items-center bg-red-100"
+          className="h-96 flex justify-center items-center bg-red-100 scroll-mt-32"
         >
           <h1>Contact</h1>
         </div>
-      </section>
+      </Content>
       <Navigation sections={sections} />
     </>
   );

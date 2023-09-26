@@ -1,8 +1,8 @@
 "use client";
+import { classNames } from "@/utils/classNames";
 import React, { useEffect, useState } from "react";
 import BackToTopButton from "../BackToTopButton";
 import NavigationItems from "./NavigationItems";
-import { classNames } from "@/utils/classNames";
 
 interface Section {
   id: string;
@@ -18,7 +18,7 @@ const Navigation: React.FC<NavigationProps> = ({ sections }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentPosition = window.scrollY + window.innerHeight / 10;
+      const currentPosition = window.scrollY + window.innerHeight / 2;
 
       const activeSection = sections.find((section) => {
         const element = document.getElementById(section.id);
@@ -42,16 +42,28 @@ const Navigation: React.FC<NavigationProps> = ({ sections }) => {
   }, [sections]);
 
   return (
-    <aside className="hidden z-10 xl:flex xl:col-span-2 mt-8 pl-4">
+    <aside
+      className={classNames(
+        "hidden",
+        "xl:z-10 xl:flex xl:col-span-2 xl:mt-8 xl:pl-4"
+      )}
+    >
       <div
-        className="fixed w-full max-w-[12rem] flex flex-col gap-4 text-left top-20 mt-6 pb-20 h-[calc(100vh-121px)] scrollbar-hide overflow-y-scroll"
+        className="fixed w-full max-w-[12rem] flex flex-col gap-3 text-left top-20 mt-6 pb-20 h-[calc(100vh-121px)] scrollbar-hide overflow-y-scroll"
         style={{
           WebkitMaskImage:
             "linear-gradient(to top, transparent 0%, #000 100px, #000 100%, transparent 100%)",
         }}
       >
-        <p className={classNames('text-sm font-medium text-default-800', 'dark:text-default-100')}>On this page</p>
-        <div className="scrollbar-hide flex flex-col gap-2">
+        <div className="scrollbar-hide flex flex-col gap-3">
+          <p
+            className={classNames(
+              "text-sm text-default-800",
+              "dark:text-default-100"
+            )}
+          >
+            On this page
+          </p>
           {sections.map((section) => (
             <NavigationItems
               key={section.id}

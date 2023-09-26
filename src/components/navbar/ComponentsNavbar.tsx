@@ -67,7 +67,10 @@ export const ComponentsNavbar = () => {
       <nav
         className={`flex flex-col x z-40 w-full items-center justify-center sticky top-0 inset-x-0 ${
           applyBlur
-            ? "backdrop-blur-xl backdrop-saturate-150 bg-light/80 dark:bg-dark/80 transition-all"
+            ? classNames(
+                "backdrop-blur-xl backdrop-saturate-150 bg-light/80 transition-all",
+                "dark:bg-dark/80"
+              )
             : ""
         }`}
       >
@@ -81,8 +84,20 @@ export const ComponentsNavbar = () => {
           >
             <Image src="/logo.svg" alt="Flux Logo" priority fill />
           </Link>
-          <div className="hidden lg:flex gap-8 flex-row flex-nowrap items-center justify-end flex-grow basis-1/5 sm:basis-full">
-            <div className="flex gap-8 after:border after:border-r after:border-default-300 dark:after:border-default-800 text-default-600 dark:text-default-200">
+          <div
+            className={classNames(
+              "hidden",
+              "sm:basis-full",
+              "lg:flex lg:gap-8 lg:flex-row lg:flex-nowrap lg:items-center lg:justify-end lg:flex-grow lg:basis-1/5"
+            )}
+          >
+            <div
+              className={classNames(
+                "flex gap-8 text-default-600",
+                "after:border-r after:border-default-300",
+                "dark:after:border-default-800 dark:text-default-200"
+              )}
+            >
               {navbarData.map((link) => (
                 <NavbarItems key={link.title} href={link.href}>
                   {link.title}
@@ -105,13 +120,13 @@ export const ComponentsNavbar = () => {
             <EllipsisVerticalIcon width={24} />
           </button>
         </header>
-        <div className={classNames('flex w-full px-6 pb-2', 'lg:hidden')}>
+        <div className={classNames("flex w-full px-6 pb-2", "lg:hidden")}>
           <button
             type="button"
             className={classNames(
               "flex h-8 w-8 cursor-pointer items-center justify-center p-1 rounded-lg text-default-600 transition-all",
               "active:bg-default-400",
-              "dark:text-default-200 dark:active:bg-default-800",
+              "dark:text-default-200 dark:active:bg-default-800"
             )}
             aria-label="Nav Menu"
             onClick={sidebarOpen ? closeSidebar : openSidebar}
@@ -127,9 +142,17 @@ export const ComponentsNavbar = () => {
         </div>
       </nav>
       <Modal isOpen={modalOpen} onClose={closeModal}>
-        <div className="flex flex-col justify-center gap-3 self-stretch divide-y divide divide-default-200 dark:divide-default-700">
+        <div
+          className={classNames(
+            "flex flex-col justify-center gap-3 self-stretch divide-y divide divide-default-200",
+            "dark:divide-default-700"
+          )}
+        >
           <div
-            className="flex flex-col justify-center gap-2 self-stretch text-default-700 dark:text-default-300"
+            className={classNames(
+              "flex flex-col justify-center gap-2 self-stretch text-default-700",
+              "dark:text-default-300"
+            )}
             onClick={closeModal}
           >
             {navbarData.map((link) => (

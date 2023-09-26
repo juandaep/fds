@@ -40,7 +40,7 @@ const SidebarMenuItem: FC<SidebarItemProps> = ({ item, pathname, onClick }) => {
                     "dark:bg-primary-900 dark:text-primary-300"
                   )
                 : classNames(
-                    "bg-default-100 text-default-400",
+                    "bg-default-100 text-default-500",
                     "dark:bg-default-900 dark:text-default-400"
                   )
             }`}
@@ -54,7 +54,7 @@ const SidebarMenuItem: FC<SidebarItemProps> = ({ item, pathname, onClick }) => {
           <p
             className={classNames(
               "font-semibold text-default-800",
-              "dark:text-default-200"
+              "dark:text-default-50"
             )}
           >
             {item.type}
@@ -63,7 +63,7 @@ const SidebarMenuItem: FC<SidebarItemProps> = ({ item, pathname, onClick }) => {
             <div key={subIndex} onClick={onClick}>
               <Link
                 href={subItem.href}
-                className={`before:block before:w-1 before:h-1 before:rounded-full flex items-center justify-start gap-3 pl-4 ${
+                className={`before:block before:w-1 before:h-1 before:rounded-full flex items-center justify-start gap-3 pl-3 ${
                   pathname === subItem.href
                     ? classNames(
                         "before:bg-primary-500 text-primary-500",
@@ -97,7 +97,7 @@ export const SidebarItems: React.FC<SidebarProps> = ({
   onClick,
 }) => {
   return (
-    <div className="flex flex-col gap-4 mt-4 scrollbar-hide pb-24">
+    <div className="flex flex-col gap-6 mt-4 scrollbar-hide pb-24">
       {sidebarMenuItems.map((item, index) => (
         <SidebarMenuItem
           key={index}

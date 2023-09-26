@@ -1,16 +1,22 @@
 "use client";
+import { classNames } from "@/utils/classNames";
 import { usePathname } from "next/navigation";
-import { sidebarData } from "./sidebarData";
 import { SidebarItems } from "./SidebarItems";
+import { sidebarData } from "./sidebarData";
 
 const Sidebar = () => {
   const pathname = usePathname();
 
   return (
-    <aside className="hidden relative z-10 lg:block lg:col-span-2 mt-8 pr-4">
-      <nav className="lg:fixed lg:top-20 mt-2 z-0 lg:h-[calc(100vh-121px)]">
+    <aside
+      className={classNames(
+        "hidden",
+        "lg:relative lg:z-10 lg:block lg:col-span-2 lg:mt-8 lg:pr-4"
+      )}
+    >
+      <nav className="fixed top-20 mt-2 z-0 h-[calc(100vh-121px)]">
         <div
-          className="flex flex-col gap-4 scrollbar-hide lg:overflow-y-scroll lg:max-h-[calc(100vh_-_64px)] pb-28"
+          className="flex flex-col gap-4 scrollbar-hide overflow-y-scroll max-h-[calc(100vh_-_64px)] pb-28"
           tabIndex={0}
           style={{
             WebkitMaskImage:
