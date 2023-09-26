@@ -7,13 +7,12 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Modal } from "../Modal";
 import { MobileSidebar } from "../sidebar/MobileSidebar";
-import { SidebarList } from "../sidebar/SidebarItem";
+import { SidebarItems } from "../sidebar/SidebarItems";
 import { sidebarData } from "../sidebar/sidebarData";
 import ThemeSwitch from "../themeswitch/ThemeSwitch";
 import ThemeToggle from "../themeswitch/ThemeToggle";
-import HeaderNavLinks from "./NavbarList";
+import { NavbarItems } from "./NavbarItems";
 import { navbarData } from "./navbarData";
-import NavbarList from "./NavbarList";
 
 export const ComponentsNavbar = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -83,11 +82,11 @@ export const ComponentsNavbar = () => {
             <Image src="/logo.svg" alt="Flux Logo" priority fill />
           </Link>
           <div className="hidden lg:flex gap-8 flex-row flex-nowrap items-center justify-end flex-grow basis-1/5 sm:basis-full">
-            <div className="flex gap-8 after:border after:border-r after:border-default-200 dark:after:border-default-800">
+            <div className="flex gap-8 after:border after:border-r after:border-default-300 dark:after:border-default-800 text-default-600 dark:text-default-200">
               {navbarData.map((link) => (
-                <NavbarList key={link.title} href={link.href}>
+                <NavbarItems key={link.title} href={link.href}>
                   {link.title}
-                </NavbarList>
+                </NavbarItems>
               ))}
             </div>
             <ThemeSwitch />
@@ -134,20 +133,20 @@ export const ComponentsNavbar = () => {
             onClick={closeModal}
           >
             {navbarData.map((link) => (
-              <HeaderNavLinks
+              <NavbarItems
                 key={link.title}
                 href={link.href}
                 className="py-2 px-3 rounded-lg"
               >
                 {link.title}
-              </HeaderNavLinks>
+              </NavbarItems>
             ))}
           </div>
           <ThemeToggle />
         </div>
       </Modal>
       <MobileSidebar isOpen={sidebarOpen} onClose={closeSidebar}>
-        <SidebarList
+        <SidebarItems
           sidebarMenuItems={sidebarData}
           pathname={pathname}
           onClick={closeSidebar}

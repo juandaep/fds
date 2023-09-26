@@ -7,9 +7,8 @@ import { useEffect, useState } from "react";
 import { Modal } from "../Modal";
 import ThemeSwitch from "../themeswitch/ThemeSwitch";
 import ThemeToggle from "../themeswitch/ThemeToggle";
-import HeaderNavLinks from "./NavbarList";
+import { NavbarItems } from "./NavbarItems";
 import { navbarData } from "./navbarData";
-import NavbarList from "./NavbarList";
 
 const Navbar = () => {
   const [applyBlur, setApplyBlur] = useState(false);
@@ -65,11 +64,11 @@ const Navbar = () => {
             <Image src="/logo.svg" alt="Flux Logo" priority fill />
           </Link>
           <div className="hidden lg:flex gap-8 flex-row flex-nowrap items-center justify-end flex-grow basis-1/5 sm:basis-full">
-            <div className="flex gap-8 font-medium after:border after:border-r after:border-default-200 dark:after:border-default-800 text-default-600 dark:text-default-200">
+            <div className="flex gap-8 after:border after:border-r after:border-default-200 dark:after:border-default-800 text-default-600 dark:text-default-200">
               {navbarData.map((link) => (
-                <HeaderNavLinks key={link.title} href={link.href}>
+                <NavbarItems key={link.title} href={link.href}>
                   {link.title}
-                </HeaderNavLinks>
+                </NavbarItems>
               ))}
             </div>
             <ThemeSwitch />
@@ -96,13 +95,13 @@ const Navbar = () => {
             onClick={closeModal}
           >
             {navbarData.map((link) => (
-              <NavbarList
+              <NavbarItems
                 key={link.title}
                 href={link.href}
                 className="py-2 px-3 rounded-lg"
               >
                 {link.title}
-              </NavbarList>
+              </NavbarItems>
             ))}
           </div>
           <ThemeToggle />

@@ -1,50 +1,13 @@
 "use client";
 import { classNames } from "@/utils/classNames";
-import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
+import {
+  ArchiveBoxIcon,
+  ArrowLongRightIcon,
+} from "@heroicons/react/24/outline";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { Button } from "./Button";
 
 export const Hero = () => {
-  const [mobileTitle, setMobileTitle] = useState(false);
-  useEffect(() => {
-    const updateTitle = () => {
-      setMobileTitle(window.innerWidth < 1280 ? true : false);
-    };
-    updateTitle();
-    window.addEventListener("resize", updateTitle);
-    return () => {
-      window.removeEventListener("resize", updateTitle);
-    };
-  }, []);
-
-  const MobileTitle = (
-    <h1
-      className={classNames(
-        "text-2xl font-bold -tracking-[0.019em] text-default-900",
-        "dark:text-default-25",
-        "sm:text-4xl sm:-tracking-[0.021em] ",
-        "md:text-5xl md:-tracking-[0.021em] ",
-        "lg:text-6xl lg:-tracking-[0.021em] "
-      )}
-    >
-      <span className="text-primary-500">FLUX </span>
-      <span className="">Design Systems</span>
-    </h1>
-  );
-
-  const DesktopTitle = (
-    <h1
-      className={classNames(
-        "text-7xl font-bold -tracking-[0.022em] text-default-900",
-        "dark:text-default-25"
-      )}
-    >
-      <span className="text-primary-500">FLUX </span>
-      <span className="break-all md:break-normal">Design Systems</span>
-    </h1>
-  );
-
   return (
     <div
       className={classNames(
@@ -61,6 +24,47 @@ export const Hero = () => {
           "xl:col-span-8"
         )}
       >
+        <div
+          className={classNames(
+            "flex w-max rounded-lg text-xs font-medium text-default-700 divide-x border border-default-300 divide-default-300",
+            "lg:text-sm",
+            "dark:text-default-200 dark:border-default-700 dark:divide-default-700"
+          )}
+        >
+          <div
+            className={classNames(
+              "flex gap-2 py-2 px-2 items-center",
+              "lg:py-2.5 lg:px-4"
+            )}
+          >
+            <ArchiveBoxIcon
+              className={classNames("h-4 w-4", "lg:h-5 lg:w-5")}
+            />
+            Variants
+          </div>
+          <div
+            className={classNames(
+              "flex gap-2 py-2 px-2 items-center",
+              "lg:py-2.5 lg:px-4"
+            )}
+          >
+            <ArchiveBoxIcon
+              className={classNames("h-4 w-4", "lg:h-5 lg:w-5")}
+            />
+            Variables
+          </div>
+          <div
+            className={classNames(
+              "flex gap-2 py-2 px-2 items-center",
+              "lg:py-2.5 lg:px-4"
+            )}
+          >
+            <ArchiveBoxIcon
+              className={classNames("h-4 w-4", "lg:h-5 lg:w-5")}
+            />
+            Auto Layout
+          </div>
+        </div>
         <div
           className={classNames("flex flex-col gap-4", "md:gap-6", "lg:gap-8")}
         >

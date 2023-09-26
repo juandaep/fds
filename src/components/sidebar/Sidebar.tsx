@@ -1,7 +1,7 @@
 "use client";
 import { usePathname } from "next/navigation";
-import { SidebarList } from "./SidebarItem";
 import { sidebarData } from "./sidebarData";
+import { SidebarItems } from "./SidebarItems";
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -17,7 +17,7 @@ const Sidebar = () => {
               "linear-gradient(to top, transparent 0%, #000 100px, #000 100%, transparent 100%)",
           }}
         >
-          <SidebarList sidebarMenuItems={sidebarData} pathname={pathname} />
+          <SidebarItems sidebarMenuItems={sidebarData} pathname={pathname} />
         </div>
       </nav>
     </aside>

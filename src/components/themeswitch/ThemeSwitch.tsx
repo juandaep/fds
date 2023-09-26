@@ -1,6 +1,6 @@
 "use client";
 import { classNames } from "@/utils/classNames";
-import { SunIcon, MoonIcon } from "@heroicons/react/24/solid";
+import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
@@ -17,7 +17,7 @@ const ThemeSwitch = () => {
       type="button"
       className={classNames(
         "hidden lg:block h-8 w-8 rounded-lg p-1",
-        "focus:ring-4 focus:ring-neutral-300 focus:dark:ring-neutral-600 focus:outline-none"
+        "focus:ring-4 focus:ring-default-200 focus:dark:ring-default-800 focus:outline-none"
       )}
       onClick={() =>
         setTheme(

@@ -32,7 +32,8 @@ export const MobileSidebar: FC<SidebarProps> = ({
           }}
           transition={{ type: "spring", bounce: 0, duration: 0.4 }}
           className="z-30 px-6 fixed flex max-w-full top-[104px] inset-x-0 bottom-0 w-screen flex-col gap-2 overflow-y-auto backdrop-blur-xl backdrop-saturate-150 bg-light/80 dark:bg-dark/80 lg:hidden"
-        >{children}
+        >
+          {children}
         </motion.div>
       )}
     </AnimatePresence>

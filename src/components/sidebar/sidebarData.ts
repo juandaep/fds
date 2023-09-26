@@ -16,7 +16,7 @@ export interface SidebarWithSubItems {
 }
 
 export const sidebarData: (SidebarItem | SidebarWithSubItems)[] = [
-  { title: "Components Overview", href: "/components" },
+  { title: "Overview", href: "/components" },
   {
     type: "Atoms",
     menu: [

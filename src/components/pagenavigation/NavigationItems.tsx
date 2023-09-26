@@ -1,6 +1,7 @@
-"use client"
-import React from 'react';
-import Link from 'next/link';
+"use client";
+import { classNames } from "@/utils/classNames";
+import Link from "next/link";
+import React from "react";
 
 interface NavigationItemProps {
   href: string;
@@ -8,14 +9,29 @@ interface NavigationItemProps {
   active: boolean;
 }
 
-const NavigationItems: React.FC<NavigationItemProps> = ({ href, label, active }) => {
+const NavigationItems: React.FC<NavigationItemProps> = ({
+  href,
+  label,
+  active,
+}) => {
   return (
-    <Link href={href} passHref
-        className={`${
-          active ? 'text-amber-400' : 'text-gray-300 hover:text-amber-400'
-        } px-1.5 py-1 text-sm font-medium`}
-      >
-        {label}
+    <Link
+      href={href}
+      passHref
+      className={`${
+        active
+          ? classNames(
+              "text-primary-500",
+              "dark:text-primary-100",
+              "hover:text-primary-500"
+            )
+          : classNames(
+              "text-default-400 hover:text-primary-100",
+              "dark:text-default-500 dark:hover:text-primary-100"
+            )
+      } text-sm`}
+    >
+      {label}
     </Link>
   );
 };
