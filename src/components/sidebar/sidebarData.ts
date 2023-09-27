@@ -3,14 +3,9 @@ export interface SidebarItem {
   href: string;
 }
 
-export interface SubmenuItem {
-  title: string;
-  href: string;
-}
-
 export interface SidebarWithSubItems {
   type: string;
-  menu: SubmenuItem[];
+  menu: SidebarItem[];
 }
 
 export const sidebarData: (SidebarItem | SidebarWithSubItems)[] = [

@@ -7,7 +7,7 @@ import React from "react";
 const typography = () => {
   return (
     <Content>
-      <ContentTitle title="Typhography: Inter">
+      <ContentTitle title="Typography: Inter">
         <div className="flex gap-1.5">
           <span>Flux Design Systems use Inter typeface and use</span>
           <Link

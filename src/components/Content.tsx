@@ -25,11 +25,11 @@ export const ContentTitle: FC<ContentTitleProps> = ({ title, children }) => {
       >
         {title}
       </h1>
-      <p
+      <div
         className={classNames("text-base text-default-600 -tracking-[0.011em]", "dark:text-default-300")}
       >
         {children}
-      </p>
+      </div>
     </div>
   );
 };

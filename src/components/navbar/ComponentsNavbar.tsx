@@ -13,6 +13,7 @@ import ThemeSwitch from "../themeswitch/ThemeSwitch";
 import ThemeToggle from "../themeswitch/ThemeToggle";
 import { NavbarItems } from "./NavbarItems";
 import { navbarData } from "./navbarData";
+import { Breadcrumbs } from "../Breadcrumbs";
 
 export const ComponentsNavbar = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -139,6 +140,7 @@ export const ComponentsNavbar = () => {
               }`}
             ></span>
           </button>
+          <Breadcrumbs />
         </div>
       </nav>
       <Modal isOpen={modalOpen} onClose={closeModal}>
