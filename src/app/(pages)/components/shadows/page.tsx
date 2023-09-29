@@ -1,8 +1,7 @@
-import { Content, ContentTitle } from "@/components/Content";
+import { Content, ContentTitle } from "@/components/content/Content";
 import { classNames } from "@/utils/classNames";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import React from "react";
 
 const shadows = () => {
   return (
