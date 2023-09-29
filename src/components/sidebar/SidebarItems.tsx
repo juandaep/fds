@@ -2,21 +2,6 @@ import { classNames } from "@/utils/classNames";
 import { Square3Stack3DIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import React, { FC } from "react";
-import { SidebarItem, SidebarWithSubItems } from "./sidebarData";
-
-interface SidebarItemProps {
-  item: {
-    title?: string;
-    href?: string;
-    type?: string;
-    menu?: {
-      href: string;
-      title: string;
-    }[];
-  };
-  pathname: string;
-  onClick?: () => void;
-}
 
 const SidebarMenuItem: FC<SidebarItemProps> = ({ item, pathname, onClick }) => {
   return (

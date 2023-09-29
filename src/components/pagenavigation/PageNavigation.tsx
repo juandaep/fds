@@ -4,15 +4,6 @@ import React, { useEffect, useState } from "react";
 import BackToTopButton from "../BackToTopButton";
 import NavigationItems from "./NavigationItems";
 
-interface Section {
-  id: string;
-  label: string;
-}
-
-interface NavigationProps {
-  sections: Section[];
-}
-
 const Navigation: React.FC<NavigationProps> = ({ sections }) => {
   const [activeLink, setActiveLink] = useState("");
 

@@ -2,11 +2,6 @@ import { classNames } from "@/utils/classNames";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-interface HeaderNavLinksProps {
-  href: string;
-  children: React.ReactNode;
-  className?: string;
-}
 export const NavbarItems: React.FC<HeaderNavLinksProps> = ({
   href,
   className,

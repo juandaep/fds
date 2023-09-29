@@ -3,12 +3,6 @@ import { classNames } from "@/utils/classNames";
 import Link from "next/link";
 import React from "react";
 
-interface NavigationItemProps {
-  href: string;
-  label: string;
-  active: boolean;
-}
-
 const NavigationItems: React.FC<NavigationItemProps> = ({
   href,
   label,

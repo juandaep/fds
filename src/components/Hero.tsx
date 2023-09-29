@@ -1,11 +1,9 @@
 "use client";
 import { classNames } from "@/utils/classNames";
-import {
-  ArchiveBoxIcon,
-  ArrowLongRightIcon,
-} from "@heroicons/react/24/outline";
+import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 import Link from "next/link";
-import { Button } from "./Button";
+import { Button } from "./button/Button";
 
 export const Hero = () => {
   return (
@@ -37,8 +35,11 @@ export const Hero = () => {
               "lg:py-2.5 lg:px-4"
             )}
           >
-            <img
+            <Image
+              alt="variants"
               src="/images/variants-variables.svg"
+              width={0}
+              height={0}
               className={classNames("h-4 w-4", "lg:h-5 lg:w-5")}
             />
             Variants
@@ -49,8 +50,11 @@ export const Hero = () => {
               "lg:py-2.5 lg:px-4"
             )}
           >
-            <img
+            <Image
+              alt="variables"
               src="/images/variants-variables.svg"
+              width={0}
+              height={0}
               className={classNames("h-4 w-4", "lg:h-5 lg:w-5")}
             />
             Variables
@@ -61,8 +65,11 @@ export const Hero = () => {
               "lg:py-2.5 lg:px-4"
             )}
           >
-            <img
+            <Image
+              alt="autolayout"
               src="/images/autolayout.svg"
+              width={0}
+              height={0}
               className={classNames("h-4 w-4", "lg:h-5 lg:w-5")}
             />
             Auto Layout
@@ -115,14 +122,15 @@ export const Hero = () => {
         <Button
           bgColor="bg-primary-500"
           textColor="text-white"
-          children="Explore Components"
           rightIcon={
             <ArrowLongRightIcon
               className={classNames("w-6 h-6", "md:w-8 md:h-8")}
             />
           }
           onClick={() => (window.location.href = "/components")}
-        />
+        >
+          Explore Components
+        </Button>
       </div>
     </div>
   );

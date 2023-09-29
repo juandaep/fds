@@ -1,18 +1,9 @@
 import { classNames } from "@/utils/classNames";
 import React, { FC } from "react";
 
-interface ContentProps {
-  children: React.ReactNode;
-}
-
 export const Content: FC<ContentProps> = ({ children }) => {
   return <section className="flex flex-col gap-12">{children}</section>;
 };
-
-interface ContentTitleProps {
-  title: string;
-  children: React.ReactNode;
-}
 
 export const ContentTitle: FC<ContentTitleProps> = ({ title, children }) => {
   return (

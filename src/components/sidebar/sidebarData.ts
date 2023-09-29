@@ -1,13 +1,3 @@
-export interface SidebarItem {
-  title: string;
-  href: string;
-}
-
-export interface SidebarWithSubItems {
-  type: string;
-  menu: SidebarItem[];
-}
-
 export const sidebarData: (SidebarItem | SidebarWithSubItems)[] = [
   { title: "Overview", href: "/components" },
   {

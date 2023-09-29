@@ -2,7 +2,7 @@ import { classNames } from "@/utils/classNames";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { FC, useEffect } from "react";
 
-type ModalProps = {
+interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   children: React.ReactNode;
