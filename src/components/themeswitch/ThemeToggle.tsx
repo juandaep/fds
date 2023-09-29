@@ -1,13 +1,11 @@
 "use client";
+import { useThemeMounted } from "@/app/hooks/useThemeMounted";
 import { classNames } from "@/utils/classNames";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 
 const ThemeToggle = () => {
-  const [mounted, setMounted] = useState(false);
   const { theme, setTheme, resolvedTheme } = useTheme();
-
-  useEffect(() => setMounted(true), []);
+  const mounted = useThemeMounted();
 
   return (
     <div

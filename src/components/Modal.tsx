@@ -1,36 +1,12 @@
+import { useCloseOnEscape } from "@/app/hooks/useCloseOnEscape";
+import { useHandleOverlayClick } from "@/app/hooks/useHandleOverlayClick";
 import { classNames } from "@/utils/classNames";
 import { AnimatePresence, motion } from "framer-motion";
-import React, { FC, useEffect } from "react";
-
-interface ModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  children: React.ReactNode;
-};
+import { FC } from "react";
 
 export const Modal: FC<ModalProps> = ({ isOpen, onClose, children }) => {
-  useEffect(() => {
-    const closeOnEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && isOpen) {
-        onClose();
-      }
-    };
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-    window.addEventListener("keydown", closeOnEscape);
-    return () => {
-      window.removeEventListener("keydown", closeOnEscape);
-    };
-  }, [isOpen, onClose]);
-
-  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.target === e.currentTarget) {
-      onClose();
-    }
-  };
+  const handleOverlayClick = useHandleOverlayClick(onClose);
+  useCloseOnEscape(isOpen, onClose);
 
   return (
     <AnimatePresence>

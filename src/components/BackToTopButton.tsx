@@ -1,32 +1,10 @@
 "use client";
+import { useScrollTop } from "@/app/hooks/useScrollTop";
 import { classNames } from "@/utils/classNames";
 import { ArrowLongUpIcon } from "@heroicons/react/24/outline";
-import React, { useEffect, useState } from "react";
 
-const BackToTopButton: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 800) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
+const BackToTopButton = () => {
+  const { isVisible, scrollToTop } = useScrollTop();
 
   return (
     <button

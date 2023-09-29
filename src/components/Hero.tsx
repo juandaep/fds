@@ -1,11 +1,17 @@
 "use client";
+import { useThemeMounted } from "@/app/hooks/useThemeMounted";
 import { classNames } from "@/utils/classNames";
 import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "./button/Button";
+import { Button } from "./Button";
 
 export const Hero = () => {
+  const { theme, setTheme, resolvedTheme } = useTheme();
+  const mounted = useThemeMounted();
+  const isDarkTheme = mounted && (theme === "dark" || resolvedTheme === "dark");
+
   return (
     <div
       className={classNames(
@@ -37,9 +43,13 @@ export const Hero = () => {
           >
             <Image
               alt="variants"
-              src="/images/variants-variables.svg"
-              width={0}
-              height={0}
+              src={
+                isDarkTheme
+                  ? "https://cdn.jsdelivr.net/gh/juandaep/Icons@master/flux/variants-variables-dark.svg"
+                  : "https://cdn.jsdelivr.net/gh/juandaep/Icons@master/flux/variants-variables-light.svg"
+              }
+              width={16}
+              height={16}
               className={classNames("h-4 w-4", "lg:h-5 lg:w-5")}
             />
             Variants
@@ -52,7 +62,11 @@ export const Hero = () => {
           >
             <Image
               alt="variables"
-              src="/images/variants-variables.svg"
+              src={
+                isDarkTheme
+                  ? "https://cdn.jsdelivr.net/gh/juandaep/Icons@master/flux/variants-variables-dark.svg"
+                  : "https://cdn.jsdelivr.net/gh/juandaep/Icons@master/flux/variants-variables-light.svg"
+              }
               width={0}
               height={0}
               className={classNames("h-4 w-4", "lg:h-5 lg:w-5")}
@@ -67,7 +81,11 @@ export const Hero = () => {
           >
             <Image
               alt="autolayout"
-              src="/images/autolayout.svg"
+              src={
+                isDarkTheme
+                  ? "https://cdn.jsdelivr.net/gh/juandaep/Icons@master/flux/autolayout-dark.svg"
+                  : "https://cdn.jsdelivr.net/gh/juandaep/Icons@master/flux/autolayout-light.svg"
+              }
               width={0}
               height={0}
               className={classNames("h-4 w-4", "lg:h-5 lg:w-5")}

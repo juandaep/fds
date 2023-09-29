@@ -1,5 +1,5 @@
 import { classNames } from "@/utils/classNames";
-import React, { FC } from "react";
+import { FC } from "react";
 
 export const Content: FC<ContentProps> = ({ children }) => {
   return <section className="flex flex-col gap-12">{children}</section>;
@@ -17,7 +17,10 @@ export const ContentTitle: FC<ContentTitleProps> = ({ title, children }) => {
         {title}
       </h1>
       <div
-        className={classNames("text-base text-default-600 -tracking-[0.011em]", "dark:text-default-300")}
+        className={classNames(
+          "text-base text-default-600 -tracking-[0.011em]",
+          "dark:text-default-300"
+        )}
       >
         {children}
       </div>

@@ -1,6 +1,6 @@
 import { classNames } from "@/utils/classNames";
 import { AnimatePresence, motion } from "framer-motion";
-import React, { FC, useEffect } from "react";
+import { FC, useEffect } from "react";
 
 export const MobileSidebar: FC<SidebarProps> = ({
   isOpen,

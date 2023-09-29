@@ -1,15 +1,12 @@
 "use client";
+import { useThemeMounted } from "@/app/hooks/useThemeMounted";
 import { classNames } from "@/utils/classNames";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 
 const ThemeSwitch = () => {
-  const [mounted, setMounted] = useState(false);
   const { theme, setTheme, resolvedTheme } = useTheme();
-
-  //Ater mounting, we have access to the theme
-  useEffect(() => setMounted(true), []);
+  const mounted = useThemeMounted();
 
   return (
     <button

@@ -1,36 +1,12 @@
 "use client";
+import { usePageNavigation } from "@/app/hooks/usePageNavigation";
 import { classNames } from "@/utils/classNames";
-import React, { useEffect, useState } from "react";
+import { FC } from "react";
 import BackToTopButton from "../BackToTopButton";
 import NavigationItems from "./NavigationItems";
 
-const Navigation: React.FC<NavigationProps> = ({ sections }) => {
-  const [activeLink, setActiveLink] = useState("");
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentPosition = window.scrollY + window.innerHeight / 2;
-
-      const activeSection = sections.find((section) => {
-        const element = document.getElementById(section.id);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          return (
-            currentPosition >= offsetTop &&
-            currentPosition < offsetTop + offsetHeight
-          );
-        }
-        return false;
-      });
-
-      setActiveLink(activeSection?.id || "");
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [sections]);
+const Navigation: FC<NavigationProps> = ({ sections }) => {
+  const activeLink = usePageNavigation(sections);
 
   return (
     <aside

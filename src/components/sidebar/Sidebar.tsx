@@ -1,8 +1,8 @@
 "use client";
 import { classNames } from "@/utils/classNames";
 import { usePathname } from "next/navigation";
+import { sidebarData } from "../../app/data/sidebarData";
 import { SidebarItems } from "./SidebarItems";
-import { sidebarData } from "./sidebarData";
 
 const Sidebar = () => {
   const pathname = usePathname();

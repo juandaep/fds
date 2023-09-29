@@ -1,9 +1,9 @@
-import { NavbarProvider } from "@/components/navbar/NavbarProvider";
-import { Provider } from "@/components/themeswitch/ThemeProvider";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ReactNode } from "react";
 import "../style/globals.css";
+import { Provider } from "@/providers/ThemeProvider";
+import { NavbarProvider } from "@/providers/NavbarProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 

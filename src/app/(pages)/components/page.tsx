@@ -1,4 +1,4 @@
-import { Content, ContentTitle } from "@/components/content/Content";
+import { Content, ContentTitle } from "@/components/Content";
 import Navigation from "@/components/pagenavigation/PageNavigation";
 
 const components = () => {

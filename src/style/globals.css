@@ -26,14 +26,12 @@
 }
 
 @layer components {
-  .bg-components {
-    @apply bg-[url('/components-bg-light.png')] dark:bg-[url('/components-bg-dark.png')];
-  }
-
   .bg-home {
-    @apply bg-[url('/web-bg-light.png')] dark:bg-[url('/web-bg-dark.png')];
+    @apply bg-home-light dark:bg-home-dark
   }
-
+  .bg-components {
+    @apply bg-components-light dark:bg-components-dark
+  }
   .hover-animation {
     @apply inline-block relative;
   }

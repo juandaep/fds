@@ -1,13 +1,9 @@
 "use client";
 import { classNames } from "@/utils/classNames";
 import Link from "next/link";
-import React from "react";
+import { FC } from "react";
 
-const NavigationItems: React.FC<NavigationItemProps> = ({
-  href,
-  label,
-  active,
-}) => {
+const NavigationItems: FC<NavigationItemProps> = ({ href, label, active }) => {
   return (
     <Link
       href={href}

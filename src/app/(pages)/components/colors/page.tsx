@@ -1,4 +1,4 @@
-import { Content, ContentTitle } from "@/components/content/Content";
+import { Content, ContentTitle } from "@/components/Content";
 
 const colors = () => {
   return (

@@ -1,63 +1,27 @@
 "use client";
+import { useApplyEffect } from "@/app/hooks/useApplyEffect";
+import { useModalState } from "@/app/hooks/useModalState";
+import { useSidebarState } from "@/app/hooks/useSidebarState";
 import { classNames } from "@/utils/classNames";
 import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { navbarData } from "../../app/data/navbarData";
+import { sidebarData } from "../../app/data/sidebarData";
+import { Breadcrumbs } from "../Breadcrumbs";
 import { Modal } from "../Modal";
 import { MobileSidebar } from "../sidebar/MobileSidebar";
 import { SidebarItems } from "../sidebar/SidebarItems";
-import { sidebarData } from "../sidebar/sidebarData";
 import ThemeSwitch from "../themeswitch/ThemeSwitch";
 import ThemeToggle from "../themeswitch/ThemeToggle";
 import { NavbarItems } from "./NavbarItems";
-import { navbarData } from "./navbarData";
-import { Breadcrumbs } from "../Breadcrumbs";
 
 export const ComponentsNavbar = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-  const openModal = () => {
-    setModalOpen(true);
-  };
-  const closeModal = () => {
-    setModalOpen(false);
-  };
-
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const { sidebarOpen, openSidebar, closeSidebar } = useSidebarState();
+  const { modalOpen, openModal, closeModal } = useModalState();
+  const applyEffect = useApplyEffect();
   const pathname = usePathname();
-
-  const openSidebar = () => {
-    setSidebarOpen(true);
-  };
-  const closeSidebar = () => {
-    setSidebarOpen(false);
-  };
-
-  const [applyBlur, setApplyBlur] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      if (scrollY > 20) {
-        setApplyBlur(true);
-      } else {
-        setApplyBlur(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (modalOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-  }, [modalOpen]);
 
   const Bars2BottomLeft = `
   before:block before:h-[2px] before:w-6 before:origin-center before:bg-default-500 before:transition-transform before:duration-300 before:ease-in-out 
@@ -67,7 +31,7 @@ export const ComponentsNavbar = () => {
     <>
       <nav
         className={`flex flex-col x z-40 w-full items-center justify-center sticky top-0 inset-x-0 ${
-          applyBlur
+          applyEffect
             ? classNames(
                 "backdrop-blur-xl backdrop-saturate-150 bg-light/80 shadow-sm transition-shadow",
                 "dark:bg-dark/80"
@@ -110,7 +74,7 @@ export const ComponentsNavbar = () => {
           <button
             type="button"
             className={classNames(
-              "p-1 text-default-600 transition-all rounded-lg",
+              "p-1 text-default-600 transition-all rounded-lg outline-none",
               "active:bg-default-400 active:rounded-lg",
               "dark:text-default-200 dark:active:bg-default-800",
               "lg:hidden"
@@ -128,7 +92,12 @@ export const ComponentsNavbar = () => {
             "lg:hidden"
           )}
         />
-        <div className={classNames("flex w-full px-6 pb-2 pt-2 gap-6", "lg:hidden")}>
+        <div
+          className={classNames(
+            "flex w-full px-6 pb-2 pt-2 gap-6",
+            "lg:hidden"
+          )}
+        >
           <button
             type="button"
             className={classNames(

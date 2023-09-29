@@ -1,54 +1,25 @@
 "use client";
+import { useApplyEffect } from "@/app/hooks/useApplyEffect";
+import { useModalState } from "@/app/hooks/useModalState";
 import { classNames } from "@/utils/classNames";
 import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { navbarData } from "../../app/data/navbarData";
 import { Modal } from "../Modal";
 import ThemeSwitch from "../themeswitch/ThemeSwitch";
 import ThemeToggle from "../themeswitch/ThemeToggle";
 import { NavbarItems } from "./NavbarItems";
-import { navbarData } from "./navbarData";
 
 const Navbar = () => {
-  const [applyBlur, setApplyBlur] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
-  const openModal = () => {
-    setModalOpen(true);
-  };
-  const closeModal = () => {
-    setModalOpen(false);
-  };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      if (scrollY > 20) {
-        setApplyBlur(true);
-      } else {
-        setApplyBlur(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (modalOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-  }, [modalOpen]);
+  const { modalOpen, openModal, closeModal } = useModalState();
+  const applyEffect = useApplyEffect();
 
   return (
     <>
       <nav
         className={`flex z-40 w-full items-center justify-center sticky top-0 inset-x-0 ${
-          applyBlur
+          applyEffect
             ? classNames(
                 "backdrop-blur-xl backdrop-saturate-150 bg-light/80 transition-all",
                 "dark:bg-dark/80"
@@ -91,7 +62,7 @@ const Navbar = () => {
           <button
             type="button"
             className={classNames(
-              "p-1 text-default-600 transition-all rounded-lg",
+              "p-1 text-default-600 transition-all rounded-lg outline-none",
               "active:bg-default-400",
               "dark:text-default-200 dark:active:bg-default-800",
               "lg:hidden"
