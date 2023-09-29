@@ -69,7 +69,7 @@ export const ComponentsNavbar = () => {
         className={`flex flex-col x z-40 w-full items-center justify-center sticky top-0 inset-x-0 ${
           applyBlur
             ? classNames(
-                "backdrop-blur-xl backdrop-saturate-150 bg-light/80 transition-all",
+                "backdrop-blur-xl backdrop-saturate-150 bg-light/80 shadow-sm transition-shadow",
                 "dark:bg-dark/80"
               )
             : ""
@@ -121,7 +121,14 @@ export const ComponentsNavbar = () => {
             <EllipsisVerticalIcon width={24} />
           </button>
         </header>
-        <div className={classNames("flex w-full px-6 pb-2", "lg:hidden")}>
+        <div
+          className={classNames(
+            "block border-b border-default-200 w-[calc(100%-3rem)]",
+            "dark:border-default-800",
+            "lg:hidden"
+          )}
+        />
+        <div className={classNames("flex w-full px-6 pb-2 pt-2 gap-6", "lg:hidden")}>
           <button
             type="button"
             className={classNames(
@@ -147,7 +154,7 @@ export const ComponentsNavbar = () => {
         <div
           className={classNames(
             "flex flex-col justify-center gap-3 self-stretch divide-y divide divide-default-200",
-            "dark:divide-default-700"
+            "dark:divide-default-800"
           )}
         >
           <div

@@ -1,17 +1,11 @@
+import { classNames } from "@/utils/classNames";
+import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import { usePathname } from "next/navigation";
-import React from "react";
 import {
   SidebarItem,
   SidebarWithSubItems,
   sidebarData,
 } from "./sidebar/sidebarData";
-import Link from "next/link";
-import { ChevronRightIcon } from "@heroicons/react/24/outline";
-
-interface BreadcrumbsProps {
-  title: string;
-  href: string;
-}
 
 export const Breadcrumbs = () => {
   const currentPath = usePathname();
@@ -38,27 +32,30 @@ export const Breadcrumbs = () => {
   };
 
   const breadcrumbs = getBreadcrumbs(sidebarData, currentPath);
-  function generateHref(title: string): string {
-    return `/components/${title.toLowerCase().replace(/ /g, "-")}`;
-  }
 
   return (
     <>
       {breadcrumbs.length > 0 && (
-        <div className="flex items-center gap-2 text-default-500">
+        <div
+          className={classNames(
+            "flex items-center gap-2 text-default-400",
+            "dark:text-default-500"
+          )}
+        >
           {breadcrumbs.map((crumb, index) => (
-            <span key={index}>
-              {index > 0 && (
-                <span>
-                  <ChevronRightIcon width={16} />
-                </span>
-              )}
+            <span key={index} className="flex gap-2">
+              {index > 0 && <ChevronRightIcon width={16} />}
               {crumb === breadcrumbs[breadcrumbs.length - 1] ? (
-                <span className="text-default-200">{crumb}</span>
-              ) : (
-                <Link href={generateHref(crumb)} className="text-primary-500">
+                <span
+                  className={classNames(
+                    "text-primary-500",
+                    "dark:text-primary-200"
+                  )}
+                >
                   {crumb}
-                </Link>
+                </span>
+              ) : (
+                <span>{crumb}</span>
               )}
             </span>
           ))}

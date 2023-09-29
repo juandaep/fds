@@ -68,7 +68,7 @@ export const Modal: FC<ModalProps> = ({ isOpen, onClose, children }) => {
             className={classNames(
               "bg-light w-11/12 mx-auto rounded-lg shadow-lg z-50",
               "sm:max-w-sm",
-              "dark:bg-default-900"
+              "dark:bg-dark dark:border dark:border-default-800"
             )}
           >
             <div className="flex flex-col p-3">{children}</div>
