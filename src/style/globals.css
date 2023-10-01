@@ -7,13 +7,13 @@
     @apply scroll-smooth;
   }
   body {
-    @apply bg-light dark:bg-dark inset-0 bg-cover bg-no-repeat bg-center absolute bg-fixed min-h-screen overflow-y-auto top-0 left-0;
+    @apply bg-light dark:bg-dark transition-all inset-0 bg-cover bg-no-repeat bg-center absolute bg-fixed min-h-screen overflow-y-auto top-0 left-0;
   }
   main {
     @apply relative container mx-auto max-w-7xl z-10 px-6 min-h-[calc(100vh_-_64px_-_108px)] mb-12 flex-grow;
   }
   section {
-    @apply col-span-12 lg:col-span-10 xl:col-span-8 lg:px-4 mt-10;
+    @apply col-span-12 lg:col-span-10 xl:col-span-8 lg:px-4 mt-6 lg:mt-10;
   }
 
   input:checked + .slider {
@@ -27,16 +27,16 @@
 
 @layer components {
   .bg-home {
-    @apply bg-home-light dark:bg-home-dark
+    @apply bg-home-light dark:bg-home-dark;
   }
   .bg-components {
-    @apply bg-components-light dark:bg-components-dark
+    @apply bg-components-light dark:bg-components-dark;
   }
   .hover-animation {
     @apply inline-block relative;
   }
   .hover-animation::after {
-    @apply absolute w-full h-[3px] -bottom-1 left-0 origin-bottom-right bg-primary-300 transition transform duration-500 ease-out;
+    @apply absolute w-full h-[3px] -bottom-1 left-0 origin-bottom-right bg-primary-200 transition transform duration-500 ease-out;
     content: "";
     transform: scaleX(0);
   }

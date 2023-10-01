@@ -4,11 +4,11 @@ export const useModalState = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
-    if (modalOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
+    document.body.style.overflow = modalOpen ? "hidden" : "auto";
+
+    return () => {
       document.body.style.overflow = "auto";
-    }
+    };
   }, [modalOpen]);
 
   const openModal = () => {

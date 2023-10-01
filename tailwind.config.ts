@@ -11,13 +11,13 @@ const config: Config = {
     extend: {
       backgroundImage: {
         "components-light":
-          "url(https://cdn.jsdelivr.net/gh/juandaep/Icons@master/flux/components-bg-light.png)",
+          "url('/components-bg-light.png')",
         "components-dark":
-          "url(https://cdn.jsdelivr.net/gh/juandaep/Icons@master/flux/components-bg-dark.png)",
+          "url('/components-bg-dark.png')",
         "home-light":
-          "url(https://cdn.jsdelivr.net/gh/juandaep/Icons@master/flux/web-bg-light.png)",
+          "url('/web-bg-light.png')",
         "home-dark":
-          "url(https://cdn.jsdelivr.net/gh/juandaep/Icons@master/flux/web-bg-dark.png)",
+          "url('/web-bg-dark.png')",
       },
       colors: {
         light: "#FFFFFF",
@@ -40,7 +40,7 @@ const config: Config = {
           25: "#F2F2FF",
           50: "#EAEAFB",
           100: "#D4D4F7",
-          200: "#E3E8EF",
+          200: "#AAAAEE",
           300: "#7F7FE6",
           400: "#5454DE",
           500: "#4C4CDC",

@@ -15,8 +15,8 @@ const Navigation: FC<NavigationProps> = ({ sections }) => {
         "xl:z-10 xl:flex xl:col-span-2 xl:mt-8 xl:pl-4"
       )}
     >
-      <div
-        className="fixed w-full max-w-[12rem] flex flex-col gap-3 text-left top-20 mt-6 pb-20 h-[calc(100vh-121px)] scrollbar-hide overflow-y-scroll"
+      <nav
+        className="fixed w-full max-w-[calc(11rem+12px)] flex flex-col gap-3 text-left top-20 mt-6 pb-20 h-[calc(100vh-121px)] scrollbar-hide overflow-y-scroll"
         style={{
           WebkitMaskImage:
             "linear-gradient(to top, transparent 0%, #000 100px, #000 100%, transparent 100%)",
@@ -41,7 +41,7 @@ const Navigation: FC<NavigationProps> = ({ sections }) => {
           ))}
         </div>
         <BackToTopButton />
-      </div>
+      </nav>
     </aside>
   );
 };

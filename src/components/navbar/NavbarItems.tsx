@@ -1,14 +1,15 @@
 import { classNames } from "@/utils/classNames";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { FC } from "react";
 
-export const NavbarItems: React.FC<HeaderNavLinksProps> = ({
+export const NavbarItems: FC<HeaderNavLinksProps> = ({
   href,
   className,
   children,
 }) => {
   const pathname = usePathname();
-  const active = href === pathname;
+  const isActive = href === pathname;
 
   return (
     <Link
@@ -17,11 +18,11 @@ export const NavbarItems: React.FC<HeaderNavLinksProps> = ({
         "text-lg font-medium",
         "lg:hover-animation lg:text-base"
       )} ${className} ${
-        active ||
+        isActive ||
         (href.startsWith("/components") && pathname.startsWith("/components"))
           ? classNames(
-              "bg-default-100 text-primary-500",
-              "dark:bg-default-800/40 dark:text-primary-300",
+              "bg-default-50 text-primary-500",
+              "dark:bg-default-800/40 dark:text-primary-200",
               "lg:bg-transparent dark:lg:bg-transparent"
             )
           : classNames("text-default-600", "dark:text-default-300")

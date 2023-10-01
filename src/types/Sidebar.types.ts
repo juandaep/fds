@@ -1,17 +1,3 @@
-interface SidebarItemProps {
-  item: {
-    title?: string;
-    href?: string;
-    type?: string;
-    menu?: {
-      href: string;
-      title: string;
-    }[];
-  };
-  pathname: string;
-  onClick?: () => void;
-}
-
 interface SidebarItem {
   title: string;
   href: string;
@@ -22,8 +8,15 @@ interface SidebarWithSubItems {
   menu: SidebarItem[];
 }
 
-interface SidebarProps {
-  isOpen: boolean;
-  onClose: () => void;
-  children: React.ReactNode;
+type SidebarDataItem = SidebarItem | SidebarWithSubItems;
+
+interface SidebarItemsProps {
+  sidebarData: SidebarDataItem[];
+  onItemClick?: () => void;
+}
+
+interface MobileSidebarProps {
+  isOpen: boolean
+  onClose: () => void
+  children: React.ReactNode
 }

@@ -8,7 +8,7 @@ import Link from "next/link";
 import { Button } from "./Button";
 
 export const Hero = () => {
-  const { theme, setTheme, resolvedTheme } = useTheme();
+  const { theme, resolvedTheme } = useTheme();
   const mounted = useThemeMounted();
   const isDarkTheme = mounted && (theme === "dark" || resolvedTheme === "dark");
 
@@ -38,7 +38,7 @@ export const Hero = () => {
           <div
             className={classNames(
               "flex gap-2 py-2 px-2 items-center",
-              "lg:py-2.5 lg:px-4"
+              "lg:py-2 lg:px-3"
             )}
           >
             <Image
@@ -48,16 +48,16 @@ export const Hero = () => {
                   ? "https://cdn.jsdelivr.net/gh/juandaep/Icons@master/flux/variants-variables-dark.svg"
                   : "https://cdn.jsdelivr.net/gh/juandaep/Icons@master/flux/variants-variables-light.svg"
               }
-              width={16}
-              height={16}
-              className={classNames("h-4 w-4", "lg:h-5 lg:w-5")}
+              width={0}
+              height={0}
+              className={classNames("h-3 w-3", "lg:h-4 lg:w-4")}
             />
             Variants
           </div>
           <div
             className={classNames(
               "flex gap-2 py-2 px-2 items-center",
-              "lg:py-2.5 lg:px-4"
+              "lg:py-2 lg:px-3"
             )}
           >
             <Image
@@ -69,14 +69,14 @@ export const Hero = () => {
               }
               width={0}
               height={0}
-              className={classNames("h-4 w-4", "lg:h-5 lg:w-5")}
+              className={classNames("h-3 w-3", "lg:h-4 lg:w-4")}
             />
             Variables
           </div>
           <div
             className={classNames(
               "flex gap-2 py-2 px-2 items-center",
-              "lg:py-2.5 lg:px-4"
+              "lg:py-2 lg:px-3"
             )}
           >
             <Image
@@ -88,7 +88,7 @@ export const Hero = () => {
               }
               width={0}
               height={0}
-              className={classNames("h-4 w-4", "lg:h-5 lg:w-5")}
+              className={classNames("h-2.5 w-2.5", "lg:h-3.5 lg:w-3.5")}
             />
             Auto Layout
           </div>
@@ -98,7 +98,7 @@ export const Hero = () => {
         >
           <h1
             className={classNames(
-              "text-2xl font-bold -tracking-[0.019em] text-default-900",
+              "text-3xl font-bold -tracking-[0.019em] text-default-900",
               "dark:text-default-25",
               "sm:text-4xl sm:-tracking-[0.021em]",
               "md:text-5xl md:-tracking-[0.021em]",
@@ -106,8 +106,12 @@ export const Hero = () => {
               "xl:text-7xl xl:-tracking-[0.021em]"
             )}
           >
-            <span className="text-primary-500">FLUX </span>
-            <span className="">Design Systems</span>
+            <span
+              className={classNames("text-primary-500", "dark:text-primary-25")}
+            >
+              FLUX{" "}
+            </span>
+            <span>Design Systems</span>
           </h1>
           <div
             className={classNames(

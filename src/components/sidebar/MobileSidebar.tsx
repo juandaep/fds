@@ -2,7 +2,7 @@ import { classNames } from "@/utils/classNames";
 import { AnimatePresence, motion } from "framer-motion";
 import { FC, useEffect } from "react";
 
-export const MobileSidebar: FC<SidebarProps> = ({
+export const MobileSidebar: FC<MobileSidebarProps> = ({
   isOpen,
   onClose,
   children,
@@ -27,7 +27,7 @@ export const MobileSidebar: FC<SidebarProps> = ({
           }}
           transition={{ type: "spring", bounce: 0, duration: 0.4 }}
           className={classNames(
-            "z-30 px-6 fixed flex max-w-full top-[112px] inset-x-0 bottom-0 w-screen flex-col gap-2 overflow-y-auto backdrop-blur-xl backdrop-saturate-150 bg-light/80",
+            "z-30 px-6 fixed flex max-w-full top-[112px] inset-x-0 bottom-0 w-screen flex-col gap-2 pt-4 overflow-y-auto scrollbar-hide backdrop-blur-xl backdrop-saturate-150 bg-light/80",
             "dark:bg-dark/80",
             "lg:hidden"
           )}

@@ -1,18 +1,16 @@
 "use client";
+import { navbarData } from "@/app/data/navbarData";
+import { sidebarData } from "@/app/data/sidebarData";
 import { useApplyEffect } from "@/app/hooks/useApplyEffect";
 import { useModalState } from "@/app/hooks/useModalState";
 import { useSidebarState } from "@/app/hooks/useSidebarState";
 import { classNames } from "@/utils/classNames";
 import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
-import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { navbarData } from "../../app/data/navbarData";
-import { sidebarData } from "../../app/data/sidebarData";
 import { Breadcrumbs } from "../Breadcrumbs";
+import { Logo } from "../Logo";
 import { Modal } from "../Modal";
 import { MobileSidebar } from "../sidebar/MobileSidebar";
-import { SidebarItems } from "../sidebar/SidebarItems";
+import SidebarItems from "../sidebar/SidebarItems";
 import ThemeSwitch from "../themeswitch/ThemeSwitch";
 import ThemeToggle from "../themeswitch/ThemeToggle";
 import { NavbarItems } from "./NavbarItems";
@@ -21,7 +19,6 @@ export const ComponentsNavbar = () => {
   const { sidebarOpen, openSidebar, closeSidebar } = useSidebarState();
   const { modalOpen, openModal, closeModal } = useModalState();
   const applyEffect = useApplyEffect();
-  const pathname = usePathname();
 
   const Bars2BottomLeft = `
   before:block before:h-[2px] before:w-6 before:origin-center before:bg-default-500 before:transition-transform before:duration-300 before:ease-in-out 
@@ -40,15 +37,7 @@ export const ComponentsNavbar = () => {
         }`}
       >
         <header className="flex z-40 px-6 py-4 gap-4 relative w-full items-center justify-between max-w-7xl">
-          <Link
-            href="/"
-            className={classNames(
-              "relative w-[60px] h-[18px]",
-              "lg:w-[96px] lg:h-[32px]"
-            )}
-          >
-            <Image src="/logo.svg" alt="Flux Logo" priority fill />
-          </Link>
+          <Logo />
           <div
             className={classNames(
               "hidden",
@@ -147,11 +136,7 @@ export const ComponentsNavbar = () => {
         </div>
       </Modal>
       <MobileSidebar isOpen={sidebarOpen} onClose={closeSidebar}>
-        <SidebarItems
-          sidebarMenuItems={sidebarData}
-          pathname={pathname}
-          onClick={closeSidebar}
-        />
+        <SidebarItems sidebarData={sidebarData} onItemClick={closeSidebar} />
       </MobileSidebar>
     </>
   );

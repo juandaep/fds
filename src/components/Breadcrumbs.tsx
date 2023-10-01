@@ -34,8 +34,8 @@ export const Breadcrumbs = () => {
       {breadcrumbs.length > 0 && (
         <div
           className={classNames(
-            "flex items-center gap-2 text-default-400",
-            "dark:text-default-500"
+            "flex items-center gap-2 text-default-600",
+            "dark:text-default-400"
           )}
         >
           {breadcrumbs.map((crumb, index) => (
@@ -45,7 +45,7 @@ export const Breadcrumbs = () => {
                 <span
                   className={classNames(
                     "text-primary-500",
-                    "dark:text-primary-200"
+                    "dark:text-primary-25"
                   )}
                 >
                   {crumb}

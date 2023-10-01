@@ -1,11 +1,10 @@
 "use client";
+import { navbarData } from "@/app/data/navbarData";
 import { useApplyEffect } from "@/app/hooks/useApplyEffect";
 import { useModalState } from "@/app/hooks/useModalState";
 import { classNames } from "@/utils/classNames";
 import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
-import Image from "next/image";
-import Link from "next/link";
-import { navbarData } from "../../app/data/navbarData";
+import { Logo } from "../Logo";
 import { Modal } from "../Modal";
 import ThemeSwitch from "../themeswitch/ThemeSwitch";
 import ThemeToggle from "../themeswitch/ThemeToggle";
@@ -28,15 +27,7 @@ const Navbar = () => {
         }`}
       >
         <header className="flex z-40 px-6 py-4 gap-4 relative w-full items-center justify-between max-w-7xl">
-          <Link
-            href="/"
-            className={classNames(
-              "relative w-[60px] h-[18px]",
-              "lg:w-[96px] lg:h-[32px]"
-            )}
-          >
-            <Image src="/logo.svg" alt="Flux Logo" priority fill />
-          </Link>
+          <Logo />
           <div
             className={classNames(
               "hidden",

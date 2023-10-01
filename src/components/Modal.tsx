@@ -11,7 +11,12 @@ export const Modal: FC<ModalProps> = ({ isOpen, onClose, children }) => {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 flex min-h-screen items-center justify-center z-50">
+        <div
+          className={classNames(
+            "fixed inset-0 flex min-h-screen items-center justify-center z-50",
+            "lg:hidden"
+          )}
+        >
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -44,7 +49,7 @@ export const Modal: FC<ModalProps> = ({ isOpen, onClose, children }) => {
             className={classNames(
               "bg-light w-11/12 mx-auto rounded-lg shadow-lg z-50",
               "sm:max-w-sm",
-              "dark:bg-dark dark:border dark:border-default-800"
+              "dark:bg-default-900 dark:border dark:border-default-800"
             )}
           >
             <div className="flex flex-col p-3">{children}</div>
