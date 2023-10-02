@@ -5,7 +5,7 @@ export const usePageNavigation = (sections: Section[]) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentPosition = window.scrollY + window.innerHeight / 2;
+      const currentPosition = window.scrollY + window.innerHeight / 4;
 
       const activeSection = sections.find((section) => {
         const element = document.getElementById(section.id);

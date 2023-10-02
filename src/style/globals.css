@@ -7,13 +7,13 @@
     @apply scroll-smooth;
   }
   body {
-    @apply bg-light dark:bg-dark transition-all inset-0 bg-cover bg-no-repeat bg-center absolute bg-fixed min-h-screen overflow-y-auto top-0 left-0;
+    @apply absolute inset-0 left-0 top-0 min-h-screen overflow-y-auto bg-light bg-cover bg-fixed bg-center bg-no-repeat transition-all dark:bg-dark;
   }
   main {
-    @apply relative container mx-auto max-w-7xl z-10 px-6 min-h-[calc(100vh_-_64px_-_108px)] mb-12 flex-grow;
+    @apply container relative z-10 mx-auto mb-24 min-h-[calc(100vh_-_64px_-_108px)] max-w-7xl flex-grow px-6;
   }
   section {
-    @apply col-span-12 lg:col-span-10 xl:col-span-8 lg:px-4 mt-6 lg:mt-10;
+    @apply col-span-12 mt-6 lg:col-span-10 lg:mt-10 lg:px-4 xl:col-span-8;
   }
 
   input:checked + .slider {
@@ -33,10 +33,10 @@
     @apply bg-components-light dark:bg-components-dark;
   }
   .hover-animation {
-    @apply inline-block relative;
+    @apply relative inline-block;
   }
   .hover-animation::after {
-    @apply absolute w-full h-[3px] -bottom-1 left-0 origin-bottom-right bg-primary-200 transition transform duration-500 ease-out;
+    @apply absolute -bottom-1 left-0 h-[3px] w-full origin-bottom-right transform bg-primary-200 transition duration-500 ease-out;
     content: "";
     transform: scaleX(0);
   }
@@ -54,12 +54,12 @@
   }
 
   .switch {
-    @apply relative inline-block w-12 h-6;
+    @apply relative inline-block h-6 w-12;
   }
   .switch input {
-    @apply opacity-0 w-0 h-0;
+    @apply h-0 w-0 opacity-0;
   }
   .slider {
-    @apply absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-default-100 hover:bg-default-200 dark:bg-default-400 dark:hover:bg-default-500 transition duration-500 rounded-full w-full before:absolute before:content-[""] before:h-5 before:w-5 before:left-[2px] before:bottom-[2px] before:bg-light before:transition before:duration-500 before:rounded-full before:shadow;
+    @apply absolute bottom-0 left-0 right-0 top-0 w-full cursor-pointer rounded-full bg-default-100 transition duration-500 before:absolute before:bottom-[2px] before:left-[2px] before:h-5 before:w-5 before:rounded-full before:bg-light before:shadow before:transition before:duration-500 before:content-[""] hover:bg-default-200 dark:bg-default-400 dark:hover:bg-default-500;
   }
 }

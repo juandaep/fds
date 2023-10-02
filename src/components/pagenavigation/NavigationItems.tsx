@@ -7,17 +7,12 @@ const NavigationItems: FC<NavigationItemProps> = ({ href, label, active }) => {
   return (
     <Link
       href={href}
-      passHref
       className={`${
         active
-          ? classNames(
-              "text-primary-500",
-              "dark:text-primary-100",
-              "hover:text-primary-500",
-            )
+          ? classNames("text-primary-500", "dark:text-primary-25")
           : classNames(
-              "text-default-400 hover:text-primary-100",
-              "dark:text-default-500 dark:hover:text-primary-100",
+              "text-default-500 hover:text-primary-500",
+              "dark:text-default-400 dark:hover:text-primary-25",
             )
       } pl-3 text-sm`}
     >

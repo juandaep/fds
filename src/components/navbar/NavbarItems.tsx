@@ -22,10 +22,10 @@ export const NavbarItems: FC<HeaderNavLinksProps> = ({
         (href.startsWith("/components") && pathname.startsWith("/components"))
           ? classNames(
               "bg-default-50 text-primary-500",
-              "dark:bg-default-800/40 dark:text-primary-200",
+              "dark:bg-default-800/40 dark:text-primary-25",
               "lg:bg-transparent dark:lg:bg-transparent",
             )
-          : classNames("text-default-600", "dark:text-default-300")
+          : classNames("text-default-500", "dark:text-default-400")
       }`}
     >
       {children}

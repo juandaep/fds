@@ -38,7 +38,10 @@ const SidebarItems: React.FC<SidebarItemsProps> = ({
             <>
               <div
                 onClick={() => collapseItem(item.type)}
-                className="flex gap-3"
+                className={classNames(
+                  "flex cursor-pointer gap-3 font-semibold text-default-800",
+                  "dark:text-default-50",
+                )}
               >
                 {item.type}
                 {isOpen[item.type] ? (
@@ -48,29 +51,34 @@ const SidebarItems: React.FC<SidebarItemsProps> = ({
                 )}
               </div>
               {isOpen[item.type] && (
-                <>
+                <div
+                  className={classNames(
+                    "border-l border-default-300",
+                    "flex flex-col gap-3 dark:border-default-600",
+                  )}
+                >
                   {item.menu.map((subItem, subIndex) => (
-                    <div key={subIndex}>
-                      <Link
-                        href={subItem.href}
-                        className={`flex items-center justify-start gap-3 pl-3 before:block before:h-1 before:w-1 before:rounded-full ${
-                          isActive(subItem.href)
-                            ? classNames(
-                                "text-primary-500 before:bg-primary-500",
-                                "dark:text-primary-50 dark:before:bg-primary-25",
-                              )
-                            : classNames(
-                                "text-default-500 before:bg-default-400",
-                                "dark:text-default-400 dark:before:bg-default-600",
-                              )
-                        }`}
-                        onClick={onItemClick}
-                      >
-                        {subItem.title}
-                      </Link>
-                    </div>
+                    <Link
+                      key={subIndex}
+                      href={subItem.href}
+                      className={`flex items-center justify-start gap-5 before:block before:h-6 before:w-[1px] ${
+                        isActive(subItem.href)
+                          ? classNames(
+                              "font-medium text-primary-500 before:bg-primary-500",
+                              "dark:text-primary-25 dark:before:bg-primary-25",
+                            )
+                          : classNames(
+                              "text-default-500 before:bg-transparent",
+                              "hover:text-primary-500",
+                              "dark:text-default-400 dark:hover:text-primary-25",
+                            )
+                      }`}
+                      onClick={onItemClick}
+                    >
+                      {subItem.title}
+                    </Link>
                   ))}
-                </>
+                </div>
               )}
             </>
           ) : (
@@ -78,7 +86,7 @@ const SidebarItems: React.FC<SidebarItemsProps> = ({
               href={item.href}
               className={`flex items-center gap-2 font-medium ${
                 isActive(item.href)
-                  ? classNames("text-primary-500", "dark:text-primary-50")
+                  ? classNames("text-primary-500", "dark:text-primary-25")
                   : classNames("text-default-500", "dark:text-default-400")
               }`}
               onClick={onItemClick}

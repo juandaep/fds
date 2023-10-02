@@ -25,8 +25,8 @@ const Navigation: FC<NavigationProps> = ({ sections }) => {
         <div className="scrollbar-hide flex flex-col gap-3">
           <p
             className={classNames(
-              "text-sm text-default-800",
-              "dark:text-default-100",
+              "text-sm font-medium text-default-800",
+              "dark:text-default-50",
             )}
           >
             On this page

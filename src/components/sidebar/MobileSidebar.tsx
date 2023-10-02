@@ -1,19 +1,8 @@
 import { classNames } from "@/utils/classNames";
 import { AnimatePresence, motion } from "framer-motion";
-import { FC, useEffect } from "react";
+import { FC } from "react";
 
-export const MobileSidebar: FC<MobileSidebarProps> = ({
-  isOpen,
-  onClose,
-  children,
-}) => {
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-  }, [isOpen, onClose]);
+export const MobileSidebar: FC<MobileSidebarProps> = ({ isOpen, children }) => {
   return (
     <AnimatePresence>
       {isOpen && (
