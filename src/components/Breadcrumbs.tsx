@@ -9,7 +9,7 @@ export const Breadcrumbs = () => {
   const getBreadcrumbs = (
     items: (SidebarItem | SidebarWithSubItems)[],
     path: string,
-    breadcrumbs: string[] = []
+    breadcrumbs: string[] = [],
   ): string[] => {
     for (const item of items) {
       if ("menu" in item) {
@@ -35,7 +35,7 @@ export const Breadcrumbs = () => {
         <div
           className={classNames(
             "flex items-center gap-2 text-default-600",
-            "dark:text-default-400"
+            "dark:text-default-400",
           )}
         >
           {breadcrumbs.map((crumb, index) => (
@@ -45,7 +45,7 @@ export const Breadcrumbs = () => {
                 <span
                   className={classNames(
                     "text-primary-500",
-                    "dark:text-primary-25"
+                    "dark:text-primary-25",
                   )}
                 >
                   {crumb}

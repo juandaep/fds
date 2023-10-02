@@ -12,9 +12,9 @@ const typography = () => {
           <Link
             href="https://rsms.me/inter/dynmetrics/"
             className={classNames(
-              "flex gap-1.5 text-primary-500 font-medium",
+              "flex gap-1.5 font-medium text-primary-500",
               "dark:text-primary-25",
-              "hover:border-b hover:border-primary-500 hover:dark:border-primary-25"
+              "hover:border-b hover:border-primary-500 hover:dark:border-primary-25",
             )}
           >
             Inter Dynamic Metric <ArrowTopRightOnSquareIcon width={16} />

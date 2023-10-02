@@ -27,9 +27,9 @@ export const MobileSidebar: FC<MobileSidebarProps> = ({
           }}
           transition={{ type: "spring", bounce: 0, duration: 0.4 }}
           className={classNames(
-            "z-30 px-6 fixed flex max-w-full top-[112px] inset-x-0 bottom-0 w-screen flex-col gap-2 pt-4 overflow-y-auto scrollbar-hide backdrop-blur-xl backdrop-saturate-150 bg-light/80",
+            "scrollbar-hide fixed inset-x-0 bottom-0 top-[112px] z-30 flex w-screen max-w-full flex-col gap-2 overflow-y-auto bg-light/80 px-6 pt-4 backdrop-blur-xl backdrop-saturate-150",
             "dark:bg-dark/80",
-            "lg:hidden"
+            "lg:hidden",
           )}
         >
           {children}

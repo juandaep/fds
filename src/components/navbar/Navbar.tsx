@@ -17,29 +17,29 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`flex z-40 w-full items-center justify-center sticky top-0 inset-x-0 ${
+        className={`sticky inset-x-0 top-0 z-40 flex w-full items-center justify-center ${
           applyEffect
             ? classNames(
-                "backdrop-blur-xl backdrop-saturate-150 bg-light/80 transition-all",
-                "dark:bg-dark/80"
+                "bg-light/80 backdrop-blur-xl backdrop-saturate-150 transition-all",
+                "dark:bg-dark/80",
               )
             : ""
         }`}
       >
-        <header className="flex z-40 px-6 py-4 gap-4 relative w-full items-center justify-between max-w-7xl">
+        <header className="relative z-40 flex w-full max-w-7xl items-center justify-between gap-4 px-6 py-4">
           <Logo />
           <div
             className={classNames(
               "hidden",
               "sm:basis-full",
-              "lg:flex lg:gap-8 lg:flex-row lg:flex-nowrap lg:items-center lg:justify-end lg:flex-grow lg:basis-1/5"
+              "lg:flex lg:flex-grow lg:basis-1/5 lg:flex-row lg:flex-nowrap lg:items-center lg:justify-end lg:gap-8",
             )}
           >
             <div
               className={classNames(
                 "flex gap-8 text-default-600 ",
                 "after:border-r after:border-default-200",
-                "dark:after:border-default-800 dark:text-default-200"
+                "dark:text-default-200 dark:after:border-default-800",
               )}
             >
               {navbarData.map((link) => (
@@ -53,10 +53,10 @@ const Navbar = () => {
           <button
             type="button"
             className={classNames(
-              "p-1 text-default-600 transition-all rounded-lg outline-none",
+              "rounded-lg p-1 text-default-600 outline-none transition-all",
               "active:bg-default-400",
               "dark:text-default-200 dark:active:bg-default-800",
-              "lg:hidden"
+              "lg:hidden",
             )}
             aria-label="Nav Menu"
             onClick={openModal}
@@ -68,14 +68,14 @@ const Navbar = () => {
       <Modal isOpen={modalOpen} onClose={closeModal}>
         <div
           className={classNames(
-            "flex flex-col justify-center gap-3 self-stretch divide-y divide divide-default-200",
-            "dark:divide-default-700"
+            "divide flex flex-col justify-center gap-3 divide-y divide-default-200 self-stretch",
+            "dark:divide-default-700",
           )}
         >
           <div
             className={classNames(
               "flex flex-col justify-center gap-2 self-stretch text-default-700",
-              "dark:text-default-300"
+              "dark:text-default-300",
             )}
             onClick={closeModal}
           >
@@ -83,7 +83,7 @@ const Navbar = () => {
               <NavbarItems
                 key={link.title}
                 href={link.href}
-                className="py-2 px-3 rounded-lg"
+                className="rounded-lg px-3 py-2"
               >
                 {link.title}
               </NavbarItems>

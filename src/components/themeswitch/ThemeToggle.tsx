@@ -10,8 +10,8 @@ const ThemeToggle = () => {
   return (
     <div
       className={classNames(
-        "flex justify-between items-center px-2 py-4 text-base",
-        "lg:hidden"
+        "flex items-center justify-between px-2 py-4 text-base",
+        "lg:hidden",
       )}
     >
       <span>Switch Theme</span>
@@ -21,7 +21,7 @@ const ThemeToggle = () => {
           checked={mounted && (theme === "dark" || resolvedTheme === "dark")}
           onChange={() =>
             setTheme(
-              theme === "dark" || resolvedTheme === "dark" ? "light" : "dark"
+              theme === "dark" || resolvedTheme === "dark" ? "light" : "dark",
             )
           }
         />

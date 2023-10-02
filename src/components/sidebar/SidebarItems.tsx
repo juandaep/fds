@@ -20,7 +20,7 @@ const SidebarItems: React.FC<SidebarItemsProps> = ({
         idx[item.type] = true;
       }
       return idx;
-    }, {})
+    }, {}),
   );
 
   const collapseItem = (type: string) => {
@@ -53,15 +53,15 @@ const SidebarItems: React.FC<SidebarItemsProps> = ({
                     <div key={subIndex}>
                       <Link
                         href={subItem.href}
-                        className={`before:block before:w-1 before:h-1 before:rounded-full flex items-center justify-start gap-3 pl-3 ${
+                        className={`flex items-center justify-start gap-3 pl-3 before:block before:h-1 before:w-1 before:rounded-full ${
                           isActive(subItem.href)
                             ? classNames(
-                                "before:bg-primary-500 text-primary-500",
-                                "dark:before:bg-primary-25 dark:text-primary-50"
+                                "text-primary-500 before:bg-primary-500",
+                                "dark:text-primary-50 dark:before:bg-primary-25",
                               )
                             : classNames(
-                                "before:bg-default-400 text-default-500",
-                                "dark:before:bg-default-600 dark:text-default-400"
+                                "text-default-500 before:bg-default-400",
+                                "dark:text-default-400 dark:before:bg-default-600",
                               )
                         }`}
                         onClick={onItemClick}
@@ -76,7 +76,7 @@ const SidebarItems: React.FC<SidebarItemsProps> = ({
           ) : (
             <Link
               href={item.href}
-              className={`flex gap-2 items-center font-medium ${
+              className={`flex items-center gap-2 font-medium ${
                 isActive(item.href)
                   ? classNames("text-primary-500", "dark:text-primary-50")
                   : classNames("text-default-500", "dark:text-default-400")
@@ -84,19 +84,19 @@ const SidebarItems: React.FC<SidebarItemsProps> = ({
               onClick={onItemClick}
             >
               <span
-                className={`p-1 rounded-lg shadow-sm transition-colors ${
+                className={`rounded-lg p-1 shadow-sm transition-colors ${
                   pathname === item.href
                     ? classNames(
                         "bg-primary-25 text-primary-500",
-                        "dark:bg-primary-800 dark:text-primary-200"
+                        "dark:bg-primary-800 dark:text-primary-200",
                       )
                     : classNames(
                         "bg-default-100 text-default-500",
-                        "dark:bg-default-900 dark:text-default-400"
+                        "dark:bg-default-900 dark:text-default-400",
                       )
                 }`}
               >
-                <Square3Stack3DIcon className="w-5 h-5" />
+                <Square3Stack3DIcon className="h-5 w-5" />
               </span>
               {item.title}
             </Link>

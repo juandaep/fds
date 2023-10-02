@@ -12,11 +12,11 @@ const Navigation: FC<NavigationProps> = ({ sections }) => {
     <aside
       className={classNames(
         "hidden",
-        "xl:z-10 xl:flex xl:col-span-2 xl:mt-8 xl:pl-4"
+        "xl:z-10 xl:col-span-2 xl:mt-8 xl:flex xl:pl-4",
       )}
     >
       <nav
-        className="fixed w-full max-w-[calc(11rem+12px)] flex flex-col gap-3 text-left top-20 mt-6 pb-20 h-[calc(100vh-121px)] scrollbar-hide overflow-y-scroll"
+        className="scrollbar-hide fixed top-20 mt-6 flex h-[calc(100vh-121px)] w-full max-w-[calc(11rem+12px)] flex-col gap-3 overflow-y-scroll pb-20 text-left"
         style={{
           WebkitMaskImage:
             "linear-gradient(to top, transparent 0%, #000 100px, #000 100%, transparent 100%)",
@@ -26,7 +26,7 @@ const Navigation: FC<NavigationProps> = ({ sections }) => {
           <p
             className={classNames(
               "text-sm text-default-800",
-              "dark:text-default-100"
+              "dark:text-default-100",
             )}
           >
             On this page

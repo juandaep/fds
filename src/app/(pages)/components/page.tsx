@@ -18,19 +18,19 @@ const components = () => {
         </ContentTitle>
         <div
           id="home"
-          className="h-96 flex justify-center items-center bg-amber-100 scroll-mt-32"
+          className="flex h-96 scroll-mt-32 items-center justify-center bg-amber-100"
         >
           <h1>Home</h1>
         </div>
         <div
           id="about"
-          className="h-96 flex justify-center items-center bg-blue-100 scroll-mt-32"
+          className="flex h-96 scroll-mt-32 items-center justify-center bg-blue-100"
         >
           <h1>About</h1>
         </div>
         <div
           id="contact"
-          className="h-96 flex justify-center items-center bg-red-100 scroll-mt-32"
+          className="flex h-96 scroll-mt-32 items-center justify-center bg-red-100"
         >
           <h1>Contact</h1>
         </div>

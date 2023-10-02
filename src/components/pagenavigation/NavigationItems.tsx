@@ -13,13 +13,13 @@ const NavigationItems: FC<NavigationItemProps> = ({ href, label, active }) => {
           ? classNames(
               "text-primary-500",
               "dark:text-primary-100",
-              "hover:text-primary-500"
+              "hover:text-primary-500",
             )
           : classNames(
               "text-default-400 hover:text-primary-100",
-              "dark:text-default-500 dark:hover:text-primary-100"
+              "dark:text-default-500 dark:hover:text-primary-100",
             )
-      } text-sm pl-3`}
+      } pl-3 text-sm`}
     >
       {label}
     </Link>

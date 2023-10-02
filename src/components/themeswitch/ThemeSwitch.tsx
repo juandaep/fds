@@ -13,12 +13,12 @@ const ThemeSwitch = () => {
       aria-label="Toggle Dark Mode"
       type="button"
       className={classNames(
-        "hidden lg:block h-8 w-8 rounded-lg p-1",
-        "focus:ring-4 focus:ring-default-200 focus:dark:ring-default-800 focus:outline-none"
+        "hidden h-8 w-8 rounded-lg p-1 lg:block",
+        "focus:outline-none focus:ring-4 focus:ring-default-200 focus:dark:ring-default-800",
       )}
       onClick={() =>
         setTheme(
-          theme === "dark" || resolvedTheme === "dark" ? "light" : "dark"
+          theme === "dark" || resolvedTheme === "dark" ? "light" : "dark",
         )
       }
     >

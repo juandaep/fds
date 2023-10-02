@@ -27,29 +27,29 @@ export const ComponentsNavbar = () => {
   return (
     <>
       <nav
-        className={`flex flex-col x z-40 w-full items-center justify-center sticky top-0 inset-x-0 ${
+        className={`x sticky inset-x-0 top-0 z-40 flex w-full flex-col items-center justify-center ${
           applyEffect
             ? classNames(
-                "backdrop-blur-xl backdrop-saturate-150 bg-light/80 shadow-sm transition-shadow",
-                "dark:bg-dark/80"
+                "bg-light/80 shadow-sm backdrop-blur-xl backdrop-saturate-150 transition-shadow",
+                "dark:bg-dark/80",
               )
             : ""
         }`}
       >
-        <header className="flex z-40 px-6 py-4 gap-4 relative w-full items-center justify-between max-w-7xl">
+        <header className="relative z-40 flex w-full max-w-7xl items-center justify-between gap-4 px-6 py-4">
           <Logo />
           <div
             className={classNames(
               "hidden",
               "sm:basis-full",
-              "lg:flex lg:gap-8 lg:flex-row lg:flex-nowrap lg:items-center lg:justify-end lg:flex-grow lg:basis-1/5"
+              "lg:flex lg:flex-grow lg:basis-1/5 lg:flex-row lg:flex-nowrap lg:items-center lg:justify-end lg:gap-8",
             )}
           >
             <div
               className={classNames(
                 "flex gap-8 text-default-600",
                 "after:border-r after:border-default-300",
-                "dark:after:border-default-800 dark:text-default-200"
+                "dark:text-default-200 dark:after:border-default-800",
               )}
             >
               {navbarData.map((link) => (
@@ -63,10 +63,10 @@ export const ComponentsNavbar = () => {
           <button
             type="button"
             className={classNames(
-              "p-1 text-default-600 transition-all rounded-lg outline-none",
-              "active:bg-default-400 active:rounded-lg",
+              "rounded-lg p-1 text-default-600 outline-none transition-all",
+              "active:rounded-lg active:bg-default-400",
               "dark:text-default-200 dark:active:bg-default-800",
-              "lg:hidden"
+              "lg:hidden",
             )}
             aria-label="Nav Menu"
             onClick={openModal}
@@ -76,23 +76,23 @@ export const ComponentsNavbar = () => {
         </header>
         <div
           className={classNames(
-            "block border-b border-default-200 w-[calc(100%-3rem)]",
+            "block w-[calc(100%-3rem)] border-b border-default-200",
             "dark:border-default-800",
-            "lg:hidden"
+            "lg:hidden",
           )}
         />
         <div
           className={classNames(
-            "flex w-full px-6 pb-2 pt-2 gap-6",
-            "lg:hidden"
+            "flex w-full gap-6 px-6 pb-2 pt-2",
+            "lg:hidden",
           )}
         >
           <button
             type="button"
             className={classNames(
-              "flex h-8 w-8 cursor-pointer items-center justify-center p-1 rounded-lg text-default-600 transition-all",
+              "flex h-8 w-8 cursor-pointer items-center justify-center rounded-lg p-1 text-default-600 transition-all",
               "active:bg-default-400",
-              "dark:text-default-200 dark:active:bg-default-800"
+              "dark:text-default-200 dark:active:bg-default-800",
             )}
             aria-label="Nav Menu"
             onClick={sidebarOpen ? closeSidebar : openSidebar}
@@ -100,7 +100,7 @@ export const ComponentsNavbar = () => {
             <span
               className={`${Bars2BottomLeft} ${
                 sidebarOpen
-                  ? "before:translate-y-1 before:rotate-45 after:-translate-y-1 after:-rotate-45 after:w-6"
+                  ? "before:translate-y-1 before:rotate-45 after:w-6 after:-translate-y-1 after:-rotate-45"
                   : "after:w-4"
               }`}
             ></span>
@@ -111,14 +111,14 @@ export const ComponentsNavbar = () => {
       <Modal isOpen={modalOpen} onClose={closeModal}>
         <div
           className={classNames(
-            "flex flex-col justify-center gap-3 self-stretch divide-y divide divide-default-200",
-            "dark:divide-default-800"
+            "divide flex flex-col justify-center gap-3 divide-y divide-default-200 self-stretch",
+            "dark:divide-default-800",
           )}
         >
           <div
             className={classNames(
               "flex flex-col justify-center gap-2 self-stretch text-default-700",
-              "dark:text-default-300"
+              "dark:text-default-300",
             )}
             onClick={closeModal}
           >
@@ -126,7 +126,7 @@ export const ComponentsNavbar = () => {
               <NavbarItems
                 key={link.title}
                 href={link.href}
-                className="py-2 px-3 rounded-lg"
+                className="rounded-lg px-3 py-2"
               >
                 {link.title}
               </NavbarItems>

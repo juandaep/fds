@@ -12,9 +12,9 @@ const shadows = () => {
           <Link
             href="https://tailwindcss.com/docs/drop-shadow"
             className={classNames(
-              "flex gap-1.5 text-primary-500 font-medium",
+              "flex gap-1.5 font-medium text-primary-500",
               "dark:text-primary-25",
-              "hover:border-b hover:border-primary-500 hover:dark:border-primary-25"
+              "hover:border-b hover:border-primary-500 hover:dark:border-primary-25",
             )}
           >
             Tailwind Shadows <ArrowTopRightOnSquareIcon width={16} />

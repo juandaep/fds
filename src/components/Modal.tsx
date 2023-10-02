@@ -13,8 +13,8 @@ export const Modal: FC<ModalProps> = ({ isOpen, onClose, children }) => {
       {isOpen && (
         <div
           className={classNames(
-            "fixed inset-0 flex min-h-screen items-center justify-center z-50",
-            "lg:hidden"
+            "fixed inset-0 z-50 flex min-h-screen items-center justify-center",
+            "lg:hidden",
           )}
         >
           <motion.div
@@ -23,7 +23,7 @@ export const Modal: FC<ModalProps> = ({ isOpen, onClose, children }) => {
             exit={{ opacity: 0 }}
             className={classNames(
               "fixed inset-0 bg-default-400/30 backdrop-blur-sm",
-              "dark:bg-dark/30"
+              "dark:bg-dark/30",
             )}
             onClick={handleOverlayClick}
           ></motion.div>
@@ -47,9 +47,9 @@ export const Modal: FC<ModalProps> = ({ isOpen, onClose, children }) => {
               },
             }}
             className={classNames(
-              "bg-light w-11/12 mx-auto rounded-lg shadow-lg z-50",
+              "z-50 mx-auto w-11/12 rounded-lg bg-light shadow-lg",
               "sm:max-w-sm",
-              "dark:bg-default-900 dark:border dark:border-default-800"
+              "dark:border dark:border-default-800 dark:bg-default-900",
             )}
           >
             <div className="flex flex-col p-3">{children}</div>

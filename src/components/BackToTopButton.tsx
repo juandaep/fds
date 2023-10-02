@@ -10,9 +10,9 @@ const BackToTopButton = () => {
     <button
       type="button"
       className={`${classNames(
-        "flex gap-2 text-sm items-center border-t border-default-200 pt-3",
+        "flex items-center gap-2 border-t border-default-200 pt-3 text-sm",
         "dark:border-default-700",
-        "hover:text-default-500 hover:dark:text-default-300"
+        "hover:text-default-500 hover:dark:text-default-300",
       )} ${
         isVisible
           ? classNames("block text-default-400", "dark:text-default-500")

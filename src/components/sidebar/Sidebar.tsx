@@ -8,18 +8,18 @@ const Sidebar = () => {
     <aside
       className={classNames(
         "hidden",
-        "lg:relative lg:z-10 lg:block lg:col-span-2 lg:mt-8 lg:pr-4"
+        "lg:relative lg:z-10 lg:col-span-2 lg:mt-8 lg:block lg:pr-4",
       )}
     >
       <nav
-        className="fixed w-full max-w-[calc(11rem+12px)] top-20 mt-6 z-0 h-[calc(100vh-121px)] scrollbar-hide overflow-y-scroll"
+        className="scrollbar-hide fixed top-20 z-0 mt-6 h-[calc(100vh-121px)] w-full max-w-[calc(11rem+12px)] overflow-y-scroll"
         style={{
           WebkitMaskImage:
             "linear-gradient(to top, transparent 0%, #000 100px, #000 100%, transparent 100%)",
         }}
       >
         <div
-          className="flex flex-col gap-4 max-h-[calc(100vh_-_64px)] pb-28"
+          className="flex max-h-[calc(100vh_-_64px)] flex-col gap-4 pb-28"
           tabIndex={0}
         >
           <SidebarItems sidebarData={sidebarData} />
