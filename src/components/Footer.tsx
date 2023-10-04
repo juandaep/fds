@@ -7,7 +7,12 @@ import React, { memo } from "react";
 const Footer = () => {
   const year: number = new Date().getFullYear();
   return (
-    <footer className="container mx-auto max-w-7xl px-12 pb-12">
+    <footer
+      className={classNames(
+        "container mx-auto max-w-7xl px-6 pb-12",
+        "lg:pb-12",
+      )}
+    >
       <div className="flex flex-col items-center justify-center gap-2 text-default-600 dark:text-default-300">
         <div className="flex items-center text-lg">
           Made with{" "}
@@ -25,7 +30,6 @@ const Footer = () => {
           </Link>
         </div>
         <div className="inline-flex items-center gap-4 text-xs font-bold uppercase tracking-wider">
-          Powered by{" "}
           <div className="inline-flex items-center space-x-2">
             <span>
               <Link href="https://reactjs.org/" target="_blank">
@@ -33,6 +37,7 @@ const Footer = () => {
                   alt="react"
                   src="https://cdn.jsdelivr.net/gh/juandaep/Icons@master/devicons/react.svg"
                   width="26"
+                  height={0}
                   title="React"
                 />
               </Link>
@@ -44,6 +49,7 @@ const Footer = () => {
                   alt="nextjs"
                   src="https://cdn.jsdelivr.net/gh/juandaep/Icons@master/devicons/nextjs.svg"
                   width="40"
+                  height={0}
                   className="dark:invert"
                   title="NextJS"
                 />
@@ -56,6 +62,7 @@ const Footer = () => {
                   alt="typescript"
                   src="https://cdn.jsdelivr.net/gh/juandaep/Icons@master/devicons/typescript.svg"
                   width="26"
+                  height={0}
                   title="Typescript"
                 />
               </Link>
@@ -67,13 +74,14 @@ const Footer = () => {
                   alt="tailwindcss"
                   src="https://cdn.jsdelivr.net/gh/juandaep/Icons@master/devicons/tailwindcss.svg"
                   width="26"
+                  height={0}
                   title="TailwindCSS"
                 />
               </Link>
               <span className="sr-only">TailwindCSS</span>
             </span>
           </div>
-          <p className="text-xs font-normal">&copy; {year} </p>
+          <p className="text-sm font-normal">&copy; {year} </p>
         </div>
       </div>
     </footer>
