@@ -1,5 +1,6 @@
 import { classNames } from "@/utils/classNames";
 import { HeartIcon } from "@heroicons/react/24/solid";
+import Image from "next/image";
 import Link from "next/link";
 import React, { memo } from "react";
 
@@ -28,7 +29,8 @@ const Footer = () => {
           <div className="inline-flex items-center space-x-2">
             <span>
               <Link href="https://reactjs.org/" target="_blank">
-                <img
+                <Image
+                  alt="react"
                   src="https://cdn.jsdelivr.net/gh/juandaep/Icons@master/devicons/react.svg"
                   width="26"
                   title="React"
@@ -38,7 +40,8 @@ const Footer = () => {
             </span>
             <span>
               <Link href="https://nextjs.org/" target="_blank">
-                <img
+                <Image
+                  alt="nextjs"
                   src="https://cdn.jsdelivr.net/gh/juandaep/Icons@master/devicons/nextjs.svg"
                   width="40"
                   className="dark:invert"
@@ -49,7 +52,8 @@ const Footer = () => {
             </span>
             <span>
               <Link href="https://www.typescriptlang.org/" target="_blank">
-                <img
+                <Image
+                  alt="typescript"
                   src="https://cdn.jsdelivr.net/gh/juandaep/Icons@master/devicons/typescript.svg"
                   width="26"
                   title="Typescript"
@@ -59,7 +63,8 @@ const Footer = () => {
             </span>
             <span>
               <Link href="https://tailwindcss.com/" target="_blank">
-                <img
+                <Image
+                  alt="tailwindcss"
                   src="https://cdn.jsdelivr.net/gh/juandaep/Icons@master/devicons/tailwindcss.svg"
                   width="26"
                   title="TailwindCSS"
