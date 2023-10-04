@@ -4,7 +4,8 @@ interface TooltipProps {
   content: ReactNode;
   direction?: "top" | "right" | "bottom" | "left";
   delay?: number;
-  trigger?: "hover" | "click"; // Tambahkan properti trigger
+  timeout?: number;
+  trigger?: "hover" | "click";
   children: ReactNode;
 }
 
@@ -12,21 +13,21 @@ const Tooltip: React.FC<TooltipProps> = ({
   content,
   direction = "top",
   delay = 400,
-  trigger = "hover", // Atur default trigger ke "hover"
+  timeout = 2000,
+  trigger = "hover",
   children,
 }) => {
-  let timeout: ReturnType<typeof setTimeout>;
+  let timeoutId: ReturnType<typeof setTimeout>;
   const [active, setActive] = useState(false);
-  const [tooltipActive, setTooltipActive] = useState(false);
 
   const showTip = () => {
-    timeout = setTimeout(() => {
+    timeoutId = setTimeout(() => {
       setActive(true);
     }, delay);
   };
 
   const hideTip = () => {
-    clearTimeout(timeout);
+    clearTimeout(timeoutId);
     setActive(false);
   };
 
@@ -47,7 +48,10 @@ const Tooltip: React.FC<TooltipProps> = ({
   const handleClick = (event: MouseEvent<HTMLDivElement>) => {
     event.persist();
     if (trigger === "click") {
-      setActive(!active); // Toggle tooltip saat diklik
+      setActive(true);
+      setTimeout(() => {
+        setActive(false);
+      }, timeout);
     }
   };
 
@@ -56,7 +60,7 @@ const Tooltip: React.FC<TooltipProps> = ({
       className="Tooltip-Wrapper"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      onClick={handleClick} // Tambahkan event handler untuk klik
+      onClick={handleClick}
     >
       {children}
       {active && <div className={`Tooltip-Tip ${direction}`}>{content}</div>}
