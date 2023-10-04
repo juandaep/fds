@@ -3,7 +3,11 @@ import { classNames } from "@/utils/classNames";
 import Link from "next/link";
 import { FC } from "react";
 
-const NavigationItems: FC<NavigationItemProps> = ({ href, label, active }) => {
+const NavigationItems: FC<PageNavigationItemProps> = ({
+  href,
+  label,
+  active,
+}) => {
   return (
     <Link
       href={href}

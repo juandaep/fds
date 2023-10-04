@@ -1,4 +1,4 @@
-interface NavigationItemProps {
+interface PageNavigationItemProps {
   href: string;
   label: string;
   active: boolean;
@@ -9,6 +9,6 @@ interface Section {
   label: string;
 }
 
-interface NavigationProps {
+interface PageNavigationProps {
   sections: Section[];
 }

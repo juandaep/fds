@@ -5,7 +5,7 @@ import { FC } from "react";
 import BackToTopButton from "../BackToTopButton";
 import NavigationItems from "./NavigationItems";
 
-const Navigation: FC<NavigationProps> = ({ sections }) => {
+export const PageNavigation: FC<PageNavigationProps> = ({ sections }) => {
   const activeLink = usePageNavigation(sections);
 
   return (
@@ -45,5 +45,3 @@ const Navigation: FC<NavigationProps> = ({ sections }) => {
     </aside>
   );
 };
-
-export default Navigation;

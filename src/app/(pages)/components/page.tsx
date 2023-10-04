@@ -1,5 +1,5 @@
 import { Content, ContentTitle } from "@/components/Content";
-import Navigation from "@/components/pagenavigation/PageNavigation";
+import { PageNavigation } from "@/components/pagenavigation/PageNavigation";
 
 const components = () => {
   const sections = [
@@ -7,6 +7,7 @@ const components = () => {
     { id: "about", label: "About" },
     { id: "contact", label: "Contact" },
   ];
+
   return (
     <>
       <Content>
@@ -18,7 +19,7 @@ const components = () => {
         </ContentTitle>
         <div
           id="home"
-          className="flex h-96 scroll-mt-32 items-center justify-center bg-amber-100"
+          className="flex h-96 scroll-mt-24 items-center justify-center bg-amber-100"
         >
           <h1>Home</h1>
         </div>
@@ -35,7 +36,7 @@ const components = () => {
           <h1>Contact</h1>
         </div>
       </Content>
-      <Navigation sections={sections} />
+      <PageNavigation sections={sections} />
     </>
   );
 };
