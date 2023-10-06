@@ -23,7 +23,7 @@ export const ColorItems: FC<ColorItemProps> = ({
   };
 
   return (
-    <Tooltip content="Copied!" trigger="click">
+    <Tooltip content="Copied" trigger="click" direction="top-center">
       <div
         className="relative flex cursor-pointer flex-col gap-2"
         onClick={() => {

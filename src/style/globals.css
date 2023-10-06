@@ -75,86 +75,40 @@
 
   /* Wrapping */
   .Tooltip-Wrapper {
-    display: inline-block;
-    position: relative;
+    @apply relative inline-block;
   }
 
   /* Absolute positioning */
   .Tooltip-Tip {
-    position: absolute;
-    border-radius: 4px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 6px;
-    color: #fff;
-    background: #000;
-    font-size: 14px;
-    font-family: sans-serif;
-    line-height: 1;
-    z-index: 100;
-    white-space: nowrap;
+    @apply absolute left-1/2 z-50 -translate-x-1/2 whitespace-nowrap rounded-lg bg-dark px-3 py-2 text-xs font-medium text-default-25 shadow-lg before:pointer-events-none before:absolute before:left-1/2 before:ml-[calc(6px*-1)] before:h-0 before:w-0 before:border-[6px] before:border-transparent before:content-[""] dark:bg-light dark:text-default-700;
   }
 
-  /* CSS border triangles */
-  .Tooltip-Tip::before {
-    content: " ";
-    left: 50%;
-    border: solid transparent;
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-    border-width: 6px;
-    margin-left: calc(6px * -1);
+  /* top */
+  .Tooltip-Tip.top-start {
+    @apply top-[calc(44px*-1)] before:left-1/4 before:top-full before:border-t-dark before:dark:border-t-light;
+  }
+  .Tooltip-Tip.top-center {
+    @apply top-[calc(44px*-1)] before:top-full before:border-t-dark before:dark:border-t-light;
+  }
+  .Tooltip-Tip.top-end {
+    @apply top-[calc(44px*-1)] before:left-3/4 before:top-full before:border-t-dark before:dark:border-t-light;
   }
 
-  /* Absolute positioning */
-  .Tooltip-Tip.top {
-    top: calc(32px * -1);
-  }
-  /* CSS border triangles */
-  .Tooltip-Tip.top::before {
-    top: 100%;
-    border-top-color: #000;
-  }
-
-  /* Absolute positioning */
   .Tooltip-Tip.right {
-    left: calc(100% + 32px);
-    top: 50%;
-    transform: translateX(0) translateY(-50%);
+    @apply left-[calc(100%+16px)] top-1/2 -translate-y-1/2 translate-x-0 before:left-[calc(6px*-1)] before:top-1/2 before:-translate-y-1/2 before:translate-x-0 before:border-r-dark before:dark:border-r-light;
   }
-  /* CSS border triangles */
-  .Tooltip-Tip.right::before {
-    left: calc(6px * -1);
-    top: 50%;
-    transform: translateX(0) translateY(-50%);
-    border-right-color: #000;
+  /* bottom */
+  .Tooltip-Tip.bottom-start {
+    @apply bottom-[calc(44px*-1)] before:bottom-full before:left-1/4 before:border-b-dark before:dark:border-b-light;
   }
-
-  /* Absolute positioning */
-  .Tooltip-Tip.bottom {
-    bottom: calc(24px * -1);
+  .Tooltip-Tip.bottom-center {
+    @apply bottom-[calc(44px*-1)] before:bottom-full before:border-b-dark before:dark:border-b-light;
   }
-  /* CSS border triangles */
-  .Tooltip-Tip.bottom::before {
-    bottom: 100%;
-    border-bottom-color: #000;
+  .Tooltip-Tip.bottom-end {
+    @apply bottom-[calc(44px*-1)] before:bottom-full before:left-3/4 before:border-b-dark before:dark:border-b-light;
   }
-
-  /* Absolute positioning */
+  /* Left */
   .Tooltip-Tip.left {
-    left: auto;
-    right: calc(100% + 24px);
-    top: 50%;
-    transform: translateX(0) translateY(-50%);
-  }
-  /* CSS border triangles */
-  .Tooltip-Tip.left::before {
-    left: auto;
-    right: calc(6px * -2);
-    top: 50%;
-    transform: translateX(0) translateY(-50%);
-    border-left-color: #000;
+    @apply left-auto right-[calc(100%+16px)] top-1/2 -translate-y-1/2 translate-x-0 before:left-auto before:right-[calc(6px*-2)] before:top-1/2 before:-translate-y-1/2 before:translate-x-0 before:border-l-dark before:dark:border-l-light;
   }
 }

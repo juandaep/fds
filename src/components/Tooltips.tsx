@@ -1,17 +1,26 @@
-import React, { useState, ReactNode, MouseEvent } from "react";
+import { motion } from "framer-motion";
+import React, { MouseEvent, ReactNode, useState } from "react";
 
-interface TooltipProps {
+type TooltipProps = {
   content: ReactNode;
-  direction?: "top" | "right" | "bottom" | "left";
+  direction?:
+    | "top-start"
+    | "top-center"
+    | "top-end"
+    | "right"
+    | "bottom-start"
+    | "bottom-center"
+    | "bottom-end"
+    | "left";
   delay?: number;
   timeout?: number;
   trigger?: "hover" | "click";
   children: ReactNode;
-}
+};
 
 const Tooltip: React.FC<TooltipProps> = ({
   content,
-  direction = "top",
+  direction = "top-center",
   delay = 400,
   timeout = 2000,
   trigger = "hover",
@@ -56,16 +65,30 @@ const Tooltip: React.FC<TooltipProps> = ({
   };
 
   return (
-    <div
+    <motion.div
       className="Tooltip-Wrapper"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={handleClick}
     >
       {children}
-      {active && <div className={`Tooltip-Tip ${direction}`}>{content}</div>}
-    </div>
+      {active && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{
+            duration: 0.3,
+            ease: "easeInOut",
+          }}
+          className={`Tooltip-Tip ${direction}`}
+        >
+          {content}
+        </motion.div>
+      )}
+    </motion.div>
   );
 };
 
 export default Tooltip;
+motion.div;
