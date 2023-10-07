@@ -1,5 +1,5 @@
 "use client";
-import { useThemeMounted } from "@/app/hooks/useThemeMounted";
+import { useThemeMounted } from "@/hooks/useThemeMounted";
 import { classNames } from "@/utils/classNames";
 import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
 import { useTheme } from "next-themes";

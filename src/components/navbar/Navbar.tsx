@@ -1,7 +1,7 @@
 "use client";
-import { navbarData } from "@/app/data/navbarData";
-import { useApplyEffect } from "@/app/hooks/useApplyEffect";
-import { useModalState } from "@/app/hooks/useModalState";
+import { navbarData } from "@/data/navbarData";
+import { useApplyEffect } from "@/hooks/useApplyEffect";
+import { useModalState } from "@/hooks/useModalState";
 import { classNames } from "@/utils/classNames";
 import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
 import { Logo } from "../Logo";

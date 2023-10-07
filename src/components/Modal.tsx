@@ -1,5 +1,5 @@
-import { useCloseOnEscape } from "@/app/hooks/useCloseOnEscape";
-import { useHandleOverlayClick } from "@/app/hooks/useHandleOverlayClick";
+import { useCloseOnEscape } from "@/hooks/useCloseOnEscape";
+import { useHandleOverlayClick } from "@/hooks/useHandleOverlayClick";
 import { classNames } from "@/utils/classNames";
 import { AnimatePresence, motion } from "framer-motion";
 import { FC } from "react";

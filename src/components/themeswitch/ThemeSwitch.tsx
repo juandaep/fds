@@ -1,5 +1,5 @@
 "use client";
-import { useThemeMounted } from "@/app/hooks/useThemeMounted";
+import { useThemeMounted } from "@/hooks/useThemeMounted";
 import { classNames } from "@/utils/classNames";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
 import { useTheme } from "next-themes";

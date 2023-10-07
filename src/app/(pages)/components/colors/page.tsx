@@ -1,4 +1,4 @@
-import { colorsData } from "@/app/data/colorsData";
+import { colorsData } from "@/data/colorsData";
 import Content from "@/components/Content";
 import { ColorItems } from "@/components/colors/ColorItems";
 import { PageNavigation } from "@/components/pagenavigation/PageNavigation";

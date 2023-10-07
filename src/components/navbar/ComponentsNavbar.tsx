@@ -1,9 +1,9 @@
 "use client";
-import { navbarData } from "@/app/data/navbarData";
-import { sidebarData } from "@/app/data/sidebarData";
-import { useApplyEffect } from "@/app/hooks/useApplyEffect";
-import { useModalState } from "@/app/hooks/useModalState";
-import { useSidebarState } from "@/app/hooks/useSidebarState";
+import { navbarData } from "@/data/navbarData";
+import { sidebarData } from "@/data/sidebarData";
+import { useApplyEffect } from "@/hooks/useApplyEffect";
+import { useModalState } from "@/hooks/useModalState";
+import { useSidebarState } from "@/hooks/useSidebarState";
 import { classNames } from "@/utils/classNames";
 import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
 import { Breadcrumbs } from "../Breadcrumbs";

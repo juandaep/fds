@@ -1,7 +1,7 @@
 import { classNames } from "@/utils/classNames";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import { usePathname } from "next/navigation";
-import { sidebarData } from "../app/data/sidebarData";
+import { sidebarData } from "../data/sidebarData";
 
 export const Breadcrumbs = () => {
   const currentPath = usePathname();

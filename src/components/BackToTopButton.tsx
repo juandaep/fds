@@ -1,5 +1,5 @@
 "use client";
-import { useScrollTop } from "@/app/hooks/useScrollTop";
+import { useScrollTop } from "@/hooks/useScrollTop";
 import { classNames } from "@/utils/classNames";
 import { ArrowLongUpIcon } from "@heroicons/react/24/outline";
 

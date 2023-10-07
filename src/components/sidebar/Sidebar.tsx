@@ -1,6 +1,6 @@
 "use client";
 import { classNames } from "@/utils/classNames";
-import { sidebarData } from "../../app/data/sidebarData";
+import { sidebarData } from "../../data/sidebarData";
 import SidebarItems from "./SidebarItems";
 
 const Sidebar = () => {

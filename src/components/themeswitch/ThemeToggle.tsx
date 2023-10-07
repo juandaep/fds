@@ -1,5 +1,5 @@
 "use client";
-import { useThemeMounted } from "@/app/hooks/useThemeMounted";
+import { useThemeMounted } from "@/hooks/useThemeMounted";
 import { classNames } from "@/utils/classNames";
 import { useTheme } from "next-themes";
 

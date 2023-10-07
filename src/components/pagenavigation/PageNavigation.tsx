@@ -1,5 +1,5 @@
 "use client";
-import { usePageNavigation } from "@/app/hooks/usePageNavigation";
+import { usePageNavigation } from "@/hooks/usePageNavigation";
 import { classNames } from "@/utils/classNames";
 import { FC } from "react";
 import BackToTopButton from "../BackToTopButton";
