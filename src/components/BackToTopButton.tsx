@@ -10,7 +10,7 @@ const BackToTopButton = () => {
     <button
       type="button"
       className={`${classNames(
-        "-tracking-sm flex items-center gap-2 border-t border-default-200 pt-3 text-sm",
+        "flex items-center gap-2 border-t border-default-200 pt-3 text-sm -tracking-sm",
         "dark:border-default-700",
         "hover:text-default-500 hover:dark:text-default-300",
       )} ${

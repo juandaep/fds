@@ -16,7 +16,7 @@
   }
 
   section {
-    @apply col-span-12 mt-6 lg:col-span-10 lg:mb-20 lg:mt-10 lg:px-4 xl:col-span-8;
+    @apply col-span-12 mt-6 lg:col-span-10 lg:mb-80 lg:mt-10 lg:px-4 xl:col-span-8;
   }
 
   input:checked + .slider {

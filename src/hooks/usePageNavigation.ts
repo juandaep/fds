@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 export const usePageNavigation = (sections: Section[]) => {
-  const [activeLink, setActiveLink] = useState("");
+  const [activeLink, setActiveLink] = useState<string>("");
 
   useEffect(() => {
     const handleScroll = () => {

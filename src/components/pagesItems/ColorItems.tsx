@@ -35,9 +35,9 @@ export const ColorItems: FC<ColorItemProps> = ({
             "h-16 rounded-lg border border-default-200 transition-transform",
             "dark:border-default-800",
             "active:scale-95",
-          )} ${color} ${isWide ? "w-28 lg:w-[248px]" : "w-28"}`}
+          )} ${color} ${isWide ? "w-28 lg:w-[244px]" : "w-[110px]"}`}
         ></div>
-        <div className="-tracking-sm text-sm">
+        <div className="text-sm -tracking-sm">
           <p className={classNames("text-default-800", "dark:text-default-50")}>
             {name}
           </p>

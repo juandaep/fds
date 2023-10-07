@@ -1,4 +1,4 @@
-export const colorsData = [
+export const colorData = [
   {
     title: "Background Colors",
     colorList: [

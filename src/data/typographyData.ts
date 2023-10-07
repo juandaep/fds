@@ -2,7 +2,7 @@ export const typographyData = [
   {
     textSpecs: { fontsize: "12px", lineheight: "16px", letterspacing: "0em" },
     textClass: "-tracking-xs text-xs",
-    textXS: [
+    textData: [
       { label: "Text XS Regular", fontweight: "font-normal" },
       { label: "Text XS Medium", fontweight: "font-medium" },
       { label: "Text XS Semibold", fontweight: "font-semibold" },
@@ -16,7 +16,7 @@ export const typographyData = [
       letterspacing: "-0.006em",
     },
     textClass: "-tracking-sm text-sm",
-    textXS: [
+    textData: [
       { label: "Text SM Regular", fontweight: "font-normal" },
       { label: "Text SM Medium", fontweight: "font-medium" },
       { label: "Text SM Semibold", fontweight: "font-semibold" },
@@ -30,7 +30,7 @@ export const typographyData = [
       letterspacing: "-0.011em",
     },
     textClass: "-tracking-base text-base",
-    textXS: [
+    textData: [
       { label: "Text Base Regular", fontweight: "font-normal" },
       { label: "Text Base Medium", fontweight: "font-medium" },
       { label: "Text Base Semibold", fontweight: "font-semibold" },
@@ -44,7 +44,7 @@ export const typographyData = [
       letterspacing: "-0.014em",
     },
     textClass: "-tracking-lg text-lg",
-    textXS: [
+    textData: [
       { label: "Text LG Regular", fontweight: "font-normal" },
       { label: "Text LG Medium", fontweight: "font-medium" },
       { label: "Text LG Semibold", fontweight: "font-semibold" },
@@ -58,7 +58,7 @@ export const typographyData = [
       letterspacing: "-0.017em",
     },
     textClass: "-tracking-xl text-xl",
-    textXS: [
+    textData: [
       { label: "Text XL Regular", fontweight: "font-normal" },
       { label: "Text XL Medium", fontweight: "font-medium" },
       { label: "Text XL Semibold", fontweight: "font-semibold" },
@@ -72,7 +72,7 @@ export const typographyData = [
       letterspacing: "-0.019em",
     },
     textClass: "-tracking-2xl text-2xl",
-    textXS: [
+    textData: [
       { label: "Text Heading 3 Regular", fontweight: "font-normal" },
       { label: "Text Heading 3 Medium", fontweight: "font-medium" },
       { label: "Text Heading 3 Semibold", fontweight: "font-semibold" },
@@ -86,7 +86,7 @@ export const typographyData = [
       letterspacing: "-0.021em",
     },
     textClass: "-tracking-3xl text-3xl",
-    textXS: [
+    textData: [
       { label: "Text Heading 2 Regular", fontweight: "font-normal" },
       { label: "Text Heading 2 Medium", fontweight: "font-medium" },
       { label: "Text Heading 2 Semibold", fontweight: "font-semibold" },
@@ -100,7 +100,7 @@ export const typographyData = [
       letterspacing: "-0.022em",
     },
     textClass: "-tracking-4xl text-4xl",
-    textXS: [
+    textData: [
       { label: "Text Heading 1 Regular", fontweight: "font-normal" },
       { label: "Text Heading 1 Medium", fontweight: "font-medium" },
       { label: "Text Heading 1 Semibold", fontweight: "font-semibold" },
@@ -114,7 +114,7 @@ export const typographyData = [
       letterspacing: "-0.022em",
     },
     textClass: "-tracking-4xl text-5xl",
-    textXS: [
+    textData: [
       { label: "Text Display 3 Regular", fontweight: "font-normal" },
       { label: "Text Display 3 Medium", fontweight: "font-medium" },
       { label: "Text Display 3 Semibold", fontweight: "font-semibold" },
@@ -128,7 +128,7 @@ export const typographyData = [
       letterspacing: "-0.022em",
     },
     textClass: "-tracking-4xl text-6xl",
-    textXS: [
+    textData: [
       { label: "Text Display 2 Regular", fontweight: "font-normal" },
       { label: "Text Display 2 Medium", fontweight: "font-medium" },
       { label: "Text Display 2 Semibold", fontweight: "font-semibold" },
@@ -142,7 +142,7 @@ export const typographyData = [
       letterspacing: "-0.022em",
     },
     textClass: "-tracking-4xl text-7xl",
-    textXS: [
+    textData: [
       { label: "Text Display 1 Regular", fontweight: "font-normal" },
       { label: "Text Display 1 Medium", fontweight: "font-medium" },
       { label: "Text Display 1 Semibold", fontweight: "font-semibold" },

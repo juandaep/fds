@@ -13,8 +13,8 @@ const ContentTitle: FC<ContentTitleProps> = ({ title, children }) => {
     <div className="flex flex-col items-start gap-4 self-stretch">
       <h1
         className={classNames(
-          "-tracking-2xl text-2xl font-bold text-default-900",
-          "lg:-tracking-4xl lg:text-4xl",
+          "text-2xl font-bold -tracking-2xl text-default-900",
+          "lg:text-4xl lg:-tracking-4xl",
           "dark:text-default-25",
         )}
       >
@@ -22,8 +22,8 @@ const ContentTitle: FC<ContentTitleProps> = ({ title, children }) => {
       </h1>
       <div
         className={classNames(
-          "-tracking-sm text-sm text-default-600",
-          "lg:-tracking-base lg:text-base",
+          "text-sm -tracking-sm text-default-600",
+          "lg:text-base lg:-tracking-base",
           "dark:text-default-300",
         )}
       >
@@ -33,13 +33,13 @@ const ContentTitle: FC<ContentTitleProps> = ({ title, children }) => {
   );
 };
 
-const ContentSection: FC<ContentSectionProps> = ({ key, id, children }) => {
+const ContentSection: FC<ContentSectionProps> = ({
+  children,
+  sectionKey,
+  id,
+}) => {
   return (
-    <div
-      key={key}
-      id={id}
-      className="container flex scroll-mt-24 flex-col gap-4"
-    >
+    <div key={sectionKey} id={id} className="flex scroll-mt-24 flex-col gap-4">
       {children}
     </div>
   );

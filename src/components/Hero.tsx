@@ -30,8 +30,8 @@ export const Hero = () => {
       >
         <div
           className={classNames(
-            "-tracking-xs flex w-max divide-x divide-default-300 rounded-lg border border-default-300 text-xs font-medium text-default-700",
-            "lg:-tracking-sm lg:text-sm",
+            "flex w-max divide-x divide-default-300 rounded-lg border border-default-300 text-xs font-medium -tracking-xs text-default-700",
+            "lg:text-sm lg:-tracking-sm",
             "dark:divide-default-700 dark:border-default-700 dark:text-default-200",
           )}
         >
@@ -98,9 +98,9 @@ export const Hero = () => {
         >
           <h1
             className={classNames(
-              "-tracking-3xl text-3xl font-bold text-default-900",
+              "text-3xl font-bold -tracking-3xl text-default-900",
               "dark:text-default-25",
-              "sm:-tracking-4xl sm:text-4xl",
+              "sm:text-4xl sm:-tracking-4xl",
               "md:text-5xl",
               "lg:text-6xl",
               "xl:text-7xl",
@@ -115,11 +115,11 @@ export const Hero = () => {
           </h1>
           <div
             className={classNames(
-              "-tracking-base flex flex-col justify-center gap-1 text-base text-default-600",
+              "flex flex-col justify-center gap-1 text-base -tracking-base text-default-600",
               "dark:text-default-300",
-              "sm:-tracking-lg sm:text-lg",
-              "md:-tracking-xl md:text-xl",
-              "lg:-tracking-2xl lg:text-2xl",
+              "sm:text-lg sm:-tracking-lg",
+              "md:text-xl md:-tracking-xl",
+              "lg:text-2xl lg:-tracking-2xl",
             )}
           >
             <div className="flex gap-1">
@@ -128,7 +128,7 @@ export const Hero = () => {
                 <Link
                   as="button"
                   href="https://tailwindcss.com/"
-                  className="font-medium underline"
+                  className="font-medium hover:underline"
                 >
                   TailwindCSS.
                 </Link>{" "}

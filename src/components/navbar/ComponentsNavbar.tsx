@@ -30,8 +30,8 @@ export const ComponentsNavbar = () => {
         className={`sticky inset-x-0 top-0 z-40 flex w-full flex-col items-center justify-center ${
           applyEffect
             ? classNames(
-                "bg-light/80 shadow-sm backdrop-blur-xl backdrop-saturate-150 transition-shadow",
-                "dark:bg-dark/80",
+                "bg-light/70 shadow-sm backdrop-blur-xl backdrop-saturate-150 transition-shadow",
+                "dark:bg-dark/70",
               )
             : ""
         }`}

@@ -1,11 +1,11 @@
-import { colorsData } from "@/data/colorsData";
 import Content from "@/components/Content";
-import { ColorItems } from "@/components/colors/ColorItems";
 import { PageNavigation } from "@/components/pagenavigation/PageNavigation";
+import { ColorItems } from "@/components/pagesItems/ColorItems";
+import { colorData } from "@/components/pagesItems/colorData";
 import { classNames } from "@/utils/classNames";
 
-const colors = () => {
-  const sections = [
+const Colors = () => {
+  const colorSection = [
     { id: "bg-colors", label: "Background Colors" },
     { id: "primary-colors", label: "Primary Colors" },
     { id: "error-colors", label: "Error Colors" },
@@ -20,18 +20,22 @@ const colors = () => {
         <Content.Title title="Colors">
           Flux Design Systems have a color palette below:
         </Content.Title>
-        {sections.map((section) => (
-          <Content.Section key={section.id} id={section.id}>
+        {colorSection.map((section) => (
+          <Content.Section
+            sectionKey={section.id}
+            key={section.id}
+            id={section.id}
+          >
             <h2
               className={classNames(
-                "-tracking-xl text-xl font-semibold text-default-700",
+                "text-xl font-semibold -tracking-xl text-default-700",
                 "dark:text-default-100",
               )}
             >
               {section.label}
             </h2>
             <div className="flex flex-wrap gap-6">
-              {colorsData
+              {colorData
                 .filter((category) => category.title === section.label)
                 .map((category) =>
                   category.colorList.map((color, colorIndex) => (
@@ -48,9 +52,9 @@ const colors = () => {
           </Content.Section>
         ))}
       </Content>
-      <PageNavigation sections={sections} />
+      <PageNavigation sections={colorSection} />
     </>
   );
 };
 
-export default colors;
+export default Colors;

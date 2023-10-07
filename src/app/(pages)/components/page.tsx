@@ -1,7 +1,7 @@
 import Content from "@/components/Content";
 import { PageNavigation } from "@/components/pagenavigation/PageNavigation";
 
-const components = () => {
+const Components = () => {
   const sections = [
     { id: "home", label: "Home" },
     { id: "about", label: "About" },
@@ -41,4 +41,4 @@ const components = () => {
   );
 };
 
-export default components;
+export default Components;

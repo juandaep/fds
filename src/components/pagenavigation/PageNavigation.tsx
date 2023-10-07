@@ -1,9 +1,9 @@
 "use client";
-import { usePageNavigation } from "@/hooks/usePageNavigation";
 import { classNames } from "@/utils/classNames";
 import { FC } from "react";
 import BackToTopButton from "../BackToTopButton";
 import NavigationItems from "./NavigationItems";
+import { usePageNavigation } from "@/hooks/usePageNavigation";
 
 export const PageNavigation: FC<PageNavigationProps> = ({ sections }) => {
   const activeLink = usePageNavigation(sections);
@@ -25,7 +25,7 @@ export const PageNavigation: FC<PageNavigationProps> = ({ sections }) => {
         <div className="scrollbar-hide flex flex-col gap-3">
           <p
             className={classNames(
-              "-tracking-sm text-sm font-medium text-default-800",
+              "text-sm font-medium -tracking-sm text-default-800",
               "dark:text-default-50",
             )}
           >

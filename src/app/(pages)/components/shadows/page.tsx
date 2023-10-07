@@ -3,7 +3,7 @@ import { PageNavigation } from "@/components/pagenavigation/PageNavigation";
 import { classNames } from "@/utils/classNames";
 import Link from "next/link";
 
-const shadows = () => {
+const Shadows = () => {
   const shadowList = [
     { shadow: "shadow-1", name: "shadow-1" },
     { shadow: "shadow-2", name: "shadow-2" },
@@ -11,7 +11,7 @@ const shadows = () => {
     { shadow: "shadow-4", name: "shadow-4" },
     { shadow: "shadow-inner", name: "shadow-inner" },
   ];
-  const sections = [{ id: "flux-shadows", label: "Flux Shadows" }];
+  const shadowSection = [{ id: "flux-shadows", label: "Flux Shadows" }];
 
   return (
     <>
@@ -32,25 +32,30 @@ const shadows = () => {
             too.
           </p>
         </Content.Title>
-        {sections.map((sections) => (
-          <Content.Section key={sections.id} id={sections.id}>
+        {shadowSection.map((section) => (
+          <Content.Section
+            sectionKey={section.id}
+            key={section.id}
+            id={section.id}
+          >
             <h2
               className={classNames(
-                "-tracking-xl text-xl font-semibold text-default-700",
+                "text-xl font-semibold -tracking-xl text-default-700",
                 "dark:text-default-100",
               )}
             >
-              {sections.label}
+              {section.label}
             </h2>
             <div className="flex flex-wrap gap-6">
-              {shadowList.map((shadow) => (
+              {shadowList.map((shadow, shadowIndex) => (
                 <div
+                  key={shadowIndex}
                   className={`flex h-28 w-28 items-center justify-center rounded-lg ${classNames(
                     "border border-default-300 bg-light",
                     "dark:border-default-700",
                   )} ${shadow.shadow}`}
                 >
-                  <p className="-tracking-sm text-sm text-dark">
+                  <p className="text-sm -tracking-sm text-dark">
                     {shadow.name}
                   </p>
                 </div>
@@ -59,9 +64,9 @@ const shadows = () => {
           </Content.Section>
         ))}
       </Content>
-      <PageNavigation sections={sections} />
+      <PageNavigation sections={shadowSection} />
     </>
   );
 };
 
-export default shadows;
+export default Shadows;

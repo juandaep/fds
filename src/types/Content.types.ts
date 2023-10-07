@@ -8,5 +8,5 @@ type ContentTitleProps = ContentProps & {
 
 type ContentSectionProps = ContentProps & {
   id?: string;
-  key?: React.Key;
+  sectionKey?: string;
 };
