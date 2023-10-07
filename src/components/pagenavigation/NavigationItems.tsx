@@ -18,7 +18,7 @@ const NavigationItems: FC<PageNavigationItemProps> = ({
               "text-default-500 hover:text-primary-500",
               "dark:text-default-400 dark:hover:text-primary-25",
             )
-      } pl-3 text-sm`}
+      } -tracking-sm pl-3 text-sm`}
     >
       {label}
     </Link>

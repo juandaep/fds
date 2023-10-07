@@ -25,7 +25,7 @@ export const PageNavigation: FC<PageNavigationProps> = ({ sections }) => {
         <div className="scrollbar-hide flex flex-col gap-3">
           <p
             className={classNames(
-              "text-sm font-medium text-default-800",
+              "-tracking-sm text-sm font-medium text-default-800",
               "dark:text-default-50",
             )}
           >

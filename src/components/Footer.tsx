@@ -14,7 +14,7 @@ const Footer = () => {
       )}
     >
       <div className="flex flex-col items-center justify-center gap-2 text-default-600 dark:text-default-300">
-        <div className="flex items-center text-lg">
+        <div className="-tracking-lg flex items-center text-lg">
           Made with{" "}
           <HeartIcon className="mx-1 h-5 w-5 animate-pulse fill-red-600" />
           <Link
@@ -29,7 +29,7 @@ const Footer = () => {
             Juanda Esa Putra.
           </Link>
         </div>
-        <div className="inline-flex items-center gap-4 text-xs font-bold uppercase tracking-wider">
+        <div className="-tracking-xs inline-flex items-center gap-4 text-xs font-bold uppercase">
           <div className="inline-flex items-center space-x-3">
             <span className="relative h-6 w-6">
               <Link href="https://reactjs.org/" target="_blank">
@@ -77,7 +77,7 @@ const Footer = () => {
               <span className="sr-only">TailwindCSS</span>
             </span>
           </div>
-          <p className="text-sm font-normal">&copy; {year} </p>
+          <p className="-tracking-sm text-sm font-normal">&copy; {year} </p>
         </div>
       </div>
     </footer>

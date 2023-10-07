@@ -36,7 +36,7 @@ const shadows = () => {
           <Content.Section key={sections.id} id={sections.id}>
             <h2
               className={classNames(
-                "text-xl font-semibold text-default-700",
+                "-tracking-xl text-xl font-semibold text-default-700",
                 "dark:text-default-100",
               )}
             >
@@ -50,7 +50,9 @@ const shadows = () => {
                     "dark:border-default-700",
                   )} ${shadow.shadow}`}
                 >
-                  <p className="text-sm text-dark">{shadow.name}</p>
+                  <p className="-tracking-sm text-sm text-dark">
+                    {shadow.name}
+                  </p>
                 </div>
               ))}
             </div>

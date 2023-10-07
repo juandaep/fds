@@ -24,7 +24,7 @@ const colors = () => {
           <Content.Section key={section.id} id={section.id}>
             <h2
               className={classNames(
-                "text-xl font-semibold text-default-700",
+                "-tracking-xl text-xl font-semibold text-default-700",
                 "dark:text-default-100",
               )}
             >

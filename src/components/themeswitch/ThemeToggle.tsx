@@ -10,7 +10,7 @@ const ThemeToggle = () => {
   return (
     <div
       className={classNames(
-        "flex items-center justify-between px-2 py-4 text-base",
+        "-tracking-base flex items-center justify-between px-2 py-4 text-base",
         "lg:hidden",
       )}
     >

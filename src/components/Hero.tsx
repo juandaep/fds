@@ -30,8 +30,8 @@ export const Hero = () => {
       >
         <div
           className={classNames(
-            "flex w-max divide-x divide-default-300 rounded-lg border border-default-300 text-xs font-medium text-default-700",
-            "lg:text-sm",
+            "-tracking-xs flex w-max divide-x divide-default-300 rounded-lg border border-default-300 text-xs font-medium text-default-700",
+            "lg:-tracking-sm lg:text-sm",
             "dark:divide-default-700 dark:border-default-700 dark:text-default-200",
           )}
         >
@@ -98,12 +98,12 @@ export const Hero = () => {
         >
           <h1
             className={classNames(
-              "text-3xl font-bold -tracking-[0.019em] text-default-900",
+              "-tracking-3xl text-3xl font-bold text-default-900",
               "dark:text-default-25",
-              "sm:text-4xl sm:-tracking-[0.021em]",
-              "md:text-5xl md:-tracking-[0.021em]",
-              "lg:text-6xl lg:-tracking-[0.021em]",
-              "xl:text-7xl xl:-tracking-[0.021em]",
+              "sm:-tracking-4xl sm:text-4xl",
+              "md:text-5xl",
+              "lg:text-6xl",
+              "xl:text-7xl",
             )}
           >
             <span
@@ -115,11 +115,11 @@ export const Hero = () => {
           </h1>
           <div
             className={classNames(
-              "flex flex-col justify-center gap-1 text-base -tracking-[0.011em] text-default-600",
+              "-tracking-base flex flex-col justify-center gap-1 text-base text-default-600",
               "dark:text-default-300",
-              "sm:text-lg sm:-tracking-[0.014em]",
-              "md:text-xl md:-tracking-[0.017em]",
-              "lg:text-2xl lg:-tracking-[0.019em]",
+              "sm:-tracking-lg sm:text-lg",
+              "md:-tracking-xl md:text-xl",
+              "lg:-tracking-2xl lg:text-2xl",
             )}
           >
             <div className="flex gap-1">

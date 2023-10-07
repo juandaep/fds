@@ -37,7 +37,7 @@ export const ColorItems: FC<ColorItemProps> = ({
             "active:scale-95",
           )} ${color} ${isWide ? "w-28 lg:w-[248px]" : "w-28"}`}
         ></div>
-        <div className="text-sm">
+        <div className="-tracking-sm text-sm">
           <p className={classNames("text-default-800", "dark:text-default-50")}>
             {name}
           </p>

@@ -18,7 +18,7 @@ const typography = () => {
           >
             Inter Dynamic Metric{" "}
           </Link>
-          guideline.
+          guideline with a bit modification.
         </p>
       </Content.Title>
     </Content>

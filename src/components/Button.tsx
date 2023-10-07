@@ -12,7 +12,7 @@ export const Button: FC<BtnProps> = ({
     <button
       type="button"
       onClick={onClick}
-      className={`${bgColor} ${textColor} flex w-max items-center justify-center gap-3 rounded-lg px-4 py-2 text-base font-medium -tracking-[0.014em] shadow-md transition-colors hover:bg-primary-600 dark:hover:bg-primary-400 md:text-lg`}
+      className={`${bgColor} ${textColor} -tracking-base md:-tracking-lg flex w-max items-center justify-center gap-3 rounded-lg px-4 py-2 text-base font-medium shadow-md transition-colors hover:bg-primary-600 dark:hover:bg-primary-400 md:text-lg`}
     >
       {leftIcon}
       {children}

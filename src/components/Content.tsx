@@ -13,8 +13,8 @@ const ContentTitle: FC<ContentTitleProps> = ({ title, children }) => {
     <div className="flex flex-col items-start gap-4 self-stretch">
       <h1
         className={classNames(
-          "text-2xl font-bold -tracking-[0.021em] text-default-900",
-          "lg:text-4xl",
+          "-tracking-2xl text-2xl font-bold text-default-900",
+          "lg:-tracking-4xl lg:text-4xl",
           "dark:text-default-25",
         )}
       >
@@ -22,8 +22,8 @@ const ContentTitle: FC<ContentTitleProps> = ({ title, children }) => {
       </h1>
       <div
         className={classNames(
-          "text-sm -tracking-[0.011em] text-default-600",
-          "lg:text-base",
+          "-tracking-sm text-sm text-default-600",
+          "lg:-tracking-base lg:text-base",
           "dark:text-default-300",
         )}
       >

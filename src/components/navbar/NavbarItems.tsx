@@ -15,8 +15,8 @@ export const NavbarItems: FC<HeaderNavLinksProps> = ({
     <Link
       href={href}
       className={`${classNames(
-        "text-lg font-medium",
-        "lg:hover-animation lg:text-base",
+        "-tracking-lg text-lg font-medium",
+        "lg:hover-animation lg:-tracking-lg lg:text-base",
       )} ${className} ${
         isActive ||
         (href.startsWith("/components") && pathname.startsWith("/components"))
