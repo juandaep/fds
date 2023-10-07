@@ -1,8 +1,12 @@
-interface ContentProps {
+type ContentProps = {
   children: React.ReactNode;
-}
+};
 
-interface ContentTitleProps {
+type ContentTitleProps = ContentProps & {
   title: string;
-  children: React.ReactNode;
-}
+};
+
+type ContentSectionProps = ContentProps & {
+  id?: string;
+  key?: React.Key;
+};

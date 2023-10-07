@@ -1,27 +1,26 @@
-import { Content, ContentTitle } from "@/components/Content";
+import Content from "@/components/Content";
 import { classNames } from "@/utils/classNames";
-import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
 const typography = () => {
   return (
     <Content>
-      <ContentTitle title="Typography: Inter">
-        <div className="flex gap-1.5">
-          <span>Flux Design Systems use Inter typeface and use</span>
+      <Content.Title title="Typography: Inter">
+        <p>
+          Flux Design Systems use Inter typeface and use{" "}
           <Link
             href="https://rsms.me/inter/dynmetrics/"
             className={classNames(
-              "flex gap-1.5 font-medium text-primary-500",
+              "font-medium text-primary-500",
               "dark:text-primary-25",
-              "hover:border-b hover:border-primary-500 hover:dark:border-primary-25",
+              "hover:underline",
             )}
           >
-            Inter Dynamic Metric <ArrowTopRightOnSquareIcon width={16} />
+            Inter Dynamic Metric{" "}
           </Link>
-          <span>guideline.</span>
-        </div>
-      </ContentTitle>
+          guideline.
+        </p>
+      </Content.Title>
     </Content>
   );
 };

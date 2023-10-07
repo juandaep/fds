@@ -22,7 +22,7 @@ const Footer = () => {
             className={classNames(
               "font-medium text-primary-500 transition-all",
               "hover:text-primary-600",
-              "dark:text-primary-400 dark:hover:text-primary-300",
+              "dark:text-primary-300 dark:hover:text-primary-200",
             )}
             target="_blank"
           >
@@ -30,51 +30,47 @@ const Footer = () => {
           </Link>
         </div>
         <div className="inline-flex items-center gap-4 text-xs font-bold uppercase tracking-wider">
-          <div className="inline-flex items-center space-x-2">
-            <span>
+          <div className="inline-flex items-center space-x-3">
+            <span className="relative h-6 w-6">
               <Link href="https://reactjs.org/" target="_blank">
                 <Image
                   alt="react"
                   src="https://cdn.jsdelivr.net/gh/juandaep/Icons@master/devicons/react.svg"
-                  width="26"
-                  height={0}
+                  fill
                   title="React"
                 />
               </Link>
               <span className="sr-only">React</span>
             </span>
-            <span>
+            <span className="relative h-8 w-8">
               <Link href="https://nextjs.org/" target="_blank">
                 <Image
                   alt="nextjs"
                   src="https://cdn.jsdelivr.net/gh/juandaep/Icons@master/devicons/nextjs.svg"
-                  width="40"
-                  height={0}
+                  fill
                   className="dark:invert"
                   title="NextJS"
                 />
               </Link>
               <span className="sr-only">NextJS</span>
             </span>
-            <span>
+            <span className="relative h-6 w-6">
               <Link href="https://www.typescriptlang.org/" target="_blank">
                 <Image
                   alt="typescript"
                   src="https://cdn.jsdelivr.net/gh/juandaep/Icons@master/devicons/typescript.svg"
-                  width="26"
-                  height={0}
+                  fill
                   title="Typescript"
                 />
               </Link>
               <span className="sr-only">Typescript</span>
             </span>
-            <span>
+            <span className="relative h-6 w-6">
               <Link href="https://tailwindcss.com/" target="_blank">
                 <Image
                   alt="tailwindcss"
                   src="https://cdn.jsdelivr.net/gh/juandaep/Icons@master/devicons/tailwindcss.svg"
-                  width="26"
-                  height={0}
+                  fill
                   title="TailwindCSS"
                 />
               </Link>

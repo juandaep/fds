@@ -10,14 +10,10 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        "components-light":
-          "url('/components-bg-light.png')",
-        "components-dark":
-          "url('/components-bg-dark.png')",
-        "home-light":
-          "url('/web-bg-light.png')",
-        "home-dark":
-          "url('/web-bg-dark.png')",
+        "components-light": "url('/components-bg-light.png')",
+        "components-dark": "url('/components-bg-dark.png')",
+        "home-light": "url('/web-bg-light.png')",
+        "home-dark": "url('/web-bg-dark.png')",
       },
       colors: {
         light: "#FFFFFF",
@@ -105,6 +101,13 @@ const config: Config = {
           800: "#0C235A",
           900: "#06122D",
         },
+      },
+      boxShadow: {
+        "1": "0px 1px 2px 0px rgba(16, 24, 40, 0.05)",
+        "2": "0px 1px 2px 0px rgba(0, 0, 0, 0.12)",
+        "3": "0px 1px 2px 0px rgba(16, 24, 40, 0.10), 0px 1px 3px 0px rgba(16, 24, 40, 0.10)",
+        "4": "0px 4px 8px 0px rgba(0, 0, 0, 0.10)",
+        inner: "1px 2px 2px 0px rgba(0, 0, 0, 0.08) inset",
       },
     },
   },

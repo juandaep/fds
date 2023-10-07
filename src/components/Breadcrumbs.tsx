@@ -39,7 +39,7 @@ export const Breadcrumbs = () => {
           )}
         >
           {breadcrumbs.map((crumb, index) => (
-            <span key={index} className="flex gap-2">
+            <span key={index} className="flex gap-2 text-sm">
               {index > 0 && <ChevronRightIcon width={16} />}
               {crumb === breadcrumbs[breadcrumbs.length - 1] ? (
                 <span

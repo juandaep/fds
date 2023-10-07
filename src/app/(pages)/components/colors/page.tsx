@@ -1,9 +1,8 @@
 import { colorsData } from "@/app/data/colorsData";
-import { Content, ContentTitle } from "@/components/Content";
+import Content from "@/components/Content";
 import { ColorItems } from "@/components/colors/ColorItems";
 import { PageNavigation } from "@/components/pagenavigation/PageNavigation";
 import { classNames } from "@/utils/classNames";
-import { useState } from "react";
 
 const colors = () => {
   const sections = [
@@ -18,15 +17,11 @@ const colors = () => {
   return (
     <>
       <Content>
-        <ContentTitle title="Colors">
+        <Content.Title title="Colors">
           Flux Design Systems have a color palette below:
-        </ContentTitle>
+        </Content.Title>
         {sections.map((section) => (
-          <div
-            key={section.id}
-            id={section.id}
-            className="flex scroll-mt-24 flex-col gap-4"
-          >
+          <Content.Section key={section.id} id={section.id}>
             <h2
               className={classNames(
                 "text-xl font-semibold text-default-700",
@@ -50,7 +45,7 @@ const colors = () => {
                   )),
                 )}
             </div>
-          </div>
+          </Content.Section>
         ))}
       </Content>
       <PageNavigation sections={sections} />

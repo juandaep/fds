@@ -32,8 +32,9 @@ export const ColorItems: FC<ColorItemProps> = ({
       >
         <div
           className={`${classNames(
-            "h-16 rounded-lg border border-default-200",
+            "h-16 rounded-lg border border-default-200 transition-transform",
             "dark:border-default-800",
+            "active:scale-95",
           )} ${color} ${isWide ? "w-28 lg:w-[248px]" : "w-28"}`}
         ></div>
         <div className="text-sm">
