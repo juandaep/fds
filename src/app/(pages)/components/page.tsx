@@ -1,4 +1,4 @@
-import { Content, ContentTitle } from "@/components/Content";
+import Content from "@/components/Content";
 import { PageNavigation } from "@/components/pagenavigation/PageNavigation";
 
 const components = () => {
@@ -11,12 +11,12 @@ const components = () => {
   return (
     <>
       <Content>
-        <ContentTitle title="Components Overview">
+        <Content.Title title="Components Overview">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi
           provident nam repellat inventore commodi corrupti quo tempore facere
           necessitatibus nobis, est sunt aperiam perferendis quaerat, voluptates
           dolorem corporis, harum voluptatibus?
-        </ContentTitle>
+        </Content.Title>
         <div
           id="home"
           className="flex h-96 scroll-mt-24 items-center justify-center bg-amber-100"
