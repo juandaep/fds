@@ -54,7 +54,7 @@ const SidebarItems: React.FC<SidebarItemsProps> = ({
                 <div
                   className={classNames(
                     "border-l border-default-300",
-                    "flex flex-col gap-3 dark:border-default-600",
+                    "flex flex-col gap-3 dark:border-default-700",
                   )}
                 >
                   {item.menu.map((subItem, subIndex) => (
