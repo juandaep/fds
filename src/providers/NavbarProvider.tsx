@@ -11,6 +11,8 @@ export function NavbarProvider() {
     { href: "/components/icons" },
     { href: "/components/shadows" },
     { href: "/components/typography" },
+    { href: "/components/accordions" },
+    { href: "/components/alerts" },
   ];
 
   const isComponentsPage = subNavLinks.some((link) => router === link.href);

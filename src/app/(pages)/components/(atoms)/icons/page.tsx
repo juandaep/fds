@@ -19,7 +19,7 @@ const Icons = () => {
               )}
             >
               Hero Icons
-            </Link>
+            </Link>{" "}
             for all components.
           </p>
         </Content.Title>
