@@ -30,9 +30,9 @@ export const Hero = () => {
       >
         <div
           className={classNames(
-            "flex w-max divide-x divide-default-300 rounded-lg border border-default-300 text-xs font-medium -tracking-xs text-default-700",
+            "flex w-max divide-x divide-default-300 rounded-lg border border-default-300 text-xs font-medium -tracking-xs text-default-600",
             "lg:text-sm lg:-tracking-sm",
-            "dark:divide-default-700 dark:border-default-700 dark:text-default-200",
+            "dark:divide-default-700 dark:border-default-700 dark:text-default-300",
           )}
         >
           <div

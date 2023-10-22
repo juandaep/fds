@@ -73,13 +73,12 @@ const Typography = () => {
                 </span>
               </p>
             </div>
-            <div
-              className={`${classNames("flex flex-wrap gap-8")} ${
-                textSpec.textClass
-              }`}
-            >
+            <div className={`flex flex-wrap gap-8 ${textSpec.textClass}`}>
               {textSpec.textData.map((textData, dataIndex) => (
-                <p key={dataIndex} className={textData.fontweight}>
+                <p
+                  key={dataIndex}
+                  className={`${textData.fontweight} w-full break-words`}
+                >
                   {textData.label}
                 </p>
               ))}

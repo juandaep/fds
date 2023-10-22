@@ -145,7 +145,10 @@ export const typographyData = [
     textData: [
       { label: "Text Display 1 Regular", fontweight: "font-normal" },
       { label: "Text Display 1 Medium", fontweight: "font-medium" },
-      { label: "Text Display 1 Semibold", fontweight: "font-semibold" },
+      {
+        label: "Text Display 1 Semibold",
+        fontweight: "font-semibold",
+      },
       { label: "Text Display 1 Bold", fontweight: "font-bold" },
     ],
   },

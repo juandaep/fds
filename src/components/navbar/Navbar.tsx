@@ -53,9 +53,8 @@ const Navbar = () => {
           <button
             type="button"
             className={classNames(
-              "rounded-lg p-1 text-default-600 outline-none transition-all",
-              "active:bg-default-400",
-              "dark:text-default-200 dark:active:bg-default-800",
+              "rounded-lg p-1 text-default-500 outline-none transition-all",
+              "dark:text-default-400",
               "lg:hidden",
             )}
             aria-label="Nav Menu"
