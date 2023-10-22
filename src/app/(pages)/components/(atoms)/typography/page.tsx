@@ -77,7 +77,7 @@ const Typography = () => {
               {textSpec.textData.map((textData, dataIndex) => (
                 <p
                   key={dataIndex}
-                  className={`${textData.fontweight} w-full break-words`}
+                  className={`${textData.fontweight} w-full break-words lg:w-auto`}
                 >
                   {textData.label}
                 </p>
